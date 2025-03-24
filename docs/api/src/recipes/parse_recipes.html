@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>src.recipes.parse_recipes API documentation</title>
+<meta name="description" content="Recipe Markdown Parser and Formatter …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>src.recipes.parse_recipes</code></h1>
+</header>
+<section id="section-intro">
+<p>Recipe Markdown Parser and Formatter</p>
+<p>This module:
+1. Parses markdown recipe files
+2. Populates a SQLite database with structured data
+3. Provides a markdown preprocessing extension that applies HTML styling</p>
+<p>Usage:
+- As a standalone script to populate the database
+- As a MkDocs extension for formatting</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="src.recipes.parse_recipes.makeExtension"><code class="name flex">
+<span>def <span class="ident">makeExtension</span></span>(<span>*args: Any, **kwargs: Any) ‑> <a title="src.recipes.parse_recipes.RecipePreprocessor" href="#src.recipes.parse_recipes.RecipePreprocessor">RecipePreprocessor</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def makeExtension(*args: Any, **kwargs: Any) -&gt; RecipePreprocessor:
+    &#34;&#34;&#34;Create a MkDocs extension.&#34;&#34;&#34;
+    return RecipePreprocessor(*args, **kwargs)</code></pre>
+</details>
+<div class="desc"><p>Create a MkDocs extension.</p></div>
+</dd>
+<dt id="src.recipes.parse_recipes.populate_database"><code class="name flex">
+<span>def <span class="ident">populate_database</span></span>(<span>) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def populate_database() -&gt; None:
+    &#34;&#34;&#34;Populate the recipe database from markdown files.&#34;&#34;&#34;
+    print(&#34;Starting recipe parser...&#34;)
+
+    # Setup paths
+    recipes_dir = Path(&#34;docs/recipes&#34;)
+    db_path = Path(&#34;docs/database/recipes.db&#34;)
+    db_path.parent.mkdir(exist_ok=True, parents=True)
+
+    # Initialize database
+    db = RecipeDatabase(str(db_path))
+
+    # Clear existing data
+    db.clear_all_data()
+
+    # Process all markdown files in the recipes directory
+    recipe_files = list(recipes_dir.glob(&#34;*.md&#34;))
+    print(f&#34;Found {len(recipe_files)} recipe files&#34;)
+
+    for file_path in recipe_files:
+        # Skip the &#39;granola copy.md&#39; as requested
+        if file_path.name == &#34;granola copy.md&#34;:
+            continue
+
+        print(f&#34;Processing {file_path}...&#34;)
+        try:
+            parser = RecipeParser(str(file_path))
+            recipe_data = parser.get_data()
+            recipe_id = db.add_recipe(recipe_data, str(file_path))
+            print(f&#34;Added recipe ID {recipe_id}: {recipe_data[&#39;title&#39;]}&#34;)
+        except Exception as e:
+            print(f&#34;Error processing {file_path}: {e}&#34;)
+
+    db.close()
+    print(&#34;Recipe database generation complete!&#34;)</code></pre>
+</details>
+<div class="desc"><p>Populate the recipe database from markdown files.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="src.recipes.parse_recipes.RecipeDatabase"><code class="flex name class">
+<span>class <span class="ident">RecipeDatabase</span></span>
+<span>(</span><span>db_path: str)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RecipeDatabase:
+    &#34;&#34;&#34;Database handler for recipes.&#34;&#34;&#34;
+
+    def __init__(self, db_path: str):
+        &#34;&#34;&#34;Initialize with the path to the SQLite database.&#34;&#34;&#34;
+        self.db_path = db_path
+        self.conn = sqlite3.connect(db_path)
+        self.cursor = self.conn.cursor()
+        self._create_tables()
+
+    def _create_tables(self) -&gt; None:
+        &#34;&#34;&#34;Create the necessary database tables if they don&#39;t exist.&#34;&#34;&#34;
+        # Main recipe table
+        self.cursor.execute(&#34;&#34;&#34;
+        CREATE TABLE IF NOT EXISTS recipes (
+            id INTEGER PRIMARY KEY,
+            title TEXT NOT NULL,
+            description TEXT,
+            file_path TEXT NOT NULL,
+            language TEXT,
+            prep_time TEXT,
+            cook_time TEXT,
+            total_time TEXT,
+            servings TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+        &#34;&#34;&#34;)
+
+        # Ingredients table
+        self.cursor.execute(&#34;&#34;&#34;
+        CREATE TABLE IF NOT EXISTS ingredients (
+            id INTEGER PRIMARY KEY,
+            recipe_id INTEGER,
+            category TEXT,
+            ingredient TEXT NOT NULL,
+            FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON DELETE CASCADE
+        )
+        &#34;&#34;&#34;)
+
+        # Instructions table
+        self.cursor.execute(&#34;&#34;&#34;
+        CREATE TABLE IF NOT EXISTS instructions (
+            id INTEGER PRIMARY KEY,
+            recipe_id INTEGER,
+            phase TEXT,
+            step_number INTEGER,
+            instruction TEXT NOT NULL,
+            FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON DELETE CASCADE
+        )
+        &#34;&#34;&#34;)
+
+        # Tips and notes tables
+        for table in [&#34;storage_tips&#34;, &#34;serving_suggestions&#34;, &#34;recipe_notes&#34;]:
+            self.cursor.execute(f&#34;&#34;&#34;
+            CREATE TABLE IF NOT EXISTS {table} (
+                id INTEGER PRIMARY KEY,
+                recipe_id INTEGER,
+                text TEXT NOT NULL,
+                FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON DELETE CASCADE
+            )
+            &#34;&#34;&#34;)
+
+        self.conn.commit()
+
+    def clear_all_data(self) -&gt; None:
+        &#34;&#34;&#34;Clear all data from all tables.&#34;&#34;&#34;
+        tables = [
+            &#34;recipe_notes&#34;,
+            &#34;serving_suggestions&#34;,
+            &#34;storage_tips&#34;,
+            &#34;instructions&#34;,
+            &#34;ingredients&#34;,
+            &#34;recipes&#34;,
+        ]
+        for table in tables:
+            self.cursor.execute(f&#34;DELETE FROM {table}&#34;)
+        self.conn.commit()
+
+    def add_recipe(self, recipe_data: dict[str, Any], file_path: str) -&gt; int:
+        &#34;&#34;&#34;Add a recipe to the database and return its ID.&#34;&#34;&#34;
+        # Determine language by checking for Dutch keywords in the title or description
+        language = (
+            &#34;nl&#34;
+            if any(
+                dutch_word in recipe_data[&#34;title&#34;].lower()
+                for dutch_word in [&#34;nederlandse&#34;, &#34;hollandse&#34;, &#34;recept&#34;]
+            )
+            else &#34;en&#34;
+        )
+
+        # Insert main recipe info
+        self.cursor.execute(
+            &#34;&#34;&#34;
+        INSERT INTO recipes (title, description, file_path, language, prep_time, cook_time, total_time, servings)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        &#34;&#34;&#34;,
+            (
+                recipe_data[&#34;title&#34;],
+                recipe_data[&#34;description&#34;],
+                file_path,
+                language,
+                recipe_data[&#34;info&#34;].get(&#34;prep_time&#34;, &#34;&#34;),
+                recipe_data[&#34;info&#34;].get(&#34;cook_time&#34;, &#34;&#34;),
+                recipe_data[&#34;info&#34;].get(&#34;total_time&#34;, &#34;&#34;),
+                recipe_data[&#34;info&#34;].get(&#34;servings&#34;, &#34;&#34;),
+            ),
+        )
+
+        recipe_id = self.cursor.lastrowid
+        if recipe_id is None:
+            raise ValueError(&#34;Failed to get recipe ID after insertion&#34;)
+
+        # Insert ingredients
+        for category, ingredients in recipe_data[&#34;ingredients&#34;].items():
+            for ingredient in ingredients:
+                self.cursor.execute(
+                    &#34;&#34;&#34;
+                INSERT INTO ingredients (recipe_id, category, ingredient)
+                VALUES (?, ?, ?)
+                &#34;&#34;&#34;,
+                    (recipe_id, category, ingredient),
+                )
+
+        # Insert instructions
+        for phase, steps in recipe_data[&#34;instructions&#34;].items():
+            for step_num, instruction in enumerate(steps, 1):
+                self.cursor.execute(
+                    &#34;&#34;&#34;
+                INSERT INTO instructions (recipe_id, phase, step_number, instruction)
+                VALUES (?, ?, ?, ?)
+                &#34;&#34;&#34;,
+                    (recipe_id, phase, step_num, instruction),
+                )
+
+        # Insert tips and notes
+        for field in [&#34;storage_tips&#34;, &#34;serving_suggestions&#34;, &#34;recipe_notes&#34;]:
+            for item in recipe_data.get(field, []):
+                self.cursor.execute(
+                    f&#34;&#34;&#34;
+                INSERT INTO {field} (recipe_id, text)
+                VALUES (?, ?)
+                &#34;&#34;&#34;,
+                    (recipe_id, item),
+                )
+
+        self.conn.commit()
+        return recipe_id
+
+    def close(self) -&gt; None:
+        &#34;&#34;&#34;Close the database connection.&#34;&#34;&#34;
+        self.conn.close()</code></pre>
+</details>
+<div class="desc"><p>Database handler for recipes.</p>
+<p>Initialize with the path to the SQLite database.</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="src.recipes.parse_recipes.RecipeDatabase.add_recipe"><code class="name flex">
+<span>def <span class="ident">add_recipe</span></span>(<span>self, recipe_data: dict[str, typing.Any], file_path: str) ‑> int</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_recipe(self, recipe_data: dict[str, Any], file_path: str) -&gt; int:
+    &#34;&#34;&#34;Add a recipe to the database and return its ID.&#34;&#34;&#34;
+    # Determine language by checking for Dutch keywords in the title or description
+    language = (
+        &#34;nl&#34;
+        if any(
+            dutch_word in recipe_data[&#34;title&#34;].lower()
+            for dutch_word in [&#34;nederlandse&#34;, &#34;hollandse&#34;, &#34;recept&#34;]
+        )
+        else &#34;en&#34;
+    )
+
+    # Insert main recipe info
+    self.cursor.execute(
+        &#34;&#34;&#34;
+    INSERT INTO recipes (title, description, file_path, language, prep_time, cook_time, total_time, servings)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    &#34;&#34;&#34;,
+        (
+            recipe_data[&#34;title&#34;],
+            recipe_data[&#34;description&#34;],
+            file_path,
+            language,
+            recipe_data[&#34;info&#34;].get(&#34;prep_time&#34;, &#34;&#34;),
+            recipe_data[&#34;info&#34;].get(&#34;cook_time&#34;, &#34;&#34;),
+            recipe_data[&#34;info&#34;].get(&#34;total_time&#34;, &#34;&#34;),
+            recipe_data[&#34;info&#34;].get(&#34;servings&#34;, &#34;&#34;),
+        ),
+    )
+
+    recipe_id = self.cursor.lastrowid
+    if recipe_id is None:
+        raise ValueError(&#34;Failed to get recipe ID after insertion&#34;)
+
+    # Insert ingredients
+    for category, ingredients in recipe_data[&#34;ingredients&#34;].items():
+        for ingredient in ingredients:
+            self.cursor.execute(
+                &#34;&#34;&#34;
+            INSERT INTO ingredients (recipe_id, category, ingredient)
+            VALUES (?, ?, ?)
+            &#34;&#34;&#34;,
+                (recipe_id, category, ingredient),
+            )
+
+    # Insert instructions
+    for phase, steps in recipe_data[&#34;instructions&#34;].items():
+        for step_num, instruction in enumerate(steps, 1):
+            self.cursor.execute(
+                &#34;&#34;&#34;
+            INSERT INTO instructions (recipe_id, phase, step_number, instruction)
+            VALUES (?, ?, ?, ?)
+            &#34;&#34;&#34;,
+                (recipe_id, phase, step_num, instruction),
+            )
+
+    # Insert tips and notes
+    for field in [&#34;storage_tips&#34;, &#34;serving_suggestions&#34;, &#34;recipe_notes&#34;]:
+        for item in recipe_data.get(field, []):
+            self.cursor.execute(
+                f&#34;&#34;&#34;
+            INSERT INTO {field} (recipe_id, text)
+            VALUES (?, ?)
+            &#34;&#34;&#34;,
+                (recipe_id, item),
+            )
+
+    self.conn.commit()
+    return recipe_id</code></pre>
+</details>
+<div class="desc"><p>Add a recipe to the database and return its ID.</p></div>
+</dd>
+<dt id="src.recipes.parse_recipes.RecipeDatabase.clear_all_data"><code class="name flex">
+<span>def <span class="ident">clear_all_data</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clear_all_data(self) -&gt; None:
+    &#34;&#34;&#34;Clear all data from all tables.&#34;&#34;&#34;
+    tables = [
+        &#34;recipe_notes&#34;,
+        &#34;serving_suggestions&#34;,
+        &#34;storage_tips&#34;,
+        &#34;instructions&#34;,
+        &#34;ingredients&#34;,
+        &#34;recipes&#34;,
+    ]
+    for table in tables:
+        self.cursor.execute(f&#34;DELETE FROM {table}&#34;)
+    self.conn.commit()</code></pre>
+</details>
+<div class="desc"><p>Clear all data from all tables.</p></div>
+</dd>
+<dt id="src.recipes.parse_recipes.RecipeDatabase.close"><code class="name flex">
+<span>def <span class="ident">close</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def close(self) -&gt; None:
+    &#34;&#34;&#34;Close the database connection.&#34;&#34;&#34;
+    self.conn.close()</code></pre>
+</details>
+<div class="desc"><p>Close the database connection.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="src.recipes.parse_recipes.RecipeParser"><code class="flex name class">
+<span>class <span class="ident">RecipeParser</span></span>
+<span>(</span><span>file_path: str)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RecipeParser:
+    &#34;&#34;&#34;Parser for recipe markdown files.&#34;&#34;&#34;
+
+    def __init__(self, file_path: str):
+        &#34;&#34;&#34;Initialize with the path to a markdown recipe file.&#34;&#34;&#34;
+        self.file_path = file_path
+        with open(file_path, encoding=&#34;utf-8&#34;) as f:
+            self.content = f.read()
+
+        self.recipe_data: dict[str, Any] = {
+            &#34;title&#34;: &#34;&#34;,
+            &#34;description&#34;: &#34;&#34;,
+            &#34;info&#34;: {},
+            &#34;ingredients&#34;: {},
+            &#34;instructions&#34;: {},
+            &#34;storage_tips&#34;: [],
+            &#34;serving_suggestions&#34;: [],
+            &#34;recipe_notes&#34;: [],
+        }
+        self.parse()
+
+    def parse(self) -&gt; None:
+        &#34;&#34;&#34;Parse the markdown content into structured data.&#34;&#34;&#34;
+        # Extract title (H1)
+        title_match = re.search(r&#34;^# (.+)$&#34;, self.content, re.MULTILINE)
+        if title_match:
+            self.recipe_data[&#34;title&#34;] = title_match.group(1).strip()
+
+        # Extract description (italicized text after title)
+        desc_match = re.search(r&#34;^# .+\n\n\*(.+)\*&#34;, self.content, re.MULTILINE | re.DOTALL)
+        if desc_match:
+            self.recipe_data[&#34;description&#34;] = desc_match.group(1).strip()
+
+        # Extract recipe information
+        info_section = self._extract_section(
+            r&#34;## Recipe Information\n(.*?)(?:\n##|\Z)&#34;,
+            self.content,
+        )
+        if info_section:
+            info_lines = re.findall(r&#34;- \*\*(.+?):\*\* (.+)&#34;, info_section)
+            self.recipe_data[&#34;info&#34;] = {
+                key.lower().replace(&#34; &#34;, &#34;_&#34;): value for key, value in info_lines
+            }
+
+        # Extract ingredients
+        ingredients_section = self._extract_section(
+            r&#34;## Ingredients\n(.*?)(?:\n##|\Z)&#34;,
+            self.content,
+        )
+        if ingredients_section:
+            # Find all ingredient categories (### headers)
+            categories = re.findall(r&#34;### (.+)\n(.*?)(?=\n###|\Z)&#34;, ingredients_section, re.DOTALL)
+            for category, items in categories:
+                ingredient_items = re.findall(r&#34;- (.+)&#34;, items)
+                self.recipe_data[&#34;ingredients&#34;][category.strip()] = [
+                    item.strip() for item in ingredient_items
+                ]
+
+        # Extract instructions
+        instructions_section = self._extract_section(
+            r&#34;## Instructions\n(.*?)(?:\n##|\Z)&#34;,
+            self.content,
+        )
+        if instructions_section:
+            # Find all instruction phases (### headers)
+            phases = re.findall(r&#34;### (.+)\n(.*?)(?=\n###|\Z)&#34;, instructions_section, re.DOTALL)
+            for phase, items in phases:
+                step_items = re.findall(r&#34;\d+\.\s+(.+)&#34;, items)
+                self.recipe_data[&#34;instructions&#34;][phase.strip()] = [
+                    item.strip() for item in step_items
+                ]
+
+        # Extract storage tips
+        storage_section = self._extract_section(r&#34;## Storage Tips\n(.*?)(?:\n##|\Z)&#34;, self.content)
+        if storage_section:
+            self.recipe_data[&#34;storage_tips&#34;] = [
+                item.strip() for item in re.findall(r&#34;- (.+)&#34;, storage_section)
+            ]
+
+        # Extract serving suggestions
+        serving_section = self._extract_section(
+            r&#34;## Serving Suggestions\n(.*?)(?:\n##|\Z)&#34;,
+            self.content,
+        )
+        if serving_section:
+            self.recipe_data[&#34;serving_suggestions&#34;] = [
+                item.strip() for item in re.findall(r&#34;- (.+)&#34;, serving_section)
+            ]
+
+        # Extract recipe notes
+        notes_section = self._extract_section(r&#34;## Recipe Notes\n(.*?)(?:\n##|\Z)&#34;, self.content)
+        if notes_section:
+            self.recipe_data[&#34;recipe_notes&#34;] = [
+                item.strip() for item in re.findall(r&#34;- (.+)&#34;, notes_section)
+            ]
+
+    def _extract_section(self, pattern: str, text: str) -&gt; str | None:
+        &#34;&#34;&#34;Extract a section of text using a regex pattern.&#34;&#34;&#34;
+        match = re.search(pattern, text, re.DOTALL)
+        return match.group(1).strip() if match else None
+
+    def get_data(self) -&gt; dict[str, Any]:
+        &#34;&#34;&#34;Return the parsed recipe data.&#34;&#34;&#34;
+        return self.recipe_data
+
+    def get_formatted_markdown(self) -&gt; str:
+        &#34;&#34;&#34;Convert the clean markdown to styled markdown with HTML elements.&#34;&#34;&#34;
+        formatted_md = []
+
+        # Add title
+        formatted_md.append(f&#34;# {self.recipe_data[&#39;title&#39;]}\n&#34;)
+
+        # Add description (blockquote)
+        formatted_md.append(f&#34;&gt; *{self.recipe_data[&#39;description&#39;]}*\n&#34;)
+
+        # Add info table and image container
+        formatted_md.append(
+            &#39;&lt;div style=&#34;display: flex; flex-direction: row; align-items: center;&#34;&gt;&#39;,
+        )
+        formatted_md.append(&#39;    &lt;div style=&#34;flex: 1; display: flex; justify-content: center;&#34;&gt;&#39;)
+        formatted_md.append(&#34;        &lt;table&gt;&#34;)
+        formatted_md.append(&#34;            &lt;tr&gt;&lt;th&gt;Information&lt;/th&gt;&lt;th&gt;Details&lt;/th&gt;&lt;/tr&gt;&#34;)
+
+        # Map internal field names to display names
+        field_display_names = {
+            &#34;prep_time&#34;: &#34;Prep Time&#34;,
+            &#34;cook_time&#34;: &#34;Cook Time&#34;,
+            &#34;cooling_time&#34;: &#34;Cooling Time&#34;,
+            &#34;total_time&#34;: &#34;Total Time&#34;,
+            &#34;servings&#34;: &#34;Servings&#34;,
+        }
+
+        # Add table rows
+        for field, display_name in field_display_names.items():
+            if field in self.recipe_data[&#34;info&#34;]:
+                formatted_md.append(
+                    f&#34;            &lt;tr&gt;&lt;td&gt;{display_name}&lt;/td&gt;&lt;td&gt;{self.recipe_data[&#39;info&#39;][field]}&lt;/td&gt;&lt;/tr&gt;&#34;,
+                )
+
+        formatted_md.append(&#34;        &lt;/table&gt;&#34;)
+        formatted_md.append(&#34;    &lt;/div&gt;&#34;)
+
+        # Extract image name from file path to determine image path
+        image_name = os.path.splitext(os.path.basename(self.file_path))[0]
+
+        # Add image container
+        formatted_md.append(
+            &#39;    &lt;div style=&#34;flex: 1; padding-left: 20px; display: flex; justify-content: center;&#34;&gt;&#39;,
+        )
+        formatted_md.append(
+            f&#39;        &lt;img src=&#34;../images/{image_name}.jpg&#34; alt=&#34;{self.recipe_data[&#34;title&#34;]}&#34; style=&#34;max-width: 100%;&#34;&gt;&#39;,
+        )
+        formatted_md.append(&#34;    &lt;/div&gt;&#34;)
+        formatted_md.append(&#34;&lt;/div&gt;\n&#34;)
+
+        # Add section separator
+        formatted_md.append(&#34;---\n&#34;)
+
+        # Add ingredients section
+        formatted_md.append(&#34;## Ingredients\n&#34;)
+        for category, ingredients in self.recipe_data[&#34;ingredients&#34;].items():
+            formatted_md.append(f&#34;### {category}&#34;)
+            for ingredient in ingredients:
+                formatted_md.append(f&#34;- {ingredient}&#34;)
+            formatted_md.append(&#34;&#34;)
+
+        # Add section separator
+        formatted_md.append(&#34;---\n&#34;)
+
+        # Add instructions section
+        formatted_md.append(&#34;## Instructions\n&#34;)
+        step_counter = 1
+        for phase, steps in self.recipe_data[&#34;instructions&#34;].items():
+            formatted_md.append(f&#34;### {phase}&#34;)
+            for step in steps:
+                # Bold the first word of each instruction
+                first_word_end = step.find(&#34; &#34;)
+                if first_word_end &gt; 0:
+                    bolded_step = f&#34;**{step[:first_word_end]}** {step[first_word_end + 1 :]}&#34;
+                else:
+                    bolded_step = step
+
+                formatted_md.append(f&#34;{step_counter}. {bolded_step}&#34;)
+                step_counter += 1
+            formatted_md.append(&#34;&#34;)
+
+        # Add section separator and additional sections if they exist
+        for section_title, items in [
+            (&#34;Storage Tips&#34;, self.recipe_data[&#34;storage_tips&#34;]),
+            (&#34;Serving Suggestions&#34;, self.recipe_data[&#34;serving_suggestions&#34;]),
+            (&#34;Recipe Notes&#34;, self.recipe_data[&#34;recipe_notes&#34;]),
+        ]:
+            if items:
+                formatted_md.append(&#34;---\n&#34;)
+                formatted_md.append(f&#34;## {section_title}\n&#34;)
+                for item in items:
+                    formatted_md.append(f&#34;- {item}&#34;)
+                formatted_md.append(&#34;&#34;)
+
+        # Add final separator and footer
+        formatted_md.append(&#34;---\n&#34;)
+        formatted_md.append(&#34;*Recipe formatted with automatic styling*&#34;)
+
+        return &#34;\n&#34;.join(formatted_md)</code></pre>
+</details>
+<div class="desc"><p>Parser for recipe markdown files.</p>
+<p>Initialize with the path to a markdown recipe file.</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="src.recipes.parse_recipes.RecipeParser.get_data"><code class="name flex">
+<span>def <span class="ident">get_data</span></span>(<span>self) ‑> dict[str, typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_data(self) -&gt; dict[str, Any]:
+    &#34;&#34;&#34;Return the parsed recipe data.&#34;&#34;&#34;
+    return self.recipe_data</code></pre>
+</details>
+<div class="desc"><p>Return the parsed recipe data.</p></div>
+</dd>
+<dt id="src.recipes.parse_recipes.RecipeParser.get_formatted_markdown"><code class="name flex">
+<span>def <span class="ident">get_formatted_markdown</span></span>(<span>self) ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_formatted_markdown(self) -&gt; str:
+    &#34;&#34;&#34;Convert the clean markdown to styled markdown with HTML elements.&#34;&#34;&#34;
+    formatted_md = []
+
+    # Add title
+    formatted_md.append(f&#34;# {self.recipe_data[&#39;title&#39;]}\n&#34;)
+
+    # Add description (blockquote)
+    formatted_md.append(f&#34;&gt; *{self.recipe_data[&#39;description&#39;]}*\n&#34;)
+
+    # Add info table and image container
+    formatted_md.append(
+        &#39;&lt;div style=&#34;display: flex; flex-direction: row; align-items: center;&#34;&gt;&#39;,
+    )
+    formatted_md.append(&#39;    &lt;div style=&#34;flex: 1; display: flex; justify-content: center;&#34;&gt;&#39;)
+    formatted_md.append(&#34;        &lt;table&gt;&#34;)
+    formatted_md.append(&#34;            &lt;tr&gt;&lt;th&gt;Information&lt;/th&gt;&lt;th&gt;Details&lt;/th&gt;&lt;/tr&gt;&#34;)
+
+    # Map internal field names to display names
+    field_display_names = {
+        &#34;prep_time&#34;: &#34;Prep Time&#34;,
+        &#34;cook_time&#34;: &#34;Cook Time&#34;,
+        &#34;cooling_time&#34;: &#34;Cooling Time&#34;,
+        &#34;total_time&#34;: &#34;Total Time&#34;,
+        &#34;servings&#34;: &#34;Servings&#34;,
+    }
+
+    # Add table rows
+    for field, display_name in field_display_names.items():
+        if field in self.recipe_data[&#34;info&#34;]:
+            formatted_md.append(
+                f&#34;            &lt;tr&gt;&lt;td&gt;{display_name}&lt;/td&gt;&lt;td&gt;{self.recipe_data[&#39;info&#39;][field]}&lt;/td&gt;&lt;/tr&gt;&#34;,
+            )
+
+    formatted_md.append(&#34;        &lt;/table&gt;&#34;)
+    formatted_md.append(&#34;    &lt;/div&gt;&#34;)
+
+    # Extract image name from file path to determine image path
+    image_name = os.path.splitext(os.path.basename(self.file_path))[0]
+
+    # Add image container
+    formatted_md.append(
+        &#39;    &lt;div style=&#34;flex: 1; padding-left: 20px; display: flex; justify-content: center;&#34;&gt;&#39;,
+    )
+    formatted_md.append(
+        f&#39;        &lt;img src=&#34;../images/{image_name}.jpg&#34; alt=&#34;{self.recipe_data[&#34;title&#34;]}&#34; style=&#34;max-width: 100%;&#34;&gt;&#39;,
+    )
+    formatted_md.append(&#34;    &lt;/div&gt;&#34;)
+    formatted_md.append(&#34;&lt;/div&gt;\n&#34;)
+
+    # Add section separator
+    formatted_md.append(&#34;---\n&#34;)
+
+    # Add ingredients section
+    formatted_md.append(&#34;## Ingredients\n&#34;)
+    for category, ingredients in self.recipe_data[&#34;ingredients&#34;].items():
+        formatted_md.append(f&#34;### {category}&#34;)
+        for ingredient in ingredients:
+            formatted_md.append(f&#34;- {ingredient}&#34;)
+        formatted_md.append(&#34;&#34;)
+
+    # Add section separator
+    formatted_md.append(&#34;---\n&#34;)
+
+    # Add instructions section
+    formatted_md.append(&#34;## Instructions\n&#34;)
+    step_counter = 1
+    for phase, steps in self.recipe_data[&#34;instructions&#34;].items():
+        formatted_md.append(f&#34;### {phase}&#34;)
+        for step in steps:
+            # Bold the first word of each instruction
+            first_word_end = step.find(&#34; &#34;)
+            if first_word_end &gt; 0:
+                bolded_step = f&#34;**{step[:first_word_end]}** {step[first_word_end + 1 :]}&#34;
+            else:
+                bolded_step = step
+
+            formatted_md.append(f&#34;{step_counter}. {bolded_step}&#34;)
+            step_counter += 1
+        formatted_md.append(&#34;&#34;)
+
+    # Add section separator and additional sections if they exist
+    for section_title, items in [
+        (&#34;Storage Tips&#34;, self.recipe_data[&#34;storage_tips&#34;]),
+        (&#34;Serving Suggestions&#34;, self.recipe_data[&#34;serving_suggestions&#34;]),
+        (&#34;Recipe Notes&#34;, self.recipe_data[&#34;recipe_notes&#34;]),
+    ]:
+        if items:
+            formatted_md.append(&#34;---\n&#34;)
+            formatted_md.append(f&#34;## {section_title}\n&#34;)
+            for item in items:
+                formatted_md.append(f&#34;- {item}&#34;)
+            formatted_md.append(&#34;&#34;)
+
+    # Add final separator and footer
+    formatted_md.append(&#34;---\n&#34;)
+    formatted_md.append(&#34;*Recipe formatted with automatic styling*&#34;)
+
+    return &#34;\n&#34;.join(formatted_md)</code></pre>
+</details>
+<div class="desc"><p>Convert the clean markdown to styled markdown with HTML elements.</p></div>
+</dd>
+<dt id="src.recipes.parse_recipes.RecipeParser.parse"><code class="name flex">
+<span>def <span class="ident">parse</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parse(self) -&gt; None:
+    &#34;&#34;&#34;Parse the markdown content into structured data.&#34;&#34;&#34;
+    # Extract title (H1)
+    title_match = re.search(r&#34;^# (.+)$&#34;, self.content, re.MULTILINE)
+    if title_match:
+        self.recipe_data[&#34;title&#34;] = title_match.group(1).strip()
+
+    # Extract description (italicized text after title)
+    desc_match = re.search(r&#34;^# .+\n\n\*(.+)\*&#34;, self.content, re.MULTILINE | re.DOTALL)
+    if desc_match:
+        self.recipe_data[&#34;description&#34;] = desc_match.group(1).strip()
+
+    # Extract recipe information
+    info_section = self._extract_section(
+        r&#34;## Recipe Information\n(.*?)(?:\n##|\Z)&#34;,
+        self.content,
+    )
+    if info_section:
+        info_lines = re.findall(r&#34;- \*\*(.+?):\*\* (.+)&#34;, info_section)
+        self.recipe_data[&#34;info&#34;] = {
+            key.lower().replace(&#34; &#34;, &#34;_&#34;): value for key, value in info_lines
+        }
+
+    # Extract ingredients
+    ingredients_section = self._extract_section(
+        r&#34;## Ingredients\n(.*?)(?:\n##|\Z)&#34;,
+        self.content,
+    )
+    if ingredients_section:
+        # Find all ingredient categories (### headers)
+        categories = re.findall(r&#34;### (.+)\n(.*?)(?=\n###|\Z)&#34;, ingredients_section, re.DOTALL)
+        for category, items in categories:
+            ingredient_items = re.findall(r&#34;- (.+)&#34;, items)
+            self.recipe_data[&#34;ingredients&#34;][category.strip()] = [
+                item.strip() for item in ingredient_items
+            ]
+
+    # Extract instructions
+    instructions_section = self._extract_section(
+        r&#34;## Instructions\n(.*?)(?:\n##|\Z)&#34;,
+        self.content,
+    )
+    if instructions_section:
+        # Find all instruction phases (### headers)
+        phases = re.findall(r&#34;### (.+)\n(.*?)(?=\n###|\Z)&#34;, instructions_section, re.DOTALL)
+        for phase, items in phases:
+            step_items = re.findall(r&#34;\d+\.\s+(.+)&#34;, items)
+            self.recipe_data[&#34;instructions&#34;][phase.strip()] = [
+                item.strip() for item in step_items
+            ]
+
+    # Extract storage tips
+    storage_section = self._extract_section(r&#34;## Storage Tips\n(.*?)(?:\n##|\Z)&#34;, self.content)
+    if storage_section:
+        self.recipe_data[&#34;storage_tips&#34;] = [
+            item.strip() for item in re.findall(r&#34;- (.+)&#34;, storage_section)
+        ]
+
+    # Extract serving suggestions
+    serving_section = self._extract_section(
+        r&#34;## Serving Suggestions\n(.*?)(?:\n##|\Z)&#34;,
+        self.content,
+    )
+    if serving_section:
+        self.recipe_data[&#34;serving_suggestions&#34;] = [
+            item.strip() for item in re.findall(r&#34;- (.+)&#34;, serving_section)
+        ]
+
+    # Extract recipe notes
+    notes_section = self._extract_section(r&#34;## Recipe Notes\n(.*?)(?:\n##|\Z)&#34;, self.content)
+    if notes_section:
+        self.recipe_data[&#34;recipe_notes&#34;] = [
+            item.strip() for item in re.findall(r&#34;- (.+)&#34;, notes_section)
+        ]</code></pre>
+</details>
+<div class="desc"><p>Parse the markdown content into structured data.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="src.recipes.parse_recipes.RecipePreprocessor"><code class="flex name class">
+<span>class <span class="ident">RecipePreprocessor</span></span>
+<span>(</span><span>recipes_dir: str = 'docs/recipes')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RecipePreprocessor:
+    &#34;&#34;&#34;Preprocessor for MkDocs that converts clean markdown recipes to styled ones.&#34;&#34;&#34;
+
+    def __init__(self, recipes_dir: str = &#34;docs/recipes&#34;):
+        self.recipes_dir = recipes_dir
+
+    def on_page_markdown(
+        self, markdown_content: str, page: Any, config: dict[str, Any], **kwargs: Any
+    ) -&gt; str:
+        &#34;&#34;&#34;MkDocs hook to process the markdown content before rendering.&#34;&#34;&#34;
+        # Check if this is a recipe page (in recipes directory)
+        if not page.file.src_path.startswith(&#34;recipes/&#34;) or not page.file.src_path.endswith(&#34;.md&#34;):
+            return markdown_content
+
+        # If this is &#39;granola copy.md&#39;, leave it untouched as requested
+        if page.file.src_path == &#34;recipes/granola copy.md&#34;:
+            return markdown_content
+
+        try:
+            # Parse the recipe file
+            file_path = os.path.join(config[&#34;docs_dir&#34;], page.file.src_path)
+            parser = RecipeParser(file_path)
+
+            # Return the HTML-enhanced markdown
+            return parser.get_formatted_markdown()
+        except Exception as e:
+            print(f&#34;Error processing recipe {page.file.src_path}: {e}&#34;)
+            return markdown_content</code></pre>
+</details>
+<div class="desc"><p>Preprocessor for MkDocs that converts clean markdown recipes to styled ones.</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="src.recipes.parse_recipes.RecipePreprocessor.on_page_markdown"><code class="name flex">
+<span>def <span class="ident">on_page_markdown</span></span>(<span>self,<br>markdown_content: str,<br>page: Any,<br>config: dict[str, typing.Any],<br>**kwargs: Any) ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def on_page_markdown(
+    self, markdown_content: str, page: Any, config: dict[str, Any], **kwargs: Any
+) -&gt; str:
+    &#34;&#34;&#34;MkDocs hook to process the markdown content before rendering.&#34;&#34;&#34;
+    # Check if this is a recipe page (in recipes directory)
+    if not page.file.src_path.startswith(&#34;recipes/&#34;) or not page.file.src_path.endswith(&#34;.md&#34;):
+        return markdown_content
+
+    # If this is &#39;granola copy.md&#39;, leave it untouched as requested
+    if page.file.src_path == &#34;recipes/granola copy.md&#34;:
+        return markdown_content
+
+    try:
+        # Parse the recipe file
+        file_path = os.path.join(config[&#34;docs_dir&#34;], page.file.src_path)
+        parser = RecipeParser(file_path)
+
+        # Return the HTML-enhanced markdown
+        return parser.get_formatted_markdown()
+    except Exception as e:
+        print(f&#34;Error processing recipe {page.file.src_path}: {e}&#34;)
+        return markdown_content</code></pre>
+</details>
+<div class="desc"><p>MkDocs hook to process the markdown content before rendering.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="src.recipes" href="index.html">src.recipes</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="src.recipes.parse_recipes.makeExtension" href="#src.recipes.parse_recipes.makeExtension">makeExtension</a></code></li>
+<li><code><a title="src.recipes.parse_recipes.populate_database" href="#src.recipes.parse_recipes.populate_database">populate_database</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="src.recipes.parse_recipes.RecipeDatabase" href="#src.recipes.parse_recipes.RecipeDatabase">RecipeDatabase</a></code></h4>
+<ul class="">
+<li><code><a title="src.recipes.parse_recipes.RecipeDatabase.add_recipe" href="#src.recipes.parse_recipes.RecipeDatabase.add_recipe">add_recipe</a></code></li>
+<li><code><a title="src.recipes.parse_recipes.RecipeDatabase.clear_all_data" href="#src.recipes.parse_recipes.RecipeDatabase.clear_all_data">clear_all_data</a></code></li>
+<li><code><a title="src.recipes.parse_recipes.RecipeDatabase.close" href="#src.recipes.parse_recipes.RecipeDatabase.close">close</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="src.recipes.parse_recipes.RecipeParser" href="#src.recipes.parse_recipes.RecipeParser">RecipeParser</a></code></h4>
+<ul class="">
+<li><code><a title="src.recipes.parse_recipes.RecipeParser.get_data" href="#src.recipes.parse_recipes.RecipeParser.get_data">get_data</a></code></li>
+<li><code><a title="src.recipes.parse_recipes.RecipeParser.get_formatted_markdown" href="#src.recipes.parse_recipes.RecipeParser.get_formatted_markdown">get_formatted_markdown</a></code></li>
+<li><code><a title="src.recipes.parse_recipes.RecipeParser.parse" href="#src.recipes.parse_recipes.RecipeParser.parse">parse</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="src.recipes.parse_recipes.RecipePreprocessor" href="#src.recipes.parse_recipes.RecipePreprocessor">RecipePreprocessor</a></code></h4>
+<ul class="">
+<li><code><a title="src.recipes.parse_recipes.RecipePreprocessor.on_page_markdown" href="#src.recipes.parse_recipes.RecipePreprocessor.on_page_markdown">on_page_markdown</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.5</a>.</p>
+</footer>
+</body>
+</html>
