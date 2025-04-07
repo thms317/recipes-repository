@@ -2,39 +2,28 @@ site_name: recipes
 
 nav:
   - Introduction: index.md
-  - Getting Started: getting_started.md
-  - List of Commands: commands.md
-  - CI/CD: cicd.md
-  - Resources:
-      - Notebooks: notebooks/index.md
-      - Package: recipes.md
   - Recipes:
-      - Granola: recipes/granola.md
-      - Banana-Peanut Butter Granola with Whole Nuts: recipes/granola copy.md
+      - Banana-Peanut Butter Granola with Whole Nuts: recipes/granola.md
+      - Granola: recipes/granola_html.md
       - Dutch Vegetarian Chili: recipes/dutch_veggie_chili.md
-      - Recipe Database: recipe_database.md
-  - Tests:
-      - Tests: tests/tests.md
-      - Test Coverage: tests/coverage_report.md
-      - Test Configuration: tests/test_configuration.md
-  - Release: release.md
-  - Coding Standards: coding_standards.md
+      - Port-Caramelized Onions: recipes/port_caramelized_onions.md
+  - Recipe Database: recipe_database.md
 
 theme:
   name: material
 
-plugins:
-  - search
-  - recipe-plugin:
-      recipes_dir: docs/recipes
+# plugins:
+#   - search
+#   - recipe-plugin:
+#       recipes_dir: docs/recipes
 
-# Custom plugin settings
-markdown_extensions:
-  - pymdownx.highlight
-  - pymdownx.superfences
+# # Custom plugin settings
+# markdown_extensions:
+#   - pymdownx.highlight
+#   - pymdownx.superfences
 
-extra_css:
-  - css/custom.css
+# extra_css:
+#   - css/custom.css
 
-# Python path to locate custom plugin
-plugins_dir: src/
+# # Python path to locate custom plugin
+# plugins_dir: src/

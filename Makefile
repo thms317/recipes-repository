@@ -107,12 +107,11 @@ tree:
 recipe_db:
 	@echo "Generating recipe database from markdown files..."
 	@. .venv/bin/activate
-	# @mkdir -p docs/database
-	# @if [ ! -f "docs/database/recipes.db" ]; then \
-	# 	echo "Creating new recipe database..."; \
-	# 	uv run python -c "import sqlite3; conn = sqlite3.connect('docs/database/recipes.db'); conn.close()"; \
-	# fi
-	# @echo "Parsing recipe markdown files and populating database..."
+	@if [ ! -f "docs/database/recipes.db" ]; then \
+		echo "Creating new recipe database..."; \
+		uv run python -c "import sqlite3; conn = sqlite3.connect('docs/database/recipes.db'); conn.close()"; \
+	fi
+	@echo "Parsing recipe markdown files and populating database..."
 	# @uv run python -c "from src.recipes import populate_database; populate_database()"
 
 docs: recipe_db
