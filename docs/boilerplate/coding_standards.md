@@ -21,12 +21,6 @@ Ensure that the [`pre-commit`](https://pre-commit.com) hook defined in `.pre-com
 - [`pytest`](https://docs.pytest.org/en/stable/) for testing.
 - [`pytest-cov`](https://pytest-cov.readthedocs.io/en/latest/) for test coverage: aim for at least 80% test coverage.
 
-## Data Processing
-
-- When interacting with a Delta table, use `spark.sql.DataFrame` in subsequent transformations.
-- For small datasets, use the `coalesce(1)` method to process on a single node.
-- For large datasets, use the default method to process the data (i.e. let Spark handle the partitioning).
-
 ## Commit Conventions
 
 We follow the [Angular Commit Message Conventions](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format) for structured, semantic commit messages. This standard ensures consistent commit history and enables automated versioning and changelog generation.
@@ -81,31 +75,3 @@ Breaking changes should be indicated by:
 2. Adding a `BREAKING CHANGE:` footer with description: `BREAKING CHANGE: environment variables now take precedence over config files`
 
 Breaking changes trigger a major version update (`1.0.0` → `2.0.0`).
-
-### Examples of Good Commit Messages
-
-```text
-feat(auth): add OAuth2 authentication
-
-Implement OAuth2 authentication flow with Google and GitHub providers.
-```
-
-```text
-fix(data): resolve null pointer in dataframe transformation
-
-Fixes issue #123
-```
-
-```text
-refactor(api): simplify error handling middleware
-```
-
-```text
-docs(readme): update installation instructions
-```
-
-```text
-feat!: redesign public API
-
-BREAKING CHANGE: The entire public API has been redesigned to improve usability.
-```
