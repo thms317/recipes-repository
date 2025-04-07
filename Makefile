@@ -96,12 +96,9 @@ clean:
 test:
 	@echo "Running tests..."
 	@. .venv/bin/activate
-
 	@uv build
 	@uv sync
 	@uv run pytest -v tests --cov=src --cov-report=term
-
-deploy: deploy_dev
 
 tree:
 	@echo "Generating project tree..."
@@ -110,20 +107,15 @@ tree:
 recipe_db:
 	@echo "Generating recipe database from markdown files..."
 	@. .venv/bin/activate
-	@mkdir -p docs/database
-	@if [ ! -f "docs/database/recipes.db" ]; then \
-		echo "Creating new recipe database..."; \
-		uv run python -c "import sqlite3; conn = sqlite3.connect('docs/database/recipes.db'); conn.close()"; \
-	fi
-	@echo "Parsing recipe markdown files and populating database..."
-	@uv run python -c "from src.recipes import populate_database; populate_database()"
+	# @mkdir -p docs/database
+	# @if [ ! -f "docs/database/recipes.db" ]; then \
+	# 	echo "Creating new recipe database..."; \
+	# 	uv run python -c "import sqlite3; conn = sqlite3.connect('docs/database/recipes.db'); conn.close()"; \
+	# fi
+	# @echo "Parsing recipe markdown files and populating database..."
+	# @uv run python -c "from src.recipes import populate_database; populate_database()"
 
 docs: recipe_db
-	@echo "Running tests and generating coverage data..."
+	@echo "Serving recipes..."
 	@. .venv/bin/activate
-	@uv run pytest -v tests --cov=src --junitxml=docs/tests/coverage/pytest_coverage.xml
-	@echo "Generating HTML documentation..."
-	@uv run pdoc --html src -o docs/api --force
-	@uv run pdoc --html tests -o docs/api --force
-	@echo "Starting MkDocs server with recipe database..."
 	@uv run mkdocs serve
