@@ -4,7 +4,6 @@ nav:
   - Introduction: index.md
   - Recipes:
       - Banana-Peanut Butter Granola with Whole Nuts: recipes/granola.md
-      - Granola: recipes/granola_html.md
       - Dutch Vegetarian Chili: recipes/dutch_veggie_chili.md
       - Port-Caramelized Onions: recipes/port_caramelized_onions.md
   - Recipe Database: recipe_database.md
@@ -12,18 +11,15 @@ nav:
 theme:
   name: material
 
-# plugins:
-#   - search
-#   - recipe-plugin:
-#       recipes_dir: docs/recipes
+plugins:
+  - search
+  - recipes:
+      recipes_dir: recipes
+      images_dir: recipes/images
 
-# # Custom plugin settings
-# markdown_extensions:
-#   - pymdownx.highlight
-#   - pymdownx.superfences
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
 
-# extra_css:
-#   - css/custom.css
-
-# # Python path to locate custom plugin
-# plugins_dir: src/
+extra_css:
+  - css/custom.css
