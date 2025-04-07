@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/thms317/recipes/compare/v1.0.0...v1.1.0) (2025-04-07)
+
+
+### Bug Fixes
+
+* **amend:** fix ([91b8694](https://github.com/thms317/recipes/commit/91b8694924d8fdf50c1c188b57d9117f0749ad12))
+* **parser:** add initial parser code ([0e37b67](https://github.com/thms317/recipes/commit/0e37b678f8612a8fbd6df54e687739be79bcc541))
+
+
+### Features
+
+* **github-pages:** create workflow to automatically publish to GitHub Pages ([dfa4b07](https://github.com/thms317/recipes/commit/dfa4b072dfb8c217b895aa25936acea77360aec1))
+* **parser:** add recipe parser to build beautiful HTML from markdown ([9f291c9](https://github.com/thms317/recipes/commit/9f291c9c72ed8be0c3dd87e3bde63312ed9a432f))
+
 # 1.0.0 (2025-03-25)
 
 
