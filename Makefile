@@ -1,4 +1,4 @@
-.PHONY: install setup clean test tree docs recipe_db
+.PHONY: install setup clean test tree docs recipe_db test-recipe-plugin install-recipe-plugin serve-docs dev-recipe-plugin
 
 .DEFAULT_GOAL := setup
 
@@ -118,3 +118,21 @@ docs: recipe_db
 	@echo "Serving recipes..."
 	@. .venv/bin/activate
 	@uv run mkdocs serve
+
+# MkDocs Recipe Plugin
+test-recipe-plugin:
+	@echo "Running recipe plugin tests..."
+	@. .venv/bin/activate
+	@uv run pytest tests/test_recipe_plugin.py -v
+
+install-recipe-plugin:
+	@echo "Installing recipe plugin with uv..."
+	@. .venv/bin/activate
+	@uv pip install -e .
+
+serve-docs: install-recipe-plugin
+	@echo "Serving documentation with MkDocs..."
+	@. .venv/bin/activate
+	@uv run mkdocs serve
+
+dev-recipe-plugin: clean install-recipe-plugin test-recipe-plugin serve-docs
