@@ -2,13 +2,21 @@
 
 > *A crunchy, protein-rich homemade granola featuring the perfect combination of bananas, peanut butter, and toasted nuts*
 
-## Recipe Information
-
-- **Prep Time:** 10 minutes
-- **Cook Time:** 25-30 minutes
-- **Cooling Time:** 45-60 minutes
-- **Total Time:** 1 hour 30 minutes
-- **Servings:** About 4 cups
+<div style="display: flex; flex-direction: row; align-items: center;">
+    <div style="flex: 1; display: flex; justify-content: center;">
+        <table>
+            <tr><th>Information</th><th>Details</th></tr>
+            <tr><td>Prep Time</td><td>10 minutes</td></tr>
+            <tr><td>Cook Time</td><td>25-30 minutes</td></tr>
+            <tr><td>Cooling Time</td><td>45-60 minutes</td></tr>
+            <tr><td>Total Time</td><td>1 hour 30 minutes</td></tr>
+            <tr><td>Servings</td><td>About 4 cups</td></tr>
+        </table>
+    </div>
+    <div style="flex: 1; padding-left: 20px; display: flex; justify-content: center;">
+        <img src="../images/granola.jpg" alt="Banana-Peanut Butter Granola" style="max-width: 100%;">
+    </div>
+</div>
 
 ## Ingredients
 
