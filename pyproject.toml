@@ -82,6 +82,9 @@ disable_error_code = "name-defined"
 testpaths = ["tests"]
 pythonpath = ["src"]
 
+[tool.coverage.run]
+omit = ["*/__init__.py"]
+
 [tool.pydoclint]
 style = "numpy"
 exclude = ".git|.venv|scratch"
