@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/thms317/recipes/compare/v1.1.0...v1.1.1) (2025-04-09)
+
+
+### Bug Fixes
+
+* **deploy-docs:** fix the deployment flow ([e57b46e](https://github.com/thms317/recipes/commit/e57b46e27809ce9af12c84f662df7517d65e3116))
+* **deploy-docs:** update mkdocs method call in deploy-docs pipeline ([4b31c36](https://github.com/thms317/recipes/commit/4b31c369538b16e1000a1b1452882b635381eeac))
+
 # [1.1.0](https://github.com/thms317/recipes/compare/v1.0.0...v1.1.0) (2025-04-07)
 
 
