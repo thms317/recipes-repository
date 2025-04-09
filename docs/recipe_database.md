@@ -24,7 +24,7 @@ The table below shows all recipes currently available in the database:
 
 The recipe database uses the following schema:
 
-```
+```text
 recipes
 ├── id (PRIMARY KEY)
 ├── title
