@@ -2,9 +2,9 @@ name: Deploy MkDocs
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+  #   branches:
+  #     - main
+  # workflow_dispatch:
 
 permissions:
   contents: write
@@ -34,4 +34,4 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
       - name: Deploy documentation
-        run: mkdocs gh-deploy --force
+        run: uv run mkdocs gh-deploy --force
