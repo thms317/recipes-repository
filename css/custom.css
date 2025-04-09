@@ -1,0 +1,30 @@
+/* Recipe styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th {
+    background-color: #f0f0f0;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Responsive layout for recipe cards */
+@media (max-width: 768px) {
+    div[style*="display: flex; flex-direction: row"] {
+        flex-direction: column !important;
+    }
+
+    div[style*="flex: 1; padding-left: 20px"] {
+        padding-left: 0 !important;
+        margin-top: 20px;
+    }
+}
