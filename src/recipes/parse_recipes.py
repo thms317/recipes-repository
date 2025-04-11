@@ -13,7 +13,6 @@ Usage:
 - As a MkDocs extension for formatting
 """
 
-import os
 import re
 import sqlite3
 from pathlib import Path
@@ -23,10 +22,14 @@ from typing import Any
 class RecipeParser:
     """Parser for recipe markdown files."""
 
-    def __init__(self, file_path: str):
-        """Initialize with the path to a markdown recipe file."""
+    def __init__(self, file_path: str) -> None:
+        """Initialize with the path to a markdown recipe file.
+
+        Args:
+            file_path: Path to the markdown recipe file
+        """
         self.file_path = file_path
-        with open(file_path, encoding="utf-8") as f:
+        with Path(file_path).open(encoding="utf-8") as f:
             self.content = f.read()
 
         self.recipe_data: dict[str, Any] = {
@@ -43,6 +46,14 @@ class RecipeParser:
 
     def parse(self) -> None:
         """Parse the markdown content into structured data."""
+        self._parse_title_and_description()
+        self._parse_recipe_info()
+        self._parse_ingredients()
+        self._parse_instructions()
+        self._parse_additional_sections()
+
+    def _parse_title_and_description(self) -> None:
+        """Extract the title and description from the markdown."""
         # Extract title (H1)
         title_match = re.search(r"^# (.+)$", self.content, re.MULTILINE)
         if title_match:
@@ -53,7 +64,8 @@ class RecipeParser:
         if desc_match:
             self.recipe_data["description"] = desc_match.group(1).strip()
 
-        # Extract recipe information
+    def _parse_recipe_info(self) -> None:
+        """Extract recipe information section."""
         info_section = self._extract_section(
             r"## Recipe Information\n(.*?)(?:\n##|\Z)",
             self.content,
@@ -64,7 +76,8 @@ class RecipeParser:
                 key.lower().replace(" ", "_"): value for key, value in info_lines
             }
 
-        # Extract ingredients
+    def _parse_ingredients(self) -> None:
+        """Extract ingredients section."""
         ingredients_section = self._extract_section(
             r"## Ingredients\n(.*?)(?:\n##|\Z)",
             self.content,
@@ -78,7 +91,8 @@ class RecipeParser:
                     item.strip() for item in ingredient_items
                 ]
 
-        # Extract instructions
+    def _parse_instructions(self) -> None:
+        """Extract instructions section."""
         instructions_section = self._extract_section(
             r"## Instructions\n(.*?)(?:\n##|\Z)",
             self.content,
@@ -92,50 +106,99 @@ class RecipeParser:
                     item.strip() for item in step_items
                 ]
 
+    def _parse_additional_sections(self) -> None:
+        """Extract storage tips, serving suggestions, and notes."""
         # Extract storage tips
-        storage_section = self._extract_section(r"## Storage Tips\n(.*?)(?:\n##|\Z)", self.content)
-        if storage_section:
-            self.recipe_data["storage_tips"] = [
-                item.strip() for item in re.findall(r"- (.+)", storage_section)
-            ]
+        self._parse_list_section("storage_tips", "## Storage Tips")
 
         # Extract serving suggestions
-        serving_section = self._extract_section(
-            r"## Serving Suggestions\n(.*?)(?:\n##|\Z)",
-            self.content,
-        )
-        if serving_section:
-            self.recipe_data["serving_suggestions"] = [
-                item.strip() for item in re.findall(r"- (.+)", serving_section)
-            ]
+        self._parse_list_section("serving_suggestions", "## Serving Suggestions")
 
         # Extract recipe notes
-        notes_section = self._extract_section(r"## Recipe Notes\n(.*?)(?:\n##|\Z)", self.content)
-        if notes_section:
-            self.recipe_data["recipe_notes"] = [
-                item.strip() for item in re.findall(r"- (.+)", notes_section)
+        self._parse_list_section("recipe_notes", "## Recipe Notes")
+
+    def _parse_list_section(self, section_name: str, section_header: str) -> None:
+        """Parse a section containing a list of items.
+
+        Args:
+            section_name: Name of the section in recipe_data
+            section_header: Markdown header for the section
+        """
+        pattern = f"{section_header}\\n(.*?)(?:\\n##|\\Z)"
+        section_content = self._extract_section(pattern, self.content)
+        if section_content:
+            self.recipe_data[section_name] = [
+                item.strip() for item in re.findall(r"- (.+)", section_content)
             ]
 
     def _extract_section(self, pattern: str, text: str) -> str | None:
-        """Extract a section of text using a regex pattern."""
+        """Extract a section of text using a regex pattern.
+
+        Args:
+            pattern: Regular expression pattern to match
+            text: Text to search in
+
+        Returns
+        -------
+            The extracted section text or None if not found
+        """
         match = re.search(pattern, text, re.DOTALL)
         return match.group(1).strip() if match else None
 
     def get_data(self) -> dict[str, Any]:
-        """Return the parsed recipe data."""
+        """Return the parsed recipe data.
+
+        Returns
+        -------
+            Dictionary containing structured recipe data
+        """
         return self.recipe_data
 
     def get_formatted_markdown(self) -> str:
-        """Convert the clean markdown to styled markdown with HTML elements."""
-        formatted_md = []
+        """Convert the clean markdown to styled markdown with HTML elements.
 
-        # Add title
-        formatted_md.append(f"# {self.recipe_data['title']}\n")
+        Returns
+        -------
+            Formatted markdown string with HTML styling
+        """
+        formatted_md: list[str] = []
 
-        # Add description (blockquote)
-        formatted_md.append(f"> *{self.recipe_data['description']}*\n")
+        # Add title and description
+        self._add_header_section(formatted_md)
 
         # Add info table and image container
+        self._add_info_and_image_section(formatted_md)
+
+        # Add ingredients section
+        self._add_ingredients_section(formatted_md)
+
+        # Add instructions section
+        self._add_instructions_section(formatted_md)
+
+        # Add additional sections
+        self._add_additional_sections(formatted_md)
+
+        # Add footer
+        formatted_md.append("---\n")
+        formatted_md.append("*Recipe formatted with automatic styling*")
+
+        return "\n".join(formatted_md)
+
+    def _add_header_section(self, formatted_md: list[str]) -> None:
+        """Add title and description to the formatted markdown.
+
+        Args:
+            formatted_md: List to append markdown lines to
+        """
+        formatted_md.append(f"# {self.recipe_data['title']}\n")
+        formatted_md.append(f"> *{self.recipe_data['description']}*\n")
+
+    def _add_info_and_image_section(self, formatted_md: list[str]) -> None:
+        """Add info table and image container to the formatted markdown.
+
+        Args:
+            formatted_md: List to append markdown lines to
+        """
         formatted_md.append(
             '<div style="display: flex; flex-direction: row; align-items: center;">',
         )
@@ -163,7 +226,7 @@ class RecipeParser:
         formatted_md.append("    </div>")
 
         # Extract image name from file path to determine image path
-        image_name = os.path.splitext(os.path.basename(self.file_path))[0]
+        image_name = Path(self.file_path).stem
 
         # Add image container
         formatted_md.append(
@@ -178,35 +241,58 @@ class RecipeParser:
         # Add section separator
         formatted_md.append("---\n")
 
-        # Add ingredients section
+    def _add_ingredients_section(self, formatted_md: list[str]) -> None:
+        """Add ingredients section to the formatted markdown.
+
+        Args:
+            formatted_md: List to append markdown lines to
+        """
         formatted_md.append("## Ingredients\n")
         for category, ingredients in self.recipe_data["ingredients"].items():
             formatted_md.append(f"### {category}")
-            for ingredient in ingredients:
-                formatted_md.append(f"- {ingredient}")
+            formatted_md.extend([f"- {ingredient}" for ingredient in ingredients])
             formatted_md.append("")
 
         # Add section separator
         formatted_md.append("---\n")
 
-        # Add instructions section
+    def _add_instructions_section(self, formatted_md: list[str]) -> None:
+        """Add instructions section to the formatted markdown.
+
+        Args:
+            formatted_md: List to append markdown lines to
+        """
         formatted_md.append("## Instructions\n")
         step_counter = 1
         for phase, steps in self.recipe_data["instructions"].items():
             formatted_md.append(f"### {phase}")
             for step in steps:
-                # Bold the first word of each instruction
-                first_word_end = step.find(" ")
-                if first_word_end > 0:
-                    bolded_step = f"**{step[:first_word_end]}** {step[first_word_end + 1 :]}"
-                else:
-                    bolded_step = step
-
+                bolded_step = self._bold_first_word(step)
                 formatted_md.append(f"{step_counter}. {bolded_step}")
                 step_counter += 1
             formatted_md.append("")
 
-        # Add section separator and additional sections if they exist
+    def _bold_first_word(self, text: str) -> str:
+        """Bold the first word of a string.
+
+        Args:
+            text: The text to process
+
+        Returns
+        -------
+            Text with first word in bold
+        """
+        first_word_end = text.find(" ")
+        if first_word_end > 0:
+            return f"**{text[:first_word_end]}** {text[first_word_end + 1 :]}"
+        return text
+
+    def _add_additional_sections(self, formatted_md: list[str]) -> None:
+        """Add additional sections (tips, suggestions, notes) to the formatted markdown.
+
+        Args:
+            formatted_md: List to append markdown lines to
+        """
         for section_title, items in [
             ("Storage Tips", self.recipe_data["storage_tips"]),
             ("Serving Suggestions", self.recipe_data["serving_suggestions"]),
@@ -215,22 +301,19 @@ class RecipeParser:
             if items:
                 formatted_md.append("---\n")
                 formatted_md.append(f"## {section_title}\n")
-                for item in items:
-                    formatted_md.append(f"- {item}")
+                formatted_md.extend([f"- {item}" for item in items])
                 formatted_md.append("")
-
-        # Add final separator and footer
-        formatted_md.append("---\n")
-        formatted_md.append("*Recipe formatted with automatic styling*")
-
-        return "\n".join(formatted_md)
 
 
 class RecipeDatabase:
     """Database handler for recipes."""
 
-    def __init__(self, db_path: str):
-        """Initialize with the path to the SQLite database."""
+    def __init__(self, db_path: str) -> None:
+        """Initialize with the path to the SQLite database.
+
+        Args:
+            db_path: Path to the SQLite database file
+        """
         self.db_path = db_path
         self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
@@ -238,7 +321,22 @@ class RecipeDatabase:
 
     def _create_tables(self) -> None:
         """Create the necessary database tables if they don't exist."""
-        # Main recipe table
+        # Create main recipe table
+        self._create_recipe_table()
+
+        # Create ingredient table
+        self._create_ingredient_table()
+
+        # Create instruction table
+        self._create_instruction_table()
+
+        # Create additional tables
+        self._create_additional_tables()
+
+        self.conn.commit()
+
+    def _create_recipe_table(self) -> None:
+        """Create the main recipe table."""
         self.cursor.execute("""
         CREATE TABLE IF NOT EXISTS recipes (
             id INTEGER PRIMARY KEY,
@@ -254,7 +352,8 @@ class RecipeDatabase:
         )
         """)
 
-        # Ingredients table
+    def _create_ingredient_table(self) -> None:
+        """Create the ingredients table."""
         self.cursor.execute("""
         CREATE TABLE IF NOT EXISTS ingredients (
             id INTEGER PRIMARY KEY,
@@ -265,7 +364,8 @@ class RecipeDatabase:
         )
         """)
 
-        # Instructions table
+    def _create_instruction_table(self) -> None:
+        """Create the instructions table."""
         self.cursor.execute("""
         CREATE TABLE IF NOT EXISTS instructions (
             id INTEGER PRIMARY KEY,
@@ -277,7 +377,8 @@ class RecipeDatabase:
         )
         """)
 
-        # Tips and notes tables
+    def _create_additional_tables(self) -> None:
+        """Create tips and notes tables."""
         for table in ["storage_tips", "serving_suggestions", "recipe_notes"]:
             self.cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS {table} (
@@ -287,8 +388,6 @@ class RecipeDatabase:
                 FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON DELETE CASCADE
             )
             """)
-
-        self.conn.commit()
 
     def clear_all_data(self) -> None:
         """Clear all data from all tables."""
@@ -305,16 +404,48 @@ class RecipeDatabase:
         self.conn.commit()
 
     def add_recipe(self, recipe_data: dict[str, Any], file_path: str) -> int:
-        """Add a recipe to the database and return its ID."""
-        # Determine language by checking for Dutch keywords in the title or description
-        language = (
-            "nl"
-            if any(
-                dutch_word in recipe_data["title"].lower()
-                for dutch_word in ["nederlandse", "hollandse", "recept"]
-            )
-            else "en"
-        )
+        """Add a recipe to the database and return its ID.
+
+        Args:
+            recipe_data: Structured recipe data
+            file_path: Path to the source markdown file
+
+        Returns
+        -------
+            The ID of the inserted recipe
+
+        Raises
+        ------
+            ValueError: If unable to get recipe ID after insertion
+        """
+        # Insert main recipe data
+        recipe_id = self._insert_recipe_main_data(recipe_data, file_path)
+
+        # Insert related data
+        self._insert_recipe_ingredients(recipe_id, recipe_data)
+        self._insert_recipe_instructions(recipe_id, recipe_data)
+        self._insert_recipe_additional_data(recipe_id, recipe_data)
+
+        self.conn.commit()
+        return recipe_id
+
+    def _insert_recipe_main_data(self, recipe_data: dict[str, Any], file_path: str) -> int:
+        """Insert main recipe data and return the recipe ID.
+
+        Args:
+            recipe_data: Structured recipe data
+            file_path: Path to the source markdown file
+
+        Returns
+        -------
+            The ID of the inserted recipe
+
+        Raises
+        ------
+            ValueError: If unable to get recipe ID after insertion
+        """
+        # Determine language by checking for Dutch keywords in the title
+        language = self._determine_language(recipe_data["title"])
 
         # Insert main recipe info
         self.cursor.execute(
@@ -336,9 +467,36 @@ class RecipeDatabase:
 
         recipe_id = self.cursor.lastrowid
         if recipe_id is None:
-            raise ValueError("Failed to get recipe ID after insertion")
+            msg = "Failed to get recipe ID after insertion"
+            raise ValueError(msg)
 
-        # Insert ingredients
+        return recipe_id
+
+    def _determine_language(self, title: str) -> str:
+        """Determine recipe language from title.
+
+        Args:
+            title: Recipe title
+
+        Returns
+        -------
+            Language code ('nl' for Dutch, 'en' for English)
+        """
+        return (
+            "nl"
+            if any(
+                dutch_word in title.lower() for dutch_word in ["nederlandse", "hollandse", "recept"]
+            )
+            else "en"
+        )
+
+    def _insert_recipe_ingredients(self, recipe_id: int, recipe_data: dict[str, Any]) -> None:
+        """Insert recipe ingredients.
+
+        Args:
+            recipe_id: ID of the recipe
+            recipe_data: Structured recipe data
+        """
         for category, ingredients in recipe_data["ingredients"].items():
             for ingredient in ingredients:
                 self.cursor.execute(
@@ -349,7 +507,13 @@ class RecipeDatabase:
                     (recipe_id, category, ingredient),
                 )
 
-        # Insert instructions
+    def _insert_recipe_instructions(self, recipe_id: int, recipe_data: dict[str, Any]) -> None:
+        """Insert recipe instructions.
+
+        Args:
+            recipe_id: ID of the recipe
+            recipe_data: Structured recipe data
+        """
         for phase, steps in recipe_data["instructions"].items():
             for step_num, instruction in enumerate(steps, 1):
                 self.cursor.execute(
@@ -360,7 +524,13 @@ class RecipeDatabase:
                     (recipe_id, phase, step_num, instruction),
                 )
 
-        # Insert tips and notes
+    def _insert_recipe_additional_data(self, recipe_id: int, recipe_data: dict[str, Any]) -> None:
+        """Insert tips, suggestions, and notes.
+
+        Args:
+            recipe_id: ID of the recipe
+            recipe_data: Structured recipe data
+        """
         for field in ["storage_tips", "serving_suggestions", "recipe_notes"]:
             for item in recipe_data.get(field, []):
                 self.cursor.execute(
@@ -371,9 +541,6 @@ class RecipeDatabase:
                     (recipe_id, item),
                 )
 
-        self.conn.commit()
-        return recipe_id
-
     def close(self) -> None:
         """Close the database connection."""
         self.conn.close()
@@ -383,7 +550,12 @@ class RecipeDatabase:
 class RecipePreprocessor:
     """Preprocessor for MkDocs that converts clean markdown recipes to styled ones."""
 
-    def __init__(self, recipes_dir: str = "docs/recipes"):
+    def __init__(self, recipes_dir: str = "docs/recipes") -> None:
+        """Initialize the preprocessor.
+
+        Args:
+            recipes_dir: Directory containing recipe markdown files
+        """
         self.recipes_dir = recipes_dir
 
     def on_page_markdown(
@@ -391,32 +563,61 @@ class RecipePreprocessor:
         markdown_content: str,
         page: Any,
         config: dict[str, Any],
-        **kwargs: Any,
+        files: Any,
+        **kwargs: object,
     ) -> str:
-        """MkDocs hook to process the markdown content before rendering."""
-        # Check if this is a recipe page (in recipes directory)
-        if not page.file.src_path.startswith("recipes/") or not page.file.src_path.endswith(".md"):
-            return markdown_content
+        """MkDocs hook to process the markdown content before rendering.
 
-        # If this is 'granola copy.md', leave it untouched as requested
-        if page.file.src_path == "recipes/granola copy.md":
+        Args:
+            markdown_content: Original markdown content
+            page: Page object containing file information
+            config: MkDocs configuration
+            files: MkDocs files collection
+            **kwargs: Additional arguments (unused)
+
+        Returns
+        -------
+            Processed markdown content
+        """
+        if not self._should_process_page(page.file.src_path):
             return markdown_content
 
         try:
             # Parse the recipe file
-            file_path = os.path.join(config["docs_dir"], page.file.src_path)
-            parser = RecipeParser(file_path)
+            file_path = Path(config["docs_dir"]) / page.file.src_path
+            parser = RecipeParser(str(file_path))
 
             # Return the HTML-enhanced markdown
             return parser.get_formatted_markdown()
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             print(f"Error processing recipe {page.file.src_path}: {e}")
             return markdown_content
 
+    def _should_process_page(self, src_path: str) -> bool:
+        """Determine if this is a recipe page that should be processed.
+
+        Args:
+            src_path: Source path of the page
+
+        Returns
+        -------
+            True if the page should be processed, False otherwise
+        """
+        return src_path.startswith("recipes/") and src_path.endswith(".md")
+
 
 # Function to create a MkDocs extension
-def makeExtension(*args: Any, **kwargs: Any) -> RecipePreprocessor:
-    """Create a MkDocs extension."""
+def make_extension(*args: Any, **kwargs: Any) -> RecipePreprocessor:
+    """Create a MkDocs extension.
+
+    Args:
+        *args: Positional arguments
+        **kwargs: Keyword arguments
+
+    Returns
+    -------
+        Initialized RecipePreprocessor
+    """
     return RecipePreprocessor(*args, **kwargs)
 
 
@@ -435,26 +636,32 @@ def populate_database() -> None:
     # Clear existing data
     db.clear_all_data()
 
-    # Process all markdown files in the recipes directory
+    # Process recipe files
+    process_recipe_files(recipes_dir, db)
+
+    db.close()
+    print("Recipe database generation complete!")
+
+
+def process_recipe_files(recipes_dir: Path, db: RecipeDatabase) -> None:
+    """Process all recipe files in the directory.
+
+    Args:
+        recipes_dir: Directory containing recipe markdown files
+        db: Database instance for storing recipe data
+    """
     recipe_files = list(recipes_dir.glob("*.md"))
     print(f"Found {len(recipe_files)} recipe files")
 
     for file_path in recipe_files:
-        # Skip the 'granola copy.md' as requested
-        if file_path.name == "granola copy.md":
-            continue
-
         print(f"Processing {file_path}...")
         try:
             parser = RecipeParser(str(file_path))
             recipe_data = parser.get_data()
             recipe_id = db.add_recipe(recipe_data, str(file_path))
             print(f"Added recipe ID {recipe_id}: {recipe_data['title']}")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             print(f"Error processing {file_path}: {e}")
-
-    db.close()
-    print("Recipe database generation complete!")
 
 
 if __name__ == "__main__":
