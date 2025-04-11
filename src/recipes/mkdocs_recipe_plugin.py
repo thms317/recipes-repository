@@ -36,13 +36,13 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     with the recipe image displayed alongside.
     """
 
-    def on_page_markdown(  # type: ignore[override]
+    def on_page_markdown(
         self,
         markdown: str,
         page: Page,
-        config: MkDocsConfig,
-        files: Files,
-        **kwargs: Any,
+        config: MkDocsConfig,  # noqa: ARG002
+        files: Files,  # noqa: ARG002
+        **kwargs: Any,  # noqa: ARG002
     ) -> str:
         """Transform markdown for recipe pages.
 
