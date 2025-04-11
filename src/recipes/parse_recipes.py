@@ -563,8 +563,8 @@ class RecipePreprocessor:
         markdown_content: str,
         page: Any,
         config: dict[str, Any],
-        files: Any,
-        **kwargs: object,
+        files: Any,  # noqa: ARG002
+        **kwargs: object,  # noqa: ARG002
     ) -> str:
         """MkDocs hook to process the markdown content before rendering.
 
