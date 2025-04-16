@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/thms317/recipes/compare/v1.2.0...v1.2.1) (2025-04-16)
+
+
+### Bug Fixes
+
+* **plugin:** install plugin in CI ([03852ae](https://github.com/thms317/recipes/commit/03852aeeccf0b28ce4d22af4da8891c8fef88a77))
+
 # [1.2.0](https://github.com/thms317/recipes/compare/v1.1.1...v1.2.0) (2025-04-16)
 
 
