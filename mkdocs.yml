@@ -4,7 +4,7 @@ site_url: https://thms317.github.io/recipes/
 nav:
   - Introduction: index.md
   - Recipes:
-      - Banana-Peanut Butter Granola with Whole Nuts: recipes/granola.md
+      - Banana-Peanut Butter Granola: recipes/granola.md
       - Dutch Vegetarian Chili: recipes/dutch_veggie_chili.md
       - Port-Caramelized Onions: recipes/port_caramelized_onions.md
   - Recipe Database: recipe_database.md
