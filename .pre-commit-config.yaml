@@ -56,6 +56,11 @@ repos:
 #     rev: 0.6.5
 #     hooks:
 #     -   id: pydoclint
+-   repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.3
+    hooks:
+    -   id: gitleaks
+
 -   repo: local
     hooks:
     -   id: pytest-unit-tests

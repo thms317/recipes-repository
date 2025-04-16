@@ -1,4 +1,5 @@
 version = 1
+revision = 1
 requires-python = ">=3.12, <4.0"
 resolution-markers = [
     "platform_machine == 'x86_64' and sys_platform == 'darwin'",
@@ -392,7 +393,7 @@ wheels = [
 
 [[package]]
 name = "docling"
-version = "2.29.0"
+version = "2.30.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beautifulsoup4" },
@@ -421,9 +422,9 @@ dependencies = [
     { name = "tqdm" },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b6/c6/3fece0752ed390aa7f605d6cdb87c1f4fe4088fba0f88525db9f0c29f932/docling-2.29.0.tar.gz", hash = "sha256:c508369aa35d653bc97c3b73a241defe56fddeb6cb0c72f37ad3a6a2f253108a", size = 124942 }
+sdist = { url = "https://files.pythonhosted.org/packages/ae/c3/4638c20524dc7a822296c3f0f94ff6b0eb907f103daf6849e53198b1154f/docling-2.30.0.tar.gz", hash = "sha256:6d31293d84ac9967101e394b7fa1b75be951775c1cb873d18b505e82c8d23c83", size = 127891 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/00/fe/2df9df9bf75fa131d9f6372f87165048bbcd3b63c3785e5a5e48fafb7995/docling-2.29.0-py3-none-any.whl", hash = "sha256:3503a4a88e9863b704b4ba66b265a48e57668f746903ee2adb933070a6359d4f", size = 162234 },
+    { url = "https://files.pythonhosted.org/packages/46/de/3187100db7f416c4e0000cbfae63b9381ec9aaa3a24d29c77e180e0fac43/docling-2.30.0-py3-none-any.whl", hash = "sha256:88bc3f988116ea100ef1a025b623c94ae0010c11bc183f4773fb852a627d1d5d", size = 165852 },
 ]
 
 [[package]]
@@ -2114,15 +2115,15 @@ wheels = [
 
 [[package]]
 name = "pydoclint"
-version = "0.6.5"
+version = "0.6.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
     { name = "docstring-parser-fork" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/37/fe/a2aef1313507ed474af125c8f94a957e02806b95cf712caa421d0a40cbd0/pydoclint-0.6.5.tar.gz", hash = "sha256:e7e630d34808ea3f7cd44fc0d412b3f7997cf6a1d28e1dddbbc721ea6190bb04", size = 54475 }
+sdist = { url = "https://files.pythonhosted.org/packages/e6/b8/9ab3bb3642e1a87ad5b51276cc6465542935d44c427d75937216b22eadc0/pydoclint-0.6.6.tar.gz", hash = "sha256:22862a8494d05cdf22574d6533f4c47933c0ae1674b0f8b961d6ef42536eaa69", size = 54488 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bd/87/37e45c8debf81e35fa1242b121a4ea605feabefe569a96bc35b2ae72a03a/pydoclint-0.6.5-py2.py3-none-any.whl", hash = "sha256:a83565803f77b6f4f3934d85ec661f36c3c8931c9ae8c2b36775b5880c1f09b0", size = 48706 },
+    { url = "https://files.pythonhosted.org/packages/bc/05/c714e4dfea5e48140288ee05275e9675fbe1ab1010852ed8c77a388c7ace/pydoclint-0.6.6-py2.py3-none-any.whl", hash = "sha256:7ce8ed36f60f9201bf1c1edacb32c55eb051af80fdd7304480c6419ee0ced43c", size = 48713 },
 ]
 
 [[package]]
@@ -2422,7 +2423,7 @@ wheels = [
 [[package]]
 name = "recipes"
 version = "1.1.1"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "docling" },
     { name = "ipykernel" },
@@ -2448,7 +2449,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "docling", specifier = ">=2.29.0" },
+    { name = "docling", specifier = ">=2.30.0" },
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "ipython", specifier = ">=9.1.0" },
     { name = "jupyter", specifier = ">=1.1.1" },
@@ -2463,7 +2464,7 @@ dev = [
     { name = "mypy", specifier = ">=1.15.0" },
     { name = "pdoc3", specifier = ">=0.11.5" },
     { name = "pre-commit", specifier = ">=4.1.0" },
-    { name = "pydoclint", specifier = ">=0.5.8" },
+    { name = "pydoclint", specifier = ">=0.6.6" },
     { name = "pytest", specifier = ">=8.3.5" },
     { name = "pytest-cov", specifier = ">=6.0.0" },
     { name = "pytest-mock", specifier = ">=3.14.0" },

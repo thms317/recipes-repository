@@ -8,7 +8,7 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = [
-    "docling>=2.29.0",
+    "docling>=2.30.0",
     "ipykernel>=6.29.5",
     "ipython>=9.1.0",
     "jupyter>=1.1.1",
@@ -17,22 +17,18 @@ dependencies = [
     "tabulate>=0.9.0",
 ]
 
-[tool.uv]
-package = true
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "bandit>=1.8.3",
     "mypy>=1.15.0",
     "pdoc3>=0.11.5",
     "pre-commit>=4.1.0",
-    "pydoclint>=0.5.8",
+    "pydoclint>=0.6.6",
     "pytest-cov>=6.0.0",
     "pytest-mock>=3.14.0",
     "pytest>=8.3.5",
     "ruff>=0.11.5",
 ]
-
-[project.scripts]
-main = "recipes.main:main"
 
 [project.entry-points."mkdocs.plugins"]
 recipes = "recipes:RecipePlugin"
@@ -42,7 +38,6 @@ target-version = "py312"
 line-length = 100
 extend-include = ["*.ipynb"]
 extend-exclude = ["scratch"]
-builtins = ["dbutils", "display", "spark"]
 
 [tool.ruff.lint]
 pydocstyle.convention = "numpy"
