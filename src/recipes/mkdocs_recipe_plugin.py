@@ -22,10 +22,12 @@ class RecipePluginConfig(Config):
     ----------
         recipes_dir: Directory path where recipe markdown files are stored
         images_dir: Directory path where recipe images are stored
+        image_extensions: Map of recipe names to image extensions (defaults to jpg)
     """
 
     recipes_dir = config_options.Type(str, default="docs/recipes")
     images_dir = config_options.Type(str, default="docs/images")
+    image_extensions = config_options.Type(dict, default={})
 
 
 class RecipePlugin(BasePlugin[RecipePluginConfig]):
@@ -195,8 +197,28 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
         -------
             str: Relative path to the image file
         """
-        image_filename = Path(file_path).stem + ".jpg"
-        return f"../images/{image_filename}"
+        # Extract the base name of the file without extension
+        image_stem = Path(file_path).stem
+
+        # Define supported image formats to check
+        supported_extensions = ["jpg", "jpeg", "png", "webp", "gif"]
+
+        # Build the path to the images directory based on config
+        # Normalize path to handle different config formats (with or without 'docs/' prefix)
+        images_dir = self.config.images_dir
+        if not images_dir.startswith(("docs/", "/")):
+            images_dir = f"docs/{images_dir}"
+
+        # Check for the existence of image files with different extensions
+        for ext in supported_extensions:
+            image_path = Path(images_dir) / f"{image_stem}.{ext}"
+            if image_path.exists():
+                # Return a relative path that works in the rendered HTML
+                # Normalize the path to ensure correct relative path calculation
+                return f"../images/{image_stem}.{ext}"
+
+        # If no matching file is found, default to jpg (for backward compatibility)
+        return f"../images/{image_stem}.jpg"
 
     def _generate_recipe_html_table(
         self,
