@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/thms317/recipes/compare/v1.1.1...v1.2.0) (2025-04-16)
+
+
+### Bug Fixes
+
+* **github-actions:** streamline CI pipeline ([dfba461](https://github.com/thms317/recipes/commit/dfba4611b94c58198c40d2a1a666f36c6acc21ff))
+* **plugin:** update mkdocs plugin to handle image formats more versatile ([0e5dc2c](https://github.com/thms317/recipes/commit/0e5dc2c2dee39108b16b931de45a53e70306e196))
+
+
+### Features
+
+* **github-actions:** add gitleaks action ([af93c04](https://github.com/thms317/recipes/commit/af93c04871a4d75aec6ff04ddfe1840ef73b3d84))
+* **pdf-parser:** add pdf parser to extract text and images from pdf ([0a65c31](https://github.com/thms317/recipes/commit/0a65c31a986d065c8db0244944639f87d82ae48e))
+
 ## [1.1.1](https://github.com/thms317/recipes/compare/v1.1.0...v1.1.1) (2025-04-09)
 
 
