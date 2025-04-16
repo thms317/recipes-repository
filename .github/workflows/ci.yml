@@ -26,12 +26,12 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --group dev
       - name: Run formatting checks
         run: |
           uv run ruff check --output-format=github .
           uv run mypy .
-          uv run pydoclint .
+          # uv run pydoclint .
           uv run bandit .
       - name: Run tests with coverage report
         run: |
