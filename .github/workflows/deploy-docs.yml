@@ -23,6 +23,9 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Install local package (required for MkDocs plugin)
+        run: uv pip install -e .
+
       - name: Configure Git user
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
