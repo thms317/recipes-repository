@@ -112,7 +112,7 @@ recipe_db:
 		uv run python -c "import sqlite3; conn = sqlite3.connect('docs/database/recipes.db'); conn.close()"; \
 	fi
 	@echo "Parsing recipe markdown files and populating database..."
-	# @uv run python -c "from src.recipes import populate_database; populate_database()"
+	@uv run python -c "from src.recipes import populate_database; populate_database()"
 
 docs: recipe_db
 	@echo "Serving recipes..."

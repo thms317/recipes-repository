@@ -1,16 +1,17 @@
 # Recipes Repository
 
-[![GitHub](https://img.shields.io/badge/GitHub-thms317/recipes-blue?logo=github)](https://github.com/thms317/recipes)
+<img src="images/banner.png" width="100%">
 
 A collection of recipes, written in markdown format - beautifully rendered as HTML.
 
-<img src="images/banner.png" width="100%">
-
 ## Recipes
 
-- [Banana-Peanut Butter Granola with Whole Nuts](recipes/granola.md)
+- [Banana-Peanut Butter Granola](recipes/granola.md)
 - [Port-Caramelized Onions](recipes/port_caramelized_onions.md)
-- [Nederlandse Vegetarische Chili](recipes/dutch_veggie_chili.md)
+- [Vegetarische Chili](recipes/chili_vega.md)
+- [Boterkoek](recipes/boterkoek.md)
+- [Appeltaart](recipes/appeltaart.md)
+- [Zoete Aardappelsoep](recipes/zoete_aardappelsoep.md)
 
 ## Database
 
