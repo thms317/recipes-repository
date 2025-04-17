@@ -12,6 +12,8 @@ A collection of recipes, written in markdown format - beautifully rendered as HT
 - [Boterkoek](recipes/boterkoek.md)
 - [Appeltaart](recipes/appeltaart.md)
 - [Zoete Aardappelsoep](recipes/zoete_aardappelsoep.md)
+- [Spaghetti Carbonara](recipes/carbonara.md)
+- [Gnocchi met Saliepesto en Artisjokharten](recipes/gnocchi_saliepesto.md)
 
 ## Database
 
