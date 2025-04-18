@@ -14,6 +14,7 @@ A collection of recipes, written in markdown format - beautifully rendered as HT
 - [Zoete Aardappelsoep](recipes/zoete_aardappelsoep.md)
 - [Spaghetti Carbonara](recipes/carbonara.md)
 - [Gnocchi met Saliepesto en Artisjokharten](recipes/gnocchi_saliepesto.md)
+- [Zesty Sumac Vinaigrette](recipes/sumac.md)
 
 ## Database
 

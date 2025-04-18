@@ -1,5 +1,11 @@
 # Chili Vega
 
+> *Bennita's classic.*
+
+## Recipe Information
+- **Cook Time:** 30 minutes
+- **Servings:** 4 personen
+
 ## Ingredients
 - 1 of 2 ui, gesnipperd
 - 2 teentjes knoflook, fijngehakt
