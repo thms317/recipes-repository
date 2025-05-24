@@ -79,8 +79,9 @@ unfixable = [
 ]
 
 [tool.mypy]
+packages = ["src"]
 python_version = "3.12"
-mypy_path = ["src", ".vscode"]
+mypy_path = ["src"]
 strict = true
 disallow_untyped_decorators = false
 disallow_untyped_calls = false
