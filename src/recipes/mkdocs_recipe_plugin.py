@@ -53,7 +53,7 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
         """
         # Generate index files for recipes
         try:
-            from src.recipes.auto_index import on_startup
+            from recipes.auto_index import on_startup
 
             on_startup()
         except Exception as e:
