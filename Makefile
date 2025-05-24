@@ -115,7 +115,7 @@ lint:
 	@uv sync
 	@uv build
 	@echo "Running ruff..."
-	@uv run ruff check .
+	@uv run ruff check --output-format=concise .
 	@echo "Running mypy..."
 	@uv run mypy .
 	@echo "Running pydoclint..."
