@@ -28,10 +28,11 @@
 
 ### Wet Ingredients
 
-- 60g (¼ cup) natural crunchy peanut butter
+- 1.5 medium ripe bananas
 - 50g (3 tablespoons + 1 teaspoon) olive oil
-- 75g (¼ cup) maple syrup or honey → *for sweeter granola: increase to 100g (⅓ cup)*
-- 1.5 medium ripe bananas, about 180g peeled (approximately ¾ cup mashed)
+- 60g (¼ cup) natural crunchy peanut butter
+- 75g (¼ cup) maple syrup or honey (or more)
+
 - 5ml (1 teaspoon) vanilla extract
 
 ## Instructions
@@ -52,11 +53,10 @@
 
 ### Baking
 
-- Bake for 25-30 minutes at 175°C (350°F), stirring carefully halfway through
-- For extra crunchiness:
-    - Lower heat to 150°C (300°F) after the first 15 minutes
-    - After stirring, press down firmly with a spatula
-    - Leave small gaps between clusters for better air circulation
+- Bake for 15 minutes at 175°C
+- Stirring thoroughly halfway through, press down with a spatula to create clusters
+- Bake for an additional 30-45 minutes at 150°C
+- If needed, bake for another 30 minutes at 120°C (250°F) for extra crunchiness after cooling (1-24 hours)
 
 ### Cooling
 
@@ -74,5 +74,3 @@
 - **Nuts**: Feel free to use any combination of nuts and seeds you prefer
 - **Texture**: The longer you leave the granola untouched while cooling, the chunkier it will be
 - **Baking Sheet**: For maximum crunchiness, use parchment paper on a metal baking sheet rather than silicone/rubber mats
-
-*Recipe developed for optimal crunch and flavor balance*
