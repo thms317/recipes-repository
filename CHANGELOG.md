@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/thms317/recipes/compare/v1.2.1...v1.3.0) (2025-05-26)
+
+
+### Bug Fixes
+
+* **makefile:** update ruff check output format to concise ([df747c3](https://github.com/thms317/recipes/commit/df747c3f9cff955b29ac346b3615f320832f2e55))
+* **parser:** debug recipes parser and plugin ([5873bdc](https://github.com/thms317/recipes/commit/5873bdc78595938591e5a229aae885da73b0c619))
+* **plugin:** update import path for auto_index in RecipePlugin ([2895a90](https://github.com/thms317/recipes/commit/2895a904390c74f6704afa11ab76440b130bafe4))
+
+
+### Features
+
+* **indexer:** add indexer functionality in order to be independent from mkdocs.yaml ([ddd91f3](https://github.com/thms317/recipes/commit/ddd91f35db28a91691a1665b1c60d81be683e763))
+
 ## [1.2.1](https://github.com/thms317/recipes/compare/v1.2.0...v1.2.1) (2025-04-16)
 
 
