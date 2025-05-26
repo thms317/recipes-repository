@@ -1,9 +1,7 @@
 """Script to automatically generate index files during docs build."""
 
-import os
 import re
 from pathlib import Path
-from typing import Dict, List
 
 
 def extract_title_from_markdown(file_path: str) -> str:
@@ -17,17 +15,18 @@ def extract_title_from_markdown(file_path: str) -> str:
         The extracted title, or a capitalized filename if title not found
     """
     try:
-        with open(file_path, encoding="utf-8") as f:
+        with Path(file_path).open(encoding="utf-8") as f:
             content = f.read()
             # Look for H1 title (# Title)
             title_match = re.search(r"^# (.+)$", content, re.MULTILINE)
             if title_match:
                 return title_match.group(1).strip()
-    except Exception as e:
+    except OSError as e:
         print(f"Error reading title from {file_path}: {e}")
 
     # Fallback to filename
-    filename = os.path.splitext(os.path.basename(file_path))[0]
+    file_path_obj = Path(file_path)
+    filename = file_path_obj.stem
     return filename.replace("_", " ").title()
 
 
@@ -50,7 +49,7 @@ def scan_recipe_directories() -> dict[str, list[dict[str, str]]]:
             continue
 
         # Get all markdown files in the category directory
-        recipe_files = sorted([f for f in os.listdir(category_dir) if f.endswith(".md")])
+        recipe_files = sorted([f.name for f in category_dir.iterdir() if f.suffix == ".md"])
 
         # Skip if no recipe files found
         if not recipe_files:
@@ -104,18 +103,17 @@ def generate_index_files(recipes_by_category: dict[str, list[dict[str, str]]]) -
         ]
 
         # Add links to each recipe with actual titles
-        for recipe in recipes:
-            content.append(f"- [{recipe['title']}]({category}/{recipe['filename']})")
+        content.extend(f"- [{recipe['title']}]({category}/{recipe['filename']})" for recipe in recipes)
 
         # Write the index file
-        with open(index_file, "w") as f:
+        with index_file.open("w") as f:
             f.write("\n".join(content))
 
         print(f"Generated index file for {category} at {index_file}")
 
 
 def on_startup() -> None:
-    """Function to run when the docs site is starting up."""
+    """Run when the docs site is starting up."""
     # Scan recipe directories
     recipes_by_category = scan_recipe_directories()
 

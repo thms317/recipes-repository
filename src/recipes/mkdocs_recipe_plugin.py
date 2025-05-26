@@ -3,9 +3,8 @@
 import json
 import re
 import sqlite3
-from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple, cast
+from typing import Any
 
 from mkdocs.config import config_options
 from mkdocs.config.base import Config
@@ -56,7 +55,7 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
             from recipes.auto_index import on_startup
 
             on_startup()
-        except Exception as e:
+        except ImportError as e:
             print(f"Error generating recipe index files: {e}")
 
         # Ensure the database exists
@@ -70,11 +69,10 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
                 from recipes.parse_recipes import populate_database
 
                 populate_database()
-            except Exception as e:
+            except ImportError as e:
                 print(f"Error populating recipe database: {e}")
                 # Create an empty file if we can't import the database
-                with open(db_path, "wb") as f:
-                    pass
+                db_path.touch()
 
         # Generate the recipes JSON file directly in the docs directory
         # This ensures it will be copied to the site directory during build
@@ -84,7 +82,7 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
 
         return config
 
-    def on_serve(self, server: Any, config: MkDocsConfig, builder: Any) -> Any:
+    def on_serve(self, server: Any, config: MkDocsConfig, builder: Any) -> Any:  # noqa: ARG002
         """Add recipe API endpoint to the development server.
 
         Args:
@@ -146,14 +144,14 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
 
                 recipes = [dict(row) for row in cursor.fetchall()]
                 conn.close()
-            except Exception as e:
+            except sqlite3.Error as e:
                 print(f"Error generating recipe JSON: {e}")
 
         # Ensure directory exists
         output_path.parent.mkdir(exist_ok=True, parents=True)
 
         # Write JSON to file
-        with open(output_path, "w", encoding="utf-8") as f:
+        with output_path.open("w", encoding="utf-8") as f:
             json.dump(recipes, f, ensure_ascii=False, indent=2)
 
         print(f"Generated recipe API file at {output_path} with {len(recipes)} recipes")
@@ -318,12 +316,12 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
             str: Relative path to the image file
         """
         # Get basic file name without extension
-        file_path = Path(file_path)
-        image_stem = file_path.stem
+        file_path_obj = Path(file_path)
+        image_stem = file_path_obj.stem
 
         # Determine category from file path
         category = None
-        for part in file_path.parts:
+        for part in file_path_obj.parts:
             if part in ["breakfast", "main", "side", "dessert", "starter"]:
                 category = part
                 break
