@@ -23,8 +23,11 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Install local package (required for MkDocs plugin)
-        run: uv pip install -e .
+      - name: Run MkDocs plugin
+        run: uv run mkdocs build
+
+      # - name: Install local package (required for MkDocs plugin)
+      #   run: uv pip install -e .
 
       - name: Configure Git user
         run: |

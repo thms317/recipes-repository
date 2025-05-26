@@ -1,5 +1,5 @@
 
-# Incredible Sicilian Caponata
+# Caponata
 
 > *A fantastic aubergine stew from southern Italy with delicious capers, olives and tomatoes - eaten as a warm vegetable side dish or cold antipasto*
 

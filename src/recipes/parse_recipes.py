@@ -13,7 +13,6 @@ Usage:
 - As a MkDocs extension for formatting
 """
 
-import os
 import re
 import sqlite3
 from pathlib import Path

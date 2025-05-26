@@ -1,6 +1,5 @@
 """Generate index files for recipe categories."""
 
-import os
 import re
 from pathlib import Path
 
@@ -16,17 +15,18 @@ def extract_title_from_markdown(file_path: str) -> str:
         The extracted title, or a capitalized filename if title not found
     """
     try:
-        with open(file_path, encoding="utf-8") as f:
+        with Path(file_path).open(encoding="utf-8") as f:
             content = f.read()
             # Look for H1 title (# Title)
             title_match = re.search(r"^# (.+)$", content, re.MULTILINE)
             if title_match:
                 return title_match.group(1).strip()
-    except Exception as e:
+    except OSError as e:
         print(f"Error reading title from {file_path}: {e}")
 
     # Fallback to filename
-    filename = os.path.splitext(os.path.basename(file_path))[0]
+    file_path_obj = Path(file_path)
+    filename = file_path_obj.stem
     return filename.replace("_", " ").title()
 
 
@@ -47,7 +47,7 @@ def generate_category_index(category: str, title: str) -> None:
         return
 
     # Get all markdown files in the category directory
-    recipe_files = sorted([f for f in os.listdir(category_dir) if f.endswith(".md")])
+    recipe_files = sorted([f.name for f in category_dir.iterdir() if f.suffix == ".md"])
 
     # Skip if no recipe files found
     if not recipe_files:
@@ -70,7 +70,7 @@ def generate_category_index(category: str, title: str) -> None:
         content.append(f"- [{recipe_title}]({category}/{recipe_file})")
 
     # Write the index file
-    with open(index_file, "w") as f:
+    with index_file.open("w") as f:
         f.write("\n".join(content))
 
     print(f"Generated index file for {category} at {index_file}")
