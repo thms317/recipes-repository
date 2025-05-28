@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/thms317/recipes/compare/v1.3.0...v1.3.1) (2025-05-28)
+
+
+### Bug Fixes
+
+* **deploy-docs:** update GitHub Action configuration for docs deployment ([22a1f87](https://github.com/thms317/recipes/commit/22a1f879f7a5929c6d93c355d71fdeeafc65e760))
+
 # [1.3.0](https://github.com/thms317/recipes/compare/v1.2.1...v1.3.0) (2025-05-26)
 
 
