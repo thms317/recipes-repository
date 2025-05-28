@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://thms317.github.io/</loc>
+         <loc>https://thms317.github.io/recipes/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/llm_instructions/</loc>
+         <loc>https://thms317.github.io/recipes/llm_instructions/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipe_database/</loc>
+         <loc>https://thms317.github.io/recipes/recipe_database/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/breakfast/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/breakfast/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/dessert/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/dessert/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/main/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/main/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/side/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/side/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/starter/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/starter/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/breakfast/granola/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/breakfast/granola/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/dessert/appeltaart/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/dessert/appeltaart/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/dessert/boterkoek/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/dessert/boterkoek/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/main/asparagus-linguine/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/main/asparagus-linguine/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/main/bbq_salmon/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/main/bbq_salmon/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/main/caesar/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/main/caesar/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/main/caponata/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/main/caponata/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/main/carbonara/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/main/carbonara/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/main/chili_vega/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/main/chili_vega/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/main/gnocchi_saliepesto/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/main/gnocchi_saliepesto/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/side/port_caramelized_onions/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/side/port_caramelized_onions/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/side/sumac/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/side/sumac/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
     <url>
-         <loc>https://thms317.github.io/recipes/starter/zoete_aardappelsoep/</loc>
+         <loc>https://thms317.github.io/recipes/recipes/starter/zoete_aardappelsoep/</loc>
          <lastmod>2025-05-28</lastmod>
     </url>
 </urlset>
