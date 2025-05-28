@@ -92,6 +92,19 @@
   },
   {
     "id": 8,
+    "title": "Caponata",
+    "description": "",
+    "file_path": "docs/recipes/main/caponata.md",
+    "language": "en",
+    "category": "side, antipasto",
+    "difficulty": "simple",
+    "prep_time": "",
+    "cook_time": "30-45 minutes",
+    "total_time": "30-45 minutes",
+    "servings": "4-8 servings"
+  },
+  {
+    "id": 9,
     "title": "Asparagus Linguine with Lemon and Mint",
     "description": "",
     "file_path": "docs/recipes/main/asparagus-linguine.md",
@@ -104,7 +117,7 @@
     "servings": "4 servings"
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "Chili Vega",
     "description": "",
     "file_path": "docs/recipes/main/chili_vega.md",
@@ -117,7 +130,7 @@
     "servings": "4 personen"
   },
   {
-    "id": 10,
+    "id": 11,
     "title": "Spaghetti Carbonara",
     "description": "",
     "file_path": "docs/recipes/main/carbonara.md",
@@ -130,7 +143,7 @@
     "servings": "4 servings"
   },
   {
-    "id": 11,
+    "id": 12,
     "title": "BBQ Salmon Bowls with Mango Avocado Salsa",
     "description": "",
     "file_path": "docs/recipes/main/bbq_salmon.md",
@@ -143,9 +156,9 @@
     "servings": "2-4 (depends on how much salmon you use)"
   },
   {
-    "id": 12,
+    "id": 13,
     "title": "Banana-Peanut Butter Granola with Whole Nuts",
-    "description": "Recipe developed for optimal crunch and flavor balance",
+    "description": "",
     "file_path": "docs/recipes/breakfast/granola.md",
     "language": "en",
     "category": "",

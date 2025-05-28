@@ -12,6 +12,7 @@
 ## Ingredients
 
 ### The Dressing
+
 - 6 anchovy fillets packed in oil, drained
 - 1 small garlic clove
 - Kosher salt
@@ -24,13 +25,16 @@
 - Freshly ground black pepper
 
 ### The Croutons
+
 - 3 cups torn 1" pieces country bread, with crusts
 - 3 tablespoons olive oil
 
 ### The Lettuce
+
 - 3 romaine hearts, leaves separated
 
 ### The Cheese
+
 - Parmesan, for serving
 
 ## Instructions
