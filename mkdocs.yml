@@ -1,5 +1,5 @@
 site_name: recipes
-site_url: https://thms317.github.io/
+site_url: https://thms317.github.io/recipes/
 
 nav:
   - Introduction: index.md
