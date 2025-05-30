@@ -27,6 +27,19 @@
   },
   {
     "id": 3,
+    "title": "Pico de gallo",
+    "description": "",
+    "file_path": "docs/recipes/side/pico_de_gallo.md",
+    "language": "en",
+    "category": "side",
+    "difficulty": "simple",
+    "prep_time": "10 minutes",
+    "cook_time": "",
+    "total_time": "55 minutes",
+    "servings": "8 personen"
+  },
+  {
+    "id": 4,
     "title": "Port-Caramelized Onions",
     "description": "",
     "file_path": "docs/recipes/side/port_caramelized_onions.md",
@@ -39,7 +52,7 @@
     "servings": ""
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Zesty Sumac Vinaigrette",
     "description": "",
     "file_path": "docs/recipes/side/sumac.md",
@@ -52,7 +65,7 @@
     "servings": ""
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Aardappelsoep van zoete aardappelen, kokos en limoen",
     "description": "",
     "file_path": "docs/recipes/starter/zoete_aardappelsoep.md",
@@ -65,7 +78,7 @@
     "servings": "4 personen"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Classic Caesar Salad",
     "description": "",
     "file_path": "docs/recipes/main/caesar.md",
@@ -78,7 +91,7 @@
     "servings": "6"
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "Gnocchi met Saliepesto en Artisjokharten",
     "description": "",
     "file_path": "docs/recipes/main/gnocchi_saliepesto.md",
@@ -91,20 +104,33 @@
     "servings": "2 personen"
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "Caponata",
     "description": "",
     "file_path": "docs/recipes/main/caponata.md",
     "language": "en",
-    "category": "side, antipasto",
+    "category": "main",
     "difficulty": "simple",
-    "prep_time": "",
-    "cook_time": "30-45 minutes",
-    "total_time": "30-45 minutes",
+    "prep_time": "30 minutes",
+    "cook_time": "30 minutes",
+    "total_time": "60 minutes",
     "servings": "4-8 servings"
   },
   {
-    "id": 9,
+    "id": 10,
+    "title": "Fajitas",
+    "description": "",
+    "file_path": "docs/recipes/main/fajitas.md",
+    "language": "en",
+    "category": "main",
+    "difficulty": "simple",
+    "prep_time": "10 minutes",
+    "cook_time": "15 minutes",
+    "total_time": "25 minutes",
+    "servings": "6 servings"
+  },
+  {
+    "id": 11,
     "title": "Asparagus Linguine with Lemon and Mint",
     "description": "",
     "file_path": "docs/recipes/main/asparagus-linguine.md",
@@ -117,7 +143,7 @@
     "servings": "4 servings"
   },
   {
-    "id": 10,
+    "id": 12,
     "title": "Chili Vega",
     "description": "",
     "file_path": "docs/recipes/main/chili_vega.md",
@@ -130,7 +156,7 @@
     "servings": "4 personen"
   },
   {
-    "id": 11,
+    "id": 13,
     "title": "Spaghetti Carbonara",
     "description": "",
     "file_path": "docs/recipes/main/carbonara.md",
@@ -143,7 +169,7 @@
     "servings": "4 servings"
   },
   {
-    "id": 12,
+    "id": 14,
     "title": "BBQ Salmon Bowls with Mango Avocado Salsa",
     "description": "",
     "file_path": "docs/recipes/main/bbq_salmon.md",
@@ -156,7 +182,7 @@
     "servings": "2-4 (depends on how much salmon you use)"
   },
   {
-    "id": 13,
+    "id": 15,
     "title": "Banana-Peanut Butter Granola with Whole Nuts",
     "description": "",
     "file_path": "docs/recipes/breakfast/granola.md",
