@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/thms317/recipes/compare/v1.3.1...v1.3.2) (2025-05-30)
+
+
+### Bug Fixes
+
+* update mkdocs deploy configuration ([a3fc4ab](https://github.com/thms317/recipes/commit/a3fc4ab54eacebd9f31352e4ad495d4a36ab3ff4))
+
 ## [1.3.1](https://github.com/thms317/recipes/compare/v1.3.0...v1.3.1) (2025-05-28)
 
 
