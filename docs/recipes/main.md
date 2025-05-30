@@ -8,4 +8,5 @@
 - [Caponata](main/caponata.md)
 - [Spaghetti Carbonara](main/carbonara.md)
 - [Chili Vega](main/chili_vega.md)
+- [Fajitas](main/fajitas.md)
 - [Gnocchi met Saliepesto en Artisjokharten](main/gnocchi_saliepesto.md)
