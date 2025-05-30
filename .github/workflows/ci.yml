@@ -30,15 +30,23 @@ jobs:
       - name: Install dependencies
         run: uv sync --group dev
 
-      - name: Install local package (required for MkDocs plugin)
-        run: uv pip install -e .
+      # - name: Install local package (required for MkDocs plugin)
+      #   run: uv pip install -e .
 
       - name: Run formatting checks
         run: |
+          set -e
+          echo "Running ruff"
           uv run ruff check --output-format=github .
+          echo "Running mypy"
           uv run mypy .
-          # uv run pydoclint .
-          uv run bandit .
+          echo "Running pydoclint"
+          uv run pydoclint .
+          echo "Running bandit"
+          uv run bandit --configfile=pyproject.toml --severity-level=medium -r .
+          echo "Running sqlfluff"
+          uv run sqlfluff lint .
+          echo "Formatting checks passed ✅"
 
       - name: Run tests with coverage report
         run: |
