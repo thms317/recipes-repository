@@ -1,6 +1,6 @@
-# Chili Vega
+# Vega Chili
 
-> *Bennita's classic.*
+> *Bennita's classic*
 
 ## Recipe Information
 
@@ -39,9 +39,3 @@
 9. Voeg het vega gehakt pas later toe (niet te vroeg erbij).
 10. Breng op smaak met zout en peper.
 11. Eventueel extra tomatensap toevoegen en verder laten pruttelen.
-
-## Recipe Notes
-
-- Alle potten of blikjes eerst goed uitlekken en afspoelen
-- Vega gehakt niet te vroeg toevoegen
-- Hak Kapucijners zijn aangeraden als de lekkerste optie
