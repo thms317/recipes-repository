@@ -606,7 +606,7 @@
 <h2 id="output-format">Output Format</h2>
 <div class="highlight"><pre><span></span><code><span class="gh"># Recipe Title</span>
 
-<span class="k">&gt; </span><span class="ge">*Brief description*</span>
+<span class="k">&gt; </span><span class="ge">*Brief description (omit dot at the end of the sentence)*</span>
 
 <span class="gu">## Recipe Information</span>
 
@@ -620,8 +620,6 @@
 <span class="k">-</span><span class="w"> </span><span class="gs">**Language:**</span> EN / NL
 
 <span class="gu">## Ingredients</span>
-
-<span class="gu">### Main Ingredients</span>
 
 <span class="k">-</span><span class="w"> </span>Ingredient 1
 <span class="k">-</span><span class="w"> </span>Ingredient 2
@@ -650,16 +648,19 @@
 <li>Include timing, servings, and other key details from original</li>
 <li>Add category and difficulty if present in original</li>
 <li>
-<p>If category is not present, om</p>
+<p>If category is not present, omit</p>
 </li>
 <li>
 <p><strong>Ingredients</strong></p>
 </li>
 <li>Use H2 heading (<code>## Ingredients</code>)</li>
-<li>Group into categories with H3 headings if present in original</li>
-<li>Use "Main Ingredients" if no categories exist</li>
+<li>Group ingredients logically without category headers (proteins together, vegetables together, herbs together, etc.)</li>
+<li>Format as single bulleted list</li>
+<li>Convert all measurements to metric system (grams, milliliters, celsius)</li>
+<li>Keep tablespoons (tbsp) and teaspoons (tsp) - do NOT convert to cups</li>
+<li>Never include fahrenheit or imperial measurements in brackets</li>
 <li>
-<p>Format as bulleted list</p>
+<p>Exclude basic cooking elements like oil, salt, pepper from ingredients list</p>
 </li>
 <li>
 <p><strong>Instructions</strong></p>
@@ -667,8 +668,9 @@
 <li>Use H2 heading (<code>## Instructions</code>)</li>
 <li>Only use H3 subcategories if recipe has multiple distinct phases</li>
 <li>Format as numbered list</li>
+<li>Preserve exact wording of each step as much as possible</li>
 <li>
-<p>Preserve exact wording of each step as much as possible</p>
+<p>Remove specific quantities from instructions when they're already listed in ingredients</p>
 </li>
 <li>
 <p><strong>Notes</strong></p>
@@ -683,14 +685,18 @@
 <li>Correct obvious spelling errors</li>
 <li>Verify formatting (## for sections, ### for subsections)</li>
 <li>Ensure no information was invented or omitted</li>
+<li>IMPORTANT: ensure output is ready to copy and paste</li>
 </ol>
 <h2 id="key-principles">Key Principles</h2>
 <ul>
 <li>Preserve original language - never translate</li>
 <li>Don't invent missing information</li>
-<li>Maintain original measurements and terminology</li>
+<li>Maintain original terminology for techniques and dishes</li>
 <li>Fix obvious typos but preserve technical terms</li>
 <li>Use proper Markdown headings (# for title, ## for sections, ### for subsections)</li>
+<li>Always output in artifact format for easy copying</li>
+<li>Metric system only - no imperial conversions in brackets</li>
+<li>Group ingredients logically but without category headers</li>
 </ul>
 
 
