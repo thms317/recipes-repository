@@ -52,7 +52,8 @@ Convert raw recipe text into structured Markdown while preserving the original l
 
 3. **Ingredients**
    - Use H2 heading (`## Ingredients`)
-   - Group ingredients logically without category headers (proteins together, vegetables together, herbs together, etc.)
+   - If a logical grouping exists, use H3 subheadings (e.g. `### Group Name`)
+   - If not, group ingredients logically but without category headers (proteins together, vegetables together, herbs together, etc.)
    - Format as single bulleted list
    - Convert all measurements to metric system (grams, milliliters, celsius)
    - Keep tablespoons (tbsp) and teaspoons (tsp) - do NOT convert to cups

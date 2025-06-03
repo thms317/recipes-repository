@@ -1,0 +1,5 @@
+- Generate the frontpage
+- Alle recepten in een recipe folder
+- splitsen per categorie
+- search filter
+- analytics hier https://claude.ai/chat/96de9cb5-4dd4-4cb2-93fa-3678d444c54c
