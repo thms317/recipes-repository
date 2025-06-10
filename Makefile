@@ -113,7 +113,8 @@ dev-recipe-plugin: clean install-recipe-plugin test-recipe-plugin serve-docs
 lint:
 	@echo "Linting the project..."
 	@uv sync
-	@uv build
+	@echo "Building the project..."
+	@uv build >/dev/null 2>&1
 	@echo "Running ruff..."
 	@uv run ruff check --output-format=concise .
 	@echo "Running mypy..."
