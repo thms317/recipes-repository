@@ -24,7 +24,7 @@
 - 10g fresh oregano
 - 1 tsp smoked paprika
 - 2 tbsp tomato purée
-- 250g cooked puy lentils
+- 250g cooked lentils (or 100 g dried lentils)
 - 1 tbsp balsamic vinegar
 - 2 x 400g tins plum tomatoes
 - 200ml water
