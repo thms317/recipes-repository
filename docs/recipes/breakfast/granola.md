@@ -17,20 +17,19 @@
 
 ### Dry Ingredients
 
-- 250g rolled oats
-- 50g fine oats
-- 200g mixed whole nuts (sunflower seeds, cashews, pecans, almonds, peanuts)
-- 10g chia seeds
-- 1 teaspoon ground cinnamon
-- ½ teaspoon fine table salt
+- 500g rolled oats
+- 300g mixed whole nuts (sunflower seeds, cashews, pecans, almonds, peanuts)
+- 15g chia seeds
+- 1.5 teaspoon ground cinnamon
+- 1 teaspoon fine table salt
 
 ### Wet Ingredients
 
-- 2 bananas (mashed)
-- 50g olive oil
-- 60g crunchy peanut butter
-- 75g honey (or more)
-- 5ml (1 teaspoon) vanilla extract
+- 3 bananas (mashed)
+- 80g olive oil
+- 100g crunchy peanut butter
+- 125g honey (or more)
+- 1.5 teaspoon vanilla extract
 
 ## Instructions
 
@@ -46,8 +45,9 @@
 - bake for 15 minutes at 175°C
 - stir thoroughly, press down with a spatula to create clusters
 - bake for 15 minutes at 150°C
-- let cool undisturbed for 60 minutes at room temperature
-- bake for another 30 minutes at 120°C for extra crunchiness
+- let cool undisturbed for 1-2 hours at room temperature (or overnight)
+- stir a little bit
+- bake for another 30 minutes at 120°C for extra crunchiness (repeat if needed)
 
 ## Notes
 
