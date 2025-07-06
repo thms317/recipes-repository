@@ -49,6 +49,7 @@ Convert raw recipe text into structured Markdown while preserving the original l
    - Include timing, servings, and other key details from original
    - Add category and difficulty if present in original
    - If category is not present, omit
+   - Number of servings is important - always include, if it is not present ask the user to provide it
 
 3. **Ingredients**
    - Use H2 heading (`## Ingredients`)
