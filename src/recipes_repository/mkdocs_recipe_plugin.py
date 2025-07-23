@@ -25,14 +25,17 @@ class RecipePluginConfig(Config):
 
     Attributes
     ----------
-        recipes_dir: Directory path where recipe markdown files are stored
-        images_dir: Directory path where recipe images are stored
-        image_extensions: Map of recipe names to image extensions (defaults to jpg)
+    recipes_dir : config_options.Type[str]
+        Directory path where recipe markdown files are stored
+    images_dir : config_options.Type[str]
+        Directory path where recipe images are stored
+    image_extensions : config_options.Type[dict[str, str]]
+        Map of recipe names to image extensions (defaults to jpg)
     """
 
-    recipes_dir = config_options.Type(str, default="docs/recipes")
-    images_dir = config_options.Type(str, default="docs/images")
-    image_extensions = config_options.Type(dict, default={})
+    recipes_dir: config_options.Type[str] = config_options.Type(str, default="docs/recipes")
+    images_dir: config_options.Type[str] = config_options.Type(str, default="docs/images")
+    image_extensions: config_options.Type[dict[str, str]] = config_options.Type(dict, default={})
 
 
 class RecipePlugin(BasePlugin[RecipePluginConfig]):
@@ -46,11 +49,14 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     def on_config(self, config: MkDocsConfig) -> MkDocsConfig:
         """Process the configuration before building.
 
-        Args:
-            config: MkDocs configuration dictionary
+        Parameters
+        ----------
+        config : MkDocsConfig
+            MkDocs configuration dictionary
 
         Returns
         -------
+        MkDocsConfig
             The modified configuration
         """
         try:
@@ -84,13 +90,18 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     def on_serve(self, server: Any, config: MkDocsConfig, builder: Any) -> Any:  # noqa: ARG002
         """Add recipe API endpoint to the development server.
 
-        Args:
-            server: The WSGI server instance
-            config: The MkDocs configuration dictionary
-            builder: The MkDocs builder
+        Parameters
+        ----------
+        server : Any
+            The WSGI server instance
+        config : MkDocsConfig
+            The MkDocs configuration dictionary
+        builder : Any
+            The MkDocs builder
 
         Returns
         -------
+        Any
             The server instance, potentially modified
         """
         return server
@@ -165,16 +176,23 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     ) -> str:
         """Transform markdown for recipe pages.
 
-        Args:
-            markdown: The markdown content of the page
-            page: The page object containing file information
-            config: The MkDocs configuration dictionary
-            files: The Files collection
-            **kwargs: Additional arguments passed by MkDocs
+        Parameters
+        ----------
+        markdown : str
+            The markdown content of the page
+        page : Page
+            The page object containing file information
+        config : MkDocsConfig
+            The MkDocs configuration dictionary
+        files : Files
+            The Files collection
+        **kwargs : Any
+            Additional arguments passed by MkDocs
 
         Returns
         -------
-            str: The transformed markdown content
+        str
+            The transformed markdown content
         """
         file_path = page.file.src_path
 
@@ -215,12 +233,15 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     def _is_recipe_file(self, file_path: str) -> bool:
         """Determine if the file should be processed as a recipe.
 
-        Args:
-            file_path: Path to the markdown file
+        Parameters
+        ----------
+        file_path : str
+            Path to the markdown file
 
         Returns
         -------
-            bool: True if file should be processed, False otherwise
+        bool
+            True if file should be processed, False otherwise
         """
         # Skip files that are already in HTML format
         if "_html" in file_path:
@@ -236,12 +257,15 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     def _extract_recipe_name(self, markdown: str) -> str | None:
         """Extract recipe name from the first heading in markdown.
 
-        Args:
-            markdown: The markdown content
+        Parameters
+        ----------
+        markdown : str
+            The markdown content
 
         Returns
         -------
-            Optional[str]: The recipe name if found, None otherwise
+        str | None
+            The recipe name if found, None otherwise
         """
         recipe_name_match = re.search(r"^# (.*?)$", markdown, re.MULTILINE)
         if not recipe_name_match:
@@ -251,17 +275,16 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     def _extract_recipe_info_section(self, markdown: str) -> tuple[str, str, str, str] | None:
         """Extract the recipe information section from markdown.
 
-        Args:
-            markdown: The markdown content
+        Parameters
+        ----------
+        markdown : str
+            The markdown content
 
         Returns
         -------
-            Optional[Tuple[str, str, str, str]]: A tuple containing:
-                - Full matched section
-                - Section heading
-                - Section content
-                - Next heading
-                Or None if section not found
+        tuple[str, str, str, str] | None
+            A tuple containing (full matched section, section heading, section content, next heading)
+            or None if section not found
         """
         recipe_info_section_match = re.search(
             r"(## Recipe Information\s+)(.*?)(##)",
@@ -282,12 +305,15 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     def _parse_recipe_info_items(self, info_content: str) -> list[tuple[str, str]]:
         """Parse recipe information items from the content.
 
-        Args:
-            info_content: Content of the recipe information section
+        Parameters
+        ----------
+        info_content : str
+            Content of the recipe information section
 
         Returns
         -------
-            List[Tuple[str, str]]: List of (key, value) pairs of recipe information
+        list[tuple[str, str]]
+            List of (key, value) pairs of recipe information
         """
         info_items: list[tuple[str, str]] = []
 
@@ -307,12 +333,15 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     def _get_image_path(self, file_path: str) -> str:
         """Create image path based on markdown filename.
 
-        Args:
-            file_path: Path to the markdown file
+        Parameters
+        ----------
+        file_path : str
+            Path to the markdown file
 
         Returns
         -------
-            str: Relative path to the image file
+        str
+            Relative path to the image file
         """
         # Get basic file name without extension
         file_path_obj = Path(file_path)
@@ -353,14 +382,19 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     ) -> str:
         """Generate HTML table with recipe information and image.
 
-        Args:
-            recipe_name: Name of the recipe
-            info_items: List of (key, value) pairs of recipe information
-            image_path: Path to the recipe image
+        Parameters
+        ----------
+        recipe_name : str
+            Name of the recipe
+        info_items : list[tuple[str, str]]
+            List of (key, value) pairs of recipe information
+        image_path : str
+            Path to the recipe image
 
         Returns
         -------
-            str: HTML table with recipe information and image
+        str
+            HTML table with recipe information and image
         """
         # Create HTML table
         table_html = '<div style="display: flex; flex-direction: row; align-items: center;">\n'
@@ -392,16 +426,23 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
     ) -> str:
         """Replace the original Recipe Information section with HTML content.
 
-        Args:
-            markdown: The original markdown content
-            original_section: The full original section to replace
-            section_heading: The section heading to preserve
-            html_content: The new HTML content to insert
-            next_heading: The next heading after the section
+        Parameters
+        ----------
+        markdown : str
+            The original markdown content
+        original_section : str
+            The full original section to replace
+        section_heading : str
+            The section heading to preserve
+        html_content : str
+            The new HTML content to insert
+        next_heading : str
+            The next heading after the section
 
         Returns
         -------
-            str: The transformed markdown content
+        str
+            The transformed markdown content
         """
         section_start_index = markdown.find(original_section)
         next_heading_index = section_start_index + len(original_section) - len(next_heading)

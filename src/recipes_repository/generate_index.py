@@ -7,11 +7,14 @@ from pathlib import Path
 def extract_title_from_markdown(file_path: str) -> str:
     """Extract the recipe title from a markdown file.
 
-    Args:
-        file_path: Path to the markdown file
+    Parameters
+    ----------
+    file_path : str
+        Path to the markdown file
 
     Returns
     -------
+    str
         The extracted title, or a capitalized filename if title not found
     """
     try:
@@ -33,9 +36,12 @@ def extract_title_from_markdown(file_path: str) -> str:
 def generate_category_index(category: str, title: str) -> None:
     """Generate an index markdown file for a recipe category.
 
-    Args:
-        category: The category folder name (e.g., 'breakfast', 'main')
-        title: The title to use for the index page
+    Parameters
+    ----------
+    category : str
+        The category folder name (e.g., 'breakfast', 'main')
+    title : str
+        The title to use for the index page
     """
     recipes_dir = Path("docs/recipes")
     category_dir = recipes_dir / category
