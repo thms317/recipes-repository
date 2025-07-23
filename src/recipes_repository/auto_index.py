@@ -103,7 +103,9 @@ def generate_index_files(recipes_by_category: dict[str, list[dict[str, str]]]) -
         ]
 
         # Add links to each recipe with actual titles
-        content.extend(f"- [{recipe['title']}]({category}/{recipe['filename']})" for recipe in recipes)
+        content.extend(
+            f"- [{recipe['title']}]({category}/{recipe['filename']})" for recipe in recipes
+        )
 
         # Write the index file
         with index_file.open("w") as f:

@@ -1,5 +1,5 @@
-site_name: recipes
-site_url: https://thms317.github.io/recipes/
+site_name: recipes_repository
+site_url: https://thms317.github.io/recipes_repository/
 
 nav:
   - Introduction: index.md
@@ -32,5 +32,5 @@ markdown_extensions:
 extra_css:
   - css/custom.css
 
-repo_url: https://github.com/thms317/recipes
+repo_url: https://github.com/thms317/recipes_repository
 edit_uri: edit/main/docs/

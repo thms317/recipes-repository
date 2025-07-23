@@ -2,7 +2,7 @@
 
 <img src="images/banner.png" width="100%">
 
-A collection of recipes, written in markdown format - beautifully rendered as HTML.
+A collection of recipes, written in markdown format - beautifully rendered as HTML using the recipes_repository package.
 
 ## Favorites
 

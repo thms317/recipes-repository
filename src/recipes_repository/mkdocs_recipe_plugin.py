@@ -1,4 +1,4 @@
-"""MkDocs plugin for recipes."""
+"""MkDocs plugin for recipes_repository."""
 
 import json
 import re
@@ -12,6 +12,9 @@ from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
 from mkdocs.structure.files import Files
 from mkdocs.structure.pages import Page
+
+from recipes_repository.auto_index import on_startup
+from recipes_repository.parse_recipes import populate_database
 
 
 class RecipePluginConfig(Config):
@@ -50,10 +53,8 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
         -------
             The modified configuration
         """
-        # Generate index files for recipes
         try:
-            from recipes.auto_index import on_startup
-
+            # Generate index files for recipes
             on_startup()
         except ImportError as e:
             print(f"Error generating recipe index files: {e}")
@@ -66,8 +67,6 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
 
             try:
                 # Try to populate the database with recipe data
-                from recipes.parse_recipes import populate_database
-
                 populate_database()
             except ImportError as e:
                 print(f"Error populating recipe database: {e}")

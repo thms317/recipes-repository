@@ -596,7 +596,7 @@ class RecipeDatabase:
 
 # MkDocs extension for recipe formatting
 class RecipePreprocessor:
-    """Preprocessor for MkDocs that converts clean markdown recipes to styled ones."""
+    """Preprocessor for MkDocs that converts clean markdown recipes to styled ones for recipes_repository."""
 
     def __init__(self, recipes_dir: str = "docs/recipes") -> None:
         """Initialize the preprocessor.
