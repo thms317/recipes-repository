@@ -9,28 +9,31 @@ from recipes_repository.mkdocs_recipe_plugin import RecipePlugin, RecipePluginCo
 
 
 class RecipeTestConfig:
-    """Configuration for recipe tests."""
+    """Configuration for recipe tests.
+
+    Parameters
+    ----------
+    recipes_dir : str
+        Directory where recipe files are located, default="recipes"
+    images_dir : str
+        Directory where image files are located, default="images"
+    """
 
     def __init__(self, recipes_dir: str = "recipes", images_dir: str = "images") -> None:
-        """Initialize test configuration.
-
-        Args:
-            recipes_dir: Directory where recipe files are located
-            images_dir: Directory where image files are located
-        """
         self.recipes_dir: str = recipes_dir
         self.images_dir: str = images_dir
 
 
 class RecipePluginHelper:
-    """Helper class for recipe plugin tests."""
+    """Helper class for recipe plugin tests.
+
+    Parameters
+    ----------
+    config : RecipeTestConfig
+        Test configuration
+    """
 
     def __init__(self, config: RecipeTestConfig) -> None:
-        """Initialize helper with test configuration.
-
-        Args:
-            config: Test configuration
-        """
         self.config: RecipeTestConfig = config
         self.plugin: RecipePlugin = self._create_plugin()
 
@@ -39,6 +42,7 @@ class RecipePluginHelper:
 
         Returns
         -------
+        RecipePlugin
             Configured RecipePlugin
         """
         plugin = RecipePlugin()
@@ -60,13 +64,18 @@ class HTMLTableGenerator:
     ) -> str:
         """Generate HTML table from recipe info items.
 
-        Args:
-            info_items: List of recipe information as (key, value) tuples
-            recipe_name: Name of the recipe
-            image_path: Path to the recipe image
+        Parameters
+        ----------
+        info_items : list[tuple[str, str]]
+            List of recipe information as (key, value) tuples
+        recipe_name : str
+            Name of the recipe
+        image_path : str
+            Path to the recipe image
 
         Returns
         -------
+        str
             HTML table as a string
         """
         table_html = '<div style="display: flex; flex-direction: row; align-items: center;">\n'
@@ -96,11 +105,14 @@ class MkDocsConfigHelper:
     def load_config(config_file_path: str = "mkdocs.yml") -> Any:
         """Load MkDocs configuration.
 
-        Args:
-            config_file_path: Path to MkDocs configuration file
+        Parameters
+        ----------
+        config_file_path : str
+            Path to MkDocs configuration file, default="mkdocs.yml"
 
         Returns
         -------
+        Any
             Loaded configuration
         """
         return load_config(config_file_path=config_file_path)
@@ -109,11 +121,14 @@ class MkDocsConfigHelper:
     def extract_plugin_names(plugins_config: Any) -> list[str]:
         """Extract plugin names from MkDocs plugins configuration.
 
-        Args:
-            plugins_config: MkDocs plugins configuration
+        Parameters
+        ----------
+        plugins_config : Any
+            MkDocs plugins configuration
 
         Returns
         -------
+        list[str]
             List of plugin names
         """
         plugin_names: list[str] = []
@@ -137,6 +152,7 @@ def test_config() -> RecipeTestConfig:
 
     Returns
     -------
+    RecipeTestConfig
         Test configuration
     """
     return RecipeTestConfig(recipes_dir="recipes", images_dir="images")
@@ -146,11 +162,14 @@ def test_config() -> RecipeTestConfig:
 def plugin_helper(test_config: RecipeTestConfig) -> RecipePluginHelper:
     """Create recipe plugin helper.
 
-    Args:
-        test_config: Test configuration
+    Parameters
+    ----------
+    test_config : RecipeTestConfig
+        Test configuration
 
     Returns
     -------
+    RecipePluginHelper
         Recipe plugin helper
     """
     return RecipePluginHelper(test_config)
@@ -162,6 +181,7 @@ def table_generator() -> HTMLTableGenerator:
 
     Returns
     -------
+    HTMLTableGenerator
         HTML table generator
     """
     return HTMLTableGenerator()
@@ -173,6 +193,7 @@ def mkdocs_helper() -> MkDocsConfigHelper:
 
     Returns
     -------
+    MkDocsConfigHelper
         MkDocs configuration helper
     """
     return MkDocsConfigHelper()

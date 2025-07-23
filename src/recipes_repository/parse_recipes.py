@@ -20,14 +20,15 @@ from typing import Any
 
 
 class RecipeParser:
-    """Parser for recipe markdown files."""
+    """Parser for recipe markdown files.
+
+    Parameters
+    ----------
+    file_path : str
+        Path to the markdown recipe file
+    """
 
     def __init__(self, file_path: str) -> None:
-        """Initialize with the path to a markdown recipe file.
-
-        Args:
-            file_path: Path to the markdown recipe file
-        """
         self.file_path = file_path
         with Path(file_path).open(encoding="utf-8") as f:
             self.content = f.read()
@@ -134,12 +135,16 @@ class RecipeParser:
     def _extract_section(self, pattern: str, text: str) -> str | None:
         """Extract a section of text using a regex pattern.
 
-        Args:
-            pattern: Regular expression pattern to match
-            text: Text to search in
+        Parameters
+        ----------
+        pattern : str
+            Regular expression pattern to match
+        text : str
+            Text to search in
 
         Returns
         -------
+        str | None
             The extracted section text or None if not found
         """
         match = re.search(pattern, text, re.DOTALL)
@@ -150,6 +155,7 @@ class RecipeParser:
 
         Returns
         -------
+        dict[str, Any]
             Dictionary containing structured recipe data
         """
         return self.recipe_data
@@ -159,6 +165,7 @@ class RecipeParser:
 
         Returns
         -------
+        str
             Formatted markdown string with HTML styling
         """
         formatted_md: list[str] = []
@@ -290,11 +297,14 @@ class RecipeParser:
     def _bold_first_word(self, text: str) -> str:
         """Bold the first word of a string.
 
-        Args:
-            text: The text to process
+        Parameters
+        ----------
+        text : str
+            The text to process
 
         Returns
         -------
+        str
             Text with first word in bold
         """
         first_word_end = text.find(" ")
@@ -321,14 +331,15 @@ class RecipeParser:
 
 
 class RecipeDatabase:
-    """Database handler for recipes."""
+    """Database handler for recipes.
+
+    Parameters
+    ----------
+    db_path : str
+        Path to the SQLite database file
+    """
 
     def __init__(self, db_path: str) -> None:
-        """Initialize with the path to the SQLite database.
-
-        Args:
-            db_path: Path to the SQLite database file
-        """
         self.db_path = db_path
         self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
@@ -423,17 +434,17 @@ class RecipeDatabase:
     def add_recipe(self, recipe_data: dict[str, Any], file_path: str) -> int:
         """Add a recipe to the database and return its ID.
 
-        Args:
-            recipe_data: Structured recipe data
-            file_path: Path to the source markdown file
+        Parameters
+        ----------
+        recipe_data : dict[str, Any]
+            Structured recipe data
+        file_path : str
+            Path to the source markdown file
 
         Returns
         -------
+        int
             The ID of the inserted recipe
-
-        Raises
-        ------
-            ValueError: If unable to get recipe ID after insertion
         """
         # Insert main recipe data
         recipe_id = self._insert_recipe_main_data(recipe_data, file_path)
@@ -449,17 +460,22 @@ class RecipeDatabase:
     def _insert_recipe_main_data(self, recipe_data: dict[str, Any], file_path: str) -> int:
         """Insert main recipe data and return the recipe ID.
 
-        Args:
-            recipe_data: Structured recipe data
-            file_path: Path to the source markdown file
+        Parameters
+        ----------
+        recipe_data : dict[str, Any]
+            Structured recipe data
+        file_path : str
+            Path to the source markdown file
 
         Returns
         -------
+        int
             The ID of the inserted recipe
 
         Raises
         ------
-            ValueError: If unable to get recipe ID after insertion
+        ValueError
+            If unable to get recipe ID after insertion
         """
         # Determine language by checking for Dutch keywords in the title
         language = self._determine_language(recipe_data["title"])
@@ -502,11 +518,14 @@ class RecipeDatabase:
     def _determine_language(self, title: str) -> str:
         """Determine the language of a recipe based on its title.
 
-        Args:
-            title: Recipe title
+        Parameters
+        ----------
+        title : str
+            Recipe title
 
         Returns
         -------
+        str
             Language code ('nl' for Dutch, 'en' for English)
         """
         # Dutch keywords often found in recipe titles
@@ -596,14 +615,15 @@ class RecipeDatabase:
 
 # MkDocs extension for recipe formatting
 class RecipePreprocessor:
-    """Preprocessor for MkDocs that converts clean markdown recipes to styled ones for recipes_repository."""
+    """Preprocessor for MkDocs that converts clean markdown recipes to styled ones for recipes_repository.
+
+    Parameters
+    ----------
+    recipes_dir : str
+        Directory containing recipe markdown files, default="docs/recipes"
+    """
 
     def __init__(self, recipes_dir: str = "docs/recipes") -> None:
-        """Initialize the preprocessor.
-
-        Args:
-            recipes_dir: Directory containing recipe markdown files
-        """
         self.recipes_dir = recipes_dir
 
     def on_page_markdown(
@@ -616,15 +636,22 @@ class RecipePreprocessor:
     ) -> str:
         """MkDocs hook to process the markdown content before rendering.
 
-        Args:
-            markdown_content: Original markdown content
-            page: Page object containing file information
-            config: MkDocs configuration
-            files: MkDocs files collection
-            **kwargs: Additional arguments (unused)
+        Parameters
+        ----------
+        markdown_content : str
+            Original markdown content
+        page : Any
+            Page object containing file information
+        config : dict[str, Any]
+            MkDocs configuration
+        files : Any
+            MkDocs files collection
+        **kwargs : object
+            Additional arguments (unused)
 
         Returns
         -------
+        str
             Processed markdown content
         """
         if not self._should_process_page(page.file.src_path):
@@ -644,11 +671,14 @@ class RecipePreprocessor:
     def _should_process_page(self, src_path: str) -> bool:
         """Determine if this is a recipe page that should be processed.
 
-        Args:
-            src_path: Source path of the page
+        Parameters
+        ----------
+        src_path : str
+            Source path of the page
 
         Returns
         -------
+        bool
             True if the page should be processed, False otherwise
         """
         return src_path.startswith("recipes/") and src_path.endswith(".md")
@@ -658,12 +688,16 @@ class RecipePreprocessor:
 def make_extension(*args: Any, **kwargs: Any) -> RecipePreprocessor:
     """Create a MkDocs extension.
 
-    Args:
-        *args: Positional arguments
-        **kwargs: Keyword arguments
+    Parameters
+    ----------
+    *args : Any
+        Positional arguments
+    **kwargs : Any
+        Keyword arguments
 
     Returns
     -------
+    RecipePreprocessor
         Initialized RecipePreprocessor
     """
     return RecipePreprocessor(*args, **kwargs)
