@@ -50,5 +50,5 @@ jobs:
       - name: Build and check package
         run: |
           uv build
-          tar -xvzf dist/recipes-*.tar.gz
-          diff -r -x __pycache__ src/recipes recipes-*/src/recipes
+          tar -xvzf dist/recipes_repository-*.tar.gz
+          diff -r -x __pycache__ src/recipes_repository recipes_repository-*/src/recipes_repository
