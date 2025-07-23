@@ -1,4 +1,4 @@
-"""Recipes package.
+"""Recipes Repository package.
 
 This package provides tools for:
 1. Parsing markdown recipe files
@@ -6,8 +6,8 @@ This package provides tools for:
 3. Applying HTML styling to recipe markdown files via MkDocs plugin
 """
 
-from recipes.mkdocs_recipe_plugin import RecipePlugin
-from recipes.parse_recipes import RecipeDatabase, RecipeParser, populate_database
+from recipes_repository.mkdocs_recipe_plugin import RecipePlugin
+from recipes_repository.parse_recipes import RecipeDatabase, RecipeParser, populate_database
 
 __all__ = [
     "RecipeDatabase",

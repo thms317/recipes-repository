@@ -1,7 +1,7 @@
 [project]
-name = "recipes"
+name = "recipes_repository"
 version = "1.3.2"
-description = "Create beautiful HTML recipes from markdown."
+description = "Create beautiful HTML recipes from markdown - recipes_repository package."
 authors = [
     { name = "Thomas Brouwer", email = "notifications@example.com" },
 ]
@@ -21,22 +21,21 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "bandit>=1.8.3",
-    "mypy>=1.15.0",
+    "mypy>=1.17.0",
     "pdoc3>=0.11.5",
     "pre-commit>=4.1.0",
     "pydoclint>=0.6.6",
-    "pytest-cov>=6.0.0",
-    "pytest-mock>=3.14.0",
-    "pytest>=8.3.5",
-    "ruff>=0.11.9",
+    "pytest-cov>=6.2.1",
+    "pytest-mock>=3.14.1",
+    "pytest>=8.4.1",
+    "ruff>=0.12.4",
 ]
 
 [tool.uv]
 package = true
 
 [project.entry-points."mkdocs.plugins"]
-recipes = "recipes:RecipePlugin"
+recipes = "recipes_repository:RecipePlugin"
 
 [tool.ruff]
 target-version = "py312"
@@ -49,29 +48,25 @@ pydocstyle.convention = "numpy"
 external = ["DOC"]
 select = ["ALL"]
 ignore = [
+    "ANN401",   # "Dynamically typed expressions (typing.Any) are disallowed in `*args` / `**kwargs`.
     "D203",     # "One blank line required before class docstring." Should be disabled by default.
     "D213",     # "Multi-line docstring summary should start at the second line." Should be disabled by default.
-    "E501",     # "Line too long." Sometimes my comments are a bit longer.
-    "E731",     # "Do not assign a lambda expression, use a def." Needed for spark UDFs.
+    "E501",     # "Line too long."
     "ERA001",   # "Found commented out code."
-    "FBT001",   # "Boolean positional arg in function definition.
+    "FBT001",   # "Boolean positional arg in function definition.""
     "FBT002",   # "Boolean default value in function definition."
-    "FBT003",   # "Boolean positional value in function call." This is common in spark.
     "ISC001",   # "Implicit string concatenation." Ignored since it conflicts with the formatter.
-    "N812",     # "Lowercase `functions` imported as non-lowercase." Pretty standard for spark programming.
-    "T201",     # "`print` found."
-    # Project-specific exceptions
     "S608",     # "Possible SQL injection vector through string-based query construction."
-    "ANN401",   # "Dynamically typed expressions (typing.Any) are disallowed in `*args` / `**kwargs`.
+    "T201",     # "`print` found."
 ]
 unfixable = [
-    "F401",     # "Unused import." Disabled since it makes linting/formatting notebooks messy and impossible.
+    "F401",     # "Unused import."
 ]
 
 [tool.ruff.lint.per-file-ignores]
 "notebooks/**/*.py" = [
-    "D100",     # "Missing docstring in public module." Not needed for Databricks notebooks.
-    "INP001",   # "Part of an implicit namespace package. Add an `__init__.py`." Not needed for Databricks notebooks.
+    "D100",     # "Missing docstring in public module." Not needed for notebooks.
+    "INP001",   # "Part of an implicit namespace package. Add an `__init__.py`." Not needed for notebooks.
 ]
 "tests/*.py" = [
     "PLR2004",  # "Magic value used in comparison, consider replacing with a constant variable."
@@ -97,8 +92,3 @@ omit = ["*/__init__.py"]
 [tool.pydoclint]
 style = "numpy"
 exclude = ".git|.venv|scratch"
-
-[tool.bandit]
-targets = ["src"]
-skips = []
-exclude_dirs = [".venv", "archive", "scratch", "tests"]

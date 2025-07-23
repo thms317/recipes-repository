@@ -5,7 +5,7 @@ from typing import Any
 import pytest
 from mkdocs.config import load_config
 
-from recipes.mkdocs_recipe_plugin import RecipePlugin, RecipePluginConfig
+from recipes_repository.mkdocs_recipe_plugin import RecipePlugin, RecipePluginConfig
 
 
 class RecipeTestConfig:

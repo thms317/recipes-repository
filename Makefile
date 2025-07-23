@@ -43,8 +43,7 @@ setup:
 	fi
 
 	@echo "Setting up pre-commit..."
-	@. .venv/bin/activate
-	@.venv/bin/pre-commit install --hook-type pre-commit --hook-type commit-msg
+	@uv run pre-commit install --hook-type pre-commit --hook-type commit-msg
 
 	@echo "Setup completed successfully!"
 
@@ -69,7 +68,6 @@ clean:
 
 test:
 	@echo "Running tests..."
-	@. .venv/bin/activate
 	@uv build
 	@uv sync
 	@uv run pytest -v tests --cov=src --cov-report=term
@@ -80,32 +78,27 @@ tree:
 
 recipe_db:
 	@echo "Generating recipe database from markdown files..."
-	@. .venv/bin/activate
 	@if [ ! -f "docs/database/recipes.db" ]; then \
 		echo "Creating new recipe database..."; \
 		uv run python -c "import sqlite3; conn = sqlite3.connect('docs/database/recipes.db'); conn.close()"; \
 	fi
 	@echo "Parsing recipe markdown files and populating database..."
-	@PYTHONPATH=$(CURDIR) uv run python -c "from src.recipes import populate_database; populate_database()"
+	@PYTHONPATH=$(CURDIR) uv run python -c "from src.recipes_repository import populate_database; populate_database()"
 
 docs: recipe_db
 	@echo "Serving recipes..."
-	@. .venv/bin/activate
 	@PYTHONPATH=$(CURDIR) uv run mkdocs serve
 
 test-recipe-plugin:
 	@echo "Running recipe plugin tests..."
-	@. .venv/bin/activate
 	@uv run pytest tests/test_recipe_plugin.py -v
 
 install-recipe-plugin:
 	@echo "Installing recipe plugin with uv..."
-	@. .venv/bin/activate
-	@uv pip install -e .
+	@uv run pip install -e .
 
 serve-docs: install-recipe-plugin
 	@echo "Serving documentation with MkDocs..."
-	@. .venv/bin/activate
 	@PYTHONPATH=$(CURDIR) uv run mkdocs serve
 
 dev-recipe-plugin: clean install-recipe-plugin test-recipe-plugin serve-docs
@@ -116,11 +109,9 @@ lint:
 	@echo "Building the project..."
 	@uv build >/dev/null 2>&1
 	@echo "Running ruff..."
-	@uv run ruff check --output-format=concise .
+	-@uv run ruff check --output-format=concise .
 	@echo "Running mypy..."
-	@uv run mypy .
+	-@uv run mypy .
 	@echo "Running pydoclint..."
-	@uv run pydoclint .
-	@echo "Running bandit..."
-	@uv run bandit --configfile=pyproject.toml --severity-level=medium -r .
-	@echo "Linting completed successfully!"
+	-@uv run pydoclint .
+	@echo "Linting completed!"

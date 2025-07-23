@@ -8,13 +8,13 @@
 [![pydocstyle](https://img.shields.io/badge/pydocstyle-enabled-AD4CD3)](http://www.pydocstyle.org/en/stable/)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
-[![ci](https://github.com/thms317/recipes/actions/workflows/ci.yml/badge.svg)](https://github.com/thms317/recipes/actions/workflows/ci.yml)
-[![semantic-release](https://github.com/thms317/recipes/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/thms317/recipes/actions/workflows/semantic-release.yml)
-[![deploy-docs](https://github.com/thms317/recipes/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/thms317/recipes/actions/workflows/deploy-docs.yml)
+[![ci](https://github.com/thms317/recipes_repository/actions/workflows/ci.yml/badge.svg)](https://github.com/thms317/recipes_repository/actions/workflows/ci.yml)
+[![semantic-release](https://github.com/thms317/recipes_repository/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/thms317/recipes_repository/actions/workflows/semantic-release.yml)
+[![deploy-docs](https://github.com/thms317/recipes_repository/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/thms317/recipes_repository/actions/workflows/deploy-docs.yml)
 
-Create beautiful HTML recipes from markdown.
+Create beautiful HTML recipes from markdown using the recipes_repository package.
 
-The `recipes` project was generated from the [RevoData Asset Bundle Template](https://github.com/revodatanl/revo-asset-bundle-templates) version `0.10.2`.
+The `recipes_repository` project was generated from the [RevoData Asset Bundle Template](https://github.com/revodatanl/revo-asset-bundle-templates) version `0.10.2`.
 
 ## Getting Started
 
@@ -25,4 +25,4 @@ The `recipes` project was generated from the [RevoData Asset Bundle Template](ht
 | `make test` | Run all tests (unit and integration) |
 | `make docs` | Generate project documentation |
 
-Upon merging to `main`, the docs are automatically deployed to [GitHub Pages](https://thms317.github.io/recipes).
+Upon merging to `main`, the docs are automatically deployed to [GitHub Pages](https://thms317.github.io/recipes_repository).
