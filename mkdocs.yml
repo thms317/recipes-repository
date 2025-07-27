@@ -1,5 +1,5 @@
-site_name: recipes_repository
-site_url: https://thms317.github.io/recipes_repository/
+site_name: Recipes Repository
+site_url: https://thms317.github.io/recipes-repository/
 
 nav:
   - Introduction: index.md

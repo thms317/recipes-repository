@@ -1,39 +1,11 @@
-.PHONY: install setup clean test tree docs recipe_db test-recipe-plugin install-recipe-plugin serve-docs dev-recipe-plugin lint
+.PHONY: setup clean test tree docs recipe_db test-recipe-plugin install-recipe-plugin serve-docs dev-recipe-plugin lint
 
 .DEFAULT_GOAL := setup
 
-SHELL := /bin/bash
 
 PROFILE_NAME := "DEFAULT"
 
-install:
-	@echo "Verifying if Homebrew is installed..."; \
-	which brew > /dev/null || (echo "Homebrew is not installed. Installing Homebrew..." && /bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"); \
-	echo "Installing tools..."; \
-	for tool in git uv; do \
-		if ! command -v $$tool >/dev/null 2>&1; then \
-			echo "Installing $$tool..."; \
-			brew install $$tool; \
-		else \
-			echo "$$tool is already installed. Skipping."; \
-		fi; \
-	done; \
-	echo "Setting up Python..."; \
-	uv python install || true; \
-	echo "All tools installed successfully."
-
 setup:
-	@echo "Installing tools..."
-	@{ \
-		output=$$($(MAKE) install 2>&1); \
-		exit_code=$$?; \
-		if [ $$exit_code -ne 0 ]; then \
-			echo "$$output"; \
-			exit $$exit_code; \
-		fi; \
-	}
-	@echo "All tools installed successfully."
-
 	@echo "Setting up the project..."
 	@uv sync;
 
