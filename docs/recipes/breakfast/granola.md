@@ -8,7 +8,7 @@
 - **Cook Time:** 30 minutes
 - **Cooling Time:** 60 minutes
 - **Total Time:** 1 hour 45 minutes
-- **Servings:** 4 cups
+- **Servings:** big jar
 - **Category:** breakfast
 - **Difficulty:** easy
 - **Language:** EN
@@ -18,7 +18,7 @@
 ### Dry Ingredients
 
 - 500g rolled oats
-- 300g mixed whole nuts (sunflower seeds, cashews, pecans, almonds, peanuts)
+- 300g mixed whole nuts (sunflower seeds, cashews, pecans, almonds, peanuts, pumpkin seeds)
 - 15g chia seeds
 - 1.5 teaspoon ground cinnamon
 - 1 teaspoon fine table salt
@@ -53,3 +53,4 @@
 
 - **Storage**: store in an airtight container for 1 to 2 weeks
 - **Baking Sheet**: use parchment paper on a metal baking sheet rather than silicone/rubber mats
+- **Hazelnuts**: avoid like the plague
