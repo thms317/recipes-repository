@@ -45,7 +45,7 @@
 - bake for 15 minutes at 175°C
 - stir thoroughly, press down with a spatula to create clusters
 - bake for 15 minutes at 150°C
-- let cool undisturbed for 1-2 hours at room temperature (or overnight)
+- let cool undisturbed for 1-2 hours at room temperature (preferably overnight)
 - stir a little bit
 - bake for another 30 minutes at 120°C for extra crunchiness (repeat if needed)
 
