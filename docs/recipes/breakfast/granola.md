@@ -26,7 +26,7 @@
 ### Wet Ingredients
 
 - 3 bananas (mashed)
-- 80g olive oil
+- 75g olive oil
 - 100g crunchy peanut butter
 - 125g honey (or more)
 - 1.5 teaspoon vanilla extract
