@@ -18,18 +18,17 @@
 ### Dry Ingredients
 
 - 500g rolled oats
-- 300g mixed whole nuts (sunflower seeds, cashews, pecans, almonds, peanuts, pumpkin seeds)
-- 15g chia seeds
-- 1.5 teaspoon ground cinnamon
-- 1 teaspoon fine table salt
+- 600g mixed whole nuts (sunflower seeds, cashews, pecans, almonds, peanuts, pumpkin seeds)
+- 2 teaspoons ground cinnamon
+- 1.25 teaspoons fine table salt
 
 ### Wet Ingredients
 
-- 3 bananas (mashed)
-- 75g olive oil
-- 100g crunchy peanut butter
-- 125g honey (or more)
-- 1.5 teaspoon vanilla extract
+- 4 bananas (mashed)
+- 100g olive oil
+- 125g crunchy peanut butter
+- 150g honey (or more)
+- 2 teaspoons vanilla extract
 
 ## Instructions
 
