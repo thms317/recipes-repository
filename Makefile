@@ -59,21 +59,17 @@ recipe_db:
 
 docs: recipe_db
 	@echo "Serving recipes..."
-	@PYTHONPATH=$(CURDIR) uv run mkdocs serve
+	@uv run mkdocs serve
 
 test-recipe-plugin:
 	@echo "Running recipe plugin tests..."
 	@uv run pytest tests/test_recipe_plugin.py -v
 
-install-recipe-plugin:
-	@echo "Installing recipe plugin with uv..."
-	@uv run pip install -e .
-
-serve-docs: install-recipe-plugin
+serve-docs:
 	@echo "Serving documentation with MkDocs..."
-	@PYTHONPATH=$(CURDIR) uv run mkdocs serve
+	@uv run mkdocs serve
 
-dev-recipe-plugin: clean install-recipe-plugin test-recipe-plugin serve-docs
+dev-recipe-plugin: clean test-recipe-plugin serve-docs
 
 lint:
 	@echo "Linting the project..."
