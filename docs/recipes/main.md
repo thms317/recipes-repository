@@ -10,7 +10,6 @@
 - [Spaghetti Carbonara](main/carbonara.md)
 - [Vega Chili](main/chili_vega.md)
 - [Spicy Coconut Curry Ramen](main/coconut_curry_ramen.md)
-- [Spicy Coconut Curry Ramen](main/coconut_ramen.md)
 - [Fajitas](main/fajitas.md)
 - [Gnocchi met ricotta, kastanjechampignons en groene asperges](main/gnocchi_asperges.md)
 - [Gnocchi met Saliepesto en Artisjokharten](main/gnocchi_saliepesto.md)

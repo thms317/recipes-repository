@@ -235,19 +235,6 @@
   },
   {
     "id": 19,
-    "title": "Spicy Coconut Curry Ramen",
-    "description": "",
-    "file_path": "docs/recipes/main/coconut_ramen.md",
-    "language": "en",
-    "category": "main",
-    "difficulty": "simple",
-    "prep_time": "5 minutes",
-    "cook_time": "15 minutes",
-    "total_time": "20 minutes",
-    "servings": "4 servings"
-  },
-  {
-    "id": 20,
     "title": "Caponata",
     "description": "",
     "file_path": "docs/recipes/main/caponata.md",
@@ -260,7 +247,7 @@
     "servings": "4-8 servings"
   },
   {
-    "id": 21,
+    "id": 20,
     "title": "Fajitas",
     "description": "",
     "file_path": "docs/recipes/main/fajitas.md",
@@ -273,7 +260,7 @@
     "servings": "6 servings"
   },
   {
-    "id": 22,
+    "id": 21,
     "title": "Spaghetti Bami met Ketjap Tempeh",
     "description": "",
     "file_path": "docs/recipes/main/spaghetti_bami.md",
@@ -286,7 +273,7 @@
     "servings": ""
   },
   {
-    "id": 23,
+    "id": 22,
     "title": "Three Bean Salad",
     "description": "",
     "file_path": "docs/recipes/main/three_bean_salad.md",
@@ -299,7 +286,7 @@
     "servings": "5 servings"
   },
   {
-    "id": 24,
+    "id": 23,
     "title": "Vega Chili",
     "description": "",
     "file_path": "docs/recipes/main/chili_vega.md",
@@ -312,7 +299,7 @@
     "servings": "4 personen"
   },
   {
-    "id": 25,
+    "id": 24,
     "title": "Gnocchi met Spinaziepesto & Gekarameliseerde Artisjok",
     "description": "",
     "file_path": "docs/recipes/main/gnocchi_spinaziepesto.md",
@@ -325,7 +312,7 @@
     "servings": "2 porties"
   },
   {
-    "id": 26,
+    "id": 25,
     "title": "Gnocchi traybake",
     "description": "",
     "file_path": "docs/recipes/main/gnocchi_traybake.md",
@@ -338,7 +325,7 @@
     "servings": "2 servings"
   },
   {
-    "id": 27,
+    "id": 26,
     "title": "Spaghetti Carbonara",
     "description": "",
     "file_path": "docs/recipes/main/carbonara.md",
@@ -351,7 +338,7 @@
     "servings": "4 servings"
   },
   {
-    "id": 28,
+    "id": 27,
     "title": "Pasta met Paddenstoelen, Salie en Ei",
     "description": "",
     "file_path": "docs/recipes/main/salie_pasta.md",
@@ -364,7 +351,7 @@
     "servings": "4 servings"
   },
   {
-    "id": 29,
+    "id": 28,
     "title": "BBQ Salmon Bowls with Mango Avocado Salsa",
     "description": "",
     "file_path": "docs/recipes/main/bbq_salmon.md",
@@ -377,7 +364,7 @@
     "servings": "2-4 (depends on how much salmon you use)"
   },
   {
-    "id": 30,
+    "id": 29,
     "title": "Banana-Peanut Butter Granola with Whole Nuts",
     "description": "",
     "file_path": "docs/recipes/breakfast/granola.md",
