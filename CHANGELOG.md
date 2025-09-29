@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/thms317/recipes-repository/compare/v1.4.0...v1.4.1) (2025-09-29)
+
+
+### Bug Fixes
+
+* simplify Makefile to use native uv package management ([89abbef](https://github.com/thms317/recipes-repository/commit/89abbef5ef4d36c092b75b2984726d9596113410))
+
 # [1.4.0](https://github.com/thms317/recipes_repository/compare/v1.3.2...v1.4.0) (2025-07-23)
 
 

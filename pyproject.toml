@@ -1,6 +1,6 @@
 [project]
 name = "recipes_repository"
-version = "1.4.0"
+version = "1.4.1"
 description = "Create beautiful HTML recipes from markdown - recipes_repository package."
 authors = [
     { name = "Thomas Brouwer", email = "notifications@example.com" },
