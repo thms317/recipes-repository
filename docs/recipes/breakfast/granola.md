@@ -1,6 +1,6 @@
 # Banana-Peanut Butter Granola with Whole Nuts
 
-> *Crunchy, protein-rich homemade granola featuring the perfect combination of bananas, peanut butter, and toasted nuts*
+> _Crunchy, protein-rich homemade granola featuring the perfect combination of bananas, peanut butter, and toasted nuts_
 
 ## Recipe Information
 
@@ -29,7 +29,7 @@
 - 75g olive oil
 - 100g crunchy peanut butter
 - 125g honey (or more)
-- 1.5 teaspoon vanilla extract
+- 1 teaspoon vanilla extract
 
 ## Instructions
 
