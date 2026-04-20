@@ -50,14 +50,9 @@ tree:
 
 recipe_db:
 	@echo "Generating recipe database from markdown files..."
-	@if [ ! -f "docs/database/recipes.db" ]; then \
-		echo "Creating new recipe database..."; \
-		uv run python -c "import sqlite3; conn = sqlite3.connect('docs/database/recipes.db'); conn.close()"; \
-	fi
-	@echo "Parsing recipe markdown files and populating database..."
-	@PYTHONPATH=$(CURDIR) uv run python -c "from src.recipes_repository import populate_database; populate_database()"
+	@uv run recipe-db
 
-docs: recipe_db
+docs:
 	@echo "Serving recipes..."
 	@uv run mkdocs serve
 

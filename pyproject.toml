@@ -37,6 +37,9 @@ package = true
 [project.entry-points."mkdocs.plugins"]
 recipes = "recipes_repository:RecipePlugin"
 
+[project.scripts]
+recipe-db = "recipes_repository.parse_recipes:populate_database"
+
 [tool.ruff]
 target-version = "py312"
 line-length = 100
