@@ -2,7 +2,7 @@
 title: "Chili-olie van Sergio Herman"
 description: "Pittige chili-olie die lekkerder wordt naarmate hij langer staat"
 image: chili_olie.jpg
-course: sauzen/dips
+course: side
 prep_minutes: 10
 difficulty: easy
 language: nl

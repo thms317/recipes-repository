@@ -2,7 +2,7 @@
 title: Baba Ganoush
 description: "Authentic Baba Ganoush recipe made with smoky eggplant, tahini, garlic and lemon"
 image: baba_ganoush.jpg
-course: appetizer
+course: side
 cook_minutes: 30
 servings: 8 servings
 difficulty: medium

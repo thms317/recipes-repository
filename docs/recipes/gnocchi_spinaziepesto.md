@@ -2,7 +2,7 @@
 title: "Gnocchi met Spinaziepesto & Gekarameliseerde Artisjok"
 description: Een heerlijke combinatie van gnocchi met zelfgemaakte spinaziepesto en gekarameliseerde artisjokharten
 image: gnocchi_spinaziepesto.png
-course: hoofdgerecht
+course: main
 prep_minutes: 15
 cook_minutes: 20
 servings: 2 porties

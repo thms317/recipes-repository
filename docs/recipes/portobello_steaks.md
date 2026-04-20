@@ -2,7 +2,7 @@
 title: Portobellosteaks met puree van limabonen
 description: Uit Flavour van Yotam Ottolenghi
 image: portobello_steaks.webp
-course: hoofdgerecht
+course: main
 cook_minutes: 80
 servings: 4 personen
 language: nl

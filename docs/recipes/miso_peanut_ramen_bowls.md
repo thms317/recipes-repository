@@ -2,7 +2,7 @@
 title: Miso Peanut Ramen Bowls
 description: "A sweet and creamy savory broth ladled into bowls with noodles, crispy crumbled tofu, and fresh veg! These ramen bowls are SO GOOD"
 image: miso_peanut_ramen_bowls.jpg
-course: dinner
+course: main
 prep_minutes: 5
 cook_minutes: 30
 servings: "2-4 servings"
