@@ -1,252 +1,80 @@
 """Tests for the recipe plugin."""
 
+from __future__ import annotations
+
+import json
+import re
+from dataclasses import dataclass, field
 from typing import Any
 
-import pytest
 from mkdocs.config import load_config
 
-from recipes_repository.mkdocs_recipe_plugin import RecipePlugin, RecipePluginConfig
+from recipes_repository.mkdocs_recipe_plugin import RecipePlugin
 
 
-class RecipeTestConfig:
-    """Configuration for recipe tests.
+@dataclass
+class FakePage:
+    """Minimal Page stub exposing only the attributes the plugin reads."""
 
-    Parameters
-    ----------
-    recipes_dir : str
-        Directory where recipe files are located, default="recipes"
-    images_dir : str
-        Directory where image files are located, default="images"
-    """
-
-    def __init__(self, recipes_dir: str = "recipes", images_dir: str = "images") -> None:
-        self.recipes_dir: str = recipes_dir
-        self.images_dir: str = images_dir
+    title: str = "Test Recipe"
+    meta: dict[str, Any] = field(default_factory=dict)
 
 
-class RecipePluginHelper:
-    """Helper class for recipe plugin tests.
-
-    Parameters
-    ----------
-    config : RecipeTestConfig
-        Test configuration
-    """
-
-    def __init__(self, config: RecipeTestConfig) -> None:
-        self.config: RecipeTestConfig = config
-        self.plugin: RecipePlugin = self._create_plugin()
-
-    def _create_plugin(self) -> RecipePlugin:
-        """Create and configure a RecipePlugin instance.
-
-        Returns
-        -------
-        RecipePlugin
-            Configured RecipePlugin
-        """
-        plugin = RecipePlugin()
-        plugin_config = RecipePluginConfig()
-        plugin_config.recipes_dir = self.config.recipes_dir
-        plugin_config.images_dir = self.config.images_dir
-        plugin.config = plugin_config
-        return plugin
+def _render(meta: dict[str, Any], markdown: str = "# Body\n") -> str:
+    plugin = RecipePlugin()
+    page = FakePage(title="Test Recipe", meta=meta)
+    return plugin.on_page_markdown(markdown, page)  # type: ignore[arg-type]
 
 
-class HTMLTableGenerator:
-    """Generator for HTML tables from recipe information."""
-
-    @staticmethod
-    def generate_table(
-        info_items: list[tuple[str, str]],
-        recipe_name: str,
-        image_path: str,
-    ) -> str:
-        """Generate HTML table from recipe info items.
-
-        Parameters
-        ----------
-        info_items : list[tuple[str, str]]
-            List of recipe information as (key, value) tuples
-        recipe_name : str
-            Name of the recipe
-        image_path : str
-            Path to the recipe image
-
-        Returns
-        -------
-        str
-            HTML table as a string
-        """
-        table_html = '<div style="display: flex; flex-direction: row; align-items: center;">\n'
-        table_html += '    <div style="flex: 1; display: flex; justify-content: center;">\n'
-        table_html += "        <table>\n"
-        table_html += "            <tr><th>Information</th><th>Details</th></tr>\n"
-
-        for key, value in info_items:
-            table_html += f"            <tr><td>{key}</td><td>{value}</td></tr>\n"
-
-        table_html += "        </table>\n"
-        table_html += "    </div>\n"
-        table_html += '    <div style="flex: 1; padding-left: 20px; display: flex; justify-content: center;">\n'
-        table_html += (
-            f'        <img src="{image_path}" alt="{recipe_name}" style="max-width: 100%;">\n'
-        )
-        table_html += "    </div>\n"
-        table_html += "</div>\n"
-
-        return table_html
+def test_skips_page_without_course() -> None:
+    """Pages without recipe frontmatter are returned unchanged."""
+    markdown = "# Regular Page\n\nNo recipe here.\n"
+    assert _render({}, markdown) == markdown
 
 
-class MkDocsConfigHelper:
-    """Helper for testing MkDocs configuration."""
+def test_injects_grid_card_and_jsonld() -> None:
+    """A full recipe emits both a grid card and a schema.org JSON-LD block."""
+    meta = {
+        "title": "Spaghetti Carbonara",
+        "description": "Classic Italian pasta.",
+        "image": "carbonara.png",
+        "course": "main",
+        "prep_minutes": 20,
+        "cook_minutes": 15,
+        "servings": "4 servings",
+        "difficulty": "easy",
+        "language": "en",
+    }
+    result = _render(meta)
+    assert '<div class="grid cards" markdown>' in result
+    assert "![Spaghetti Carbonara](images/carbonara.png)" in result
+    assert "| Prep | 20 min |" in result
+    assert "| Cook | 15 min |" in result
+    assert "| Servings | 4 servings |" in result
+    assert "| Difficulty | easy |" in result
 
-    @staticmethod
-    def load_config(config_file_path: str = "mkdocs.yml") -> Any:
-        """Load MkDocs configuration.
-
-        Parameters
-        ----------
-        config_file_path : str
-            Path to MkDocs configuration file, default="mkdocs.yml"
-
-        Returns
-        -------
-        Any
-            Loaded configuration
-        """
-        return load_config(config_file_path=config_file_path)
-
-    @staticmethod
-    def extract_plugin_names(plugins_config: Any) -> list[str]:
-        """Extract plugin names from MkDocs plugins configuration.
-
-        Parameters
-        ----------
-        plugins_config : Any
-            MkDocs plugins configuration
-
-        Returns
-        -------
-        list[str]
-            List of plugin names
-        """
-        plugin_names: list[str] = []
-        if isinstance(plugins_config, dict):
-            plugin_names = list(plugins_config.keys())
-        else:
-            # Handle plugins as a list of plugin objects
-            for plugin in plugins_config:
-                if hasattr(plugin, "name"):
-                    plugin_names.append(plugin.name)
-                elif isinstance(plugin, str):
-                    plugin_names.append(plugin)
-                elif isinstance(plugin, dict):
-                    plugin_names.extend(plugin.keys())
-        return plugin_names
+    match = re.search(r'<script type="application/ld\+json">(.*?)</script>', result, re.DOTALL)
+    assert match is not None
+    payload = json.loads(match.group(1))
+    assert payload["@type"] == "Recipe"
+    assert payload["name"] == "Spaghetti Carbonara"
+    assert payload["prepTime"] == "PT20M"
+    assert payload["cookTime"] == "PT15M"
+    assert payload["recipeCategory"] == "main"
+    assert payload["image"] == "images/carbonara.png"
 
 
-@pytest.fixture
-def test_config() -> RecipeTestConfig:
-    """Create test configuration.
-
-    Returns
-    -------
-    RecipeTestConfig
-        Test configuration
-    """
-    return RecipeTestConfig(recipes_dir="recipes", images_dir="images")
+def test_missing_timings_render_as_dash() -> None:
+    """Absent minute values render as em-dashes in the info card."""
+    meta = {"course": "dessert", "difficulty": "medium"}
+    result = _render(meta)
+    assert "| Prep | — |" in result
+    assert "| Cook | — |" in result
+    assert "| Servings | — |" in result
 
 
-@pytest.fixture
-def plugin_helper(test_config: RecipeTestConfig) -> RecipePluginHelper:
-    """Create recipe plugin helper.
-
-    Parameters
-    ----------
-    test_config : RecipeTestConfig
-        Test configuration
-
-    Returns
-    -------
-    RecipePluginHelper
-        Recipe plugin helper
-    """
-    return RecipePluginHelper(test_config)
-
-
-@pytest.fixture
-def table_generator() -> HTMLTableGenerator:
-    """Create HTML table generator.
-
-    Returns
-    -------
-    HTMLTableGenerator
-        HTML table generator
-    """
-    return HTMLTableGenerator()
-
-
-@pytest.fixture
-def mkdocs_helper() -> MkDocsConfigHelper:
-    """Create MkDocs configuration helper.
-
-    Returns
-    -------
-    MkDocsConfigHelper
-        MkDocs configuration helper
-    """
-    return MkDocsConfigHelper()
-
-
-class TestRecipeTableGeneration:
-    """Tests for recipe HTML table generation."""
-
-    def test_generate_table_html(self, table_generator: HTMLTableGenerator) -> None:
-        """Test that we can generate HTML tables correctly from recipe info items.
-
-        Args:
-            table_generator: HTML table generator
-        """
-        # Create a simple list of recipe info items
-        info_items: list[tuple[str, str]] = [
-            ("Prep Time", "10 minutes"),
-            ("Cook Time", "25 minutes"),
-            ("Total Time", "35 minutes"),
-            ("Servings", "4 servings"),
-        ]
-
-        recipe_name: str = "Test Recipe"
-        image_path: str = "../images/test_recipe.jpg"
-
-        # Generate HTML table directly
-        table_html: str = table_generator.generate_table(info_items, recipe_name, image_path)
-
-        # Verify table structure
-        assert "<table>" in table_html
-        assert "<tr><th>Information</th><th>Details</th></tr>" in table_html
-        assert "<tr><td>Prep Time</td><td>10 minutes</td></tr>" in table_html
-        assert f'<img src="{image_path}" alt="{recipe_name}"' in table_html
-
-
-class TestMkDocsConfiguration:
-    """Tests for MkDocs configuration."""
-
-    def test_mkdocs_config_load(self, mkdocs_helper: MkDocsConfigHelper) -> None:
-        """Test that MkDocs can load the plugin from config.
-
-        Args:
-            mkdocs_helper: MkDocs configuration helper
-        """
-        # Load MkDocs configuration
-        config: dict[str, Any] = mkdocs_helper.load_config(config_file_path="mkdocs.yml")
-
-        # Get the plugins config
-        plugins_config: Any = config["plugins"]
-
-        # Extract plugin names
-        plugin_names: list[str] = mkdocs_helper.extract_plugin_names(plugins_config)
-
-        # Check that our plugin is in the list
-        assert "recipes" in plugin_names
-        print(f"Successfully found plugins: {plugin_names}")
+def test_mkdocs_config_registers_plugin() -> None:
+    """mkdocs.yml registers the recipes plugin via the entry point."""
+    config = load_config(config_file_path="mkdocs.yml")
+    plugin_names = list(config["plugins"].keys())
+    assert "recipes" in plugin_names
