@@ -1,493 +1,184 @@
-#!/usr/bin/env python
+"""Recipe markdown → SQLite builder.
 
+Reads YAML frontmatter plus ingredient/instruction sections from each
+recipe markdown file and writes a small relational SQLite database.
+
+The database is an on-demand analytical artefact — it is *not* used by
+the MkDocs build. Run it via the ``recipe-db`` CLI (see pyproject.toml).
 """
-Recipe Markdown Parser and SQLite Database Builder.
 
-This module:
-1. Parses markdown recipe files
-2. Populates a SQLite database with structured data
-
-Usage:
-- As a standalone script (or CLI entry point ``recipe-db``) to populate the database.
-"""
+from __future__ import annotations
 
 import re
 import sqlite3
 from pathlib import Path
 from typing import Any
 
+import yaml
 
-class RecipeParser:
-    """Parser for recipe markdown files.
-
-    Parameters
-    ----------
-    file_path : str
-        Path to the markdown recipe file
-    """
-
-    def __init__(self, file_path: str) -> None:
-        self.file_path = file_path
-        with Path(file_path).open(encoding="utf-8") as f:
-            self.content = f.read()
-
-        self.recipe_data: dict[str, Any] = {
-            "title": "",
-            "description": "",
-            "info": {},
-            "ingredients": {},
-            "instructions": {},
-            "storage_tips": [],
-            "serving_suggestions": [],
-            "recipe_notes": [],
-        }
-        self.parse()
-
-    def parse(self) -> None:
-        """Parse the markdown content into structured data."""
-        self._parse_title_and_description()
-        self._parse_recipe_info()
-        self._parse_ingredients()
-        self._parse_instructions()
-        self._parse_additional_sections()
-
-    def _parse_title_and_description(self) -> None:
-        """Extract the title and description from the markdown."""
-        # Extract title (H1)
-        title_match = re.search(r"^# (.+)$", self.content, re.MULTILINE)
-        if title_match:
-            self.recipe_data["title"] = title_match.group(1).strip()
-
-        # Extract description (italicized text after title)
-        desc_match = re.search(r"^# .+\n\n\*(.+)\*", self.content, re.MULTILINE | re.DOTALL)
-        if desc_match:
-            self.recipe_data["description"] = desc_match.group(1).strip()
-
-    def _parse_recipe_info(self) -> None:
-        """Extract recipe information section."""
-        info_section = self._extract_section(
-            r"## Recipe Information\n(.*?)(?:\n##|\Z)",
-            self.content,
-        )
-        if info_section:
-            info_lines = re.findall(r"- \*\*(.+?):\*\* (.+)", info_section)
-            self.recipe_data["info"] = {
-                key.lower().replace(" ", "_"): value for key, value in info_lines
-            }
-
-    def _parse_ingredients(self) -> None:
-        """Extract ingredients section."""
-        ingredients_section = self._extract_section(
-            r"## Ingredients\n(.*?)(?:\n##|\Z)",
-            self.content,
-        )
-        if ingredients_section:
-            # Find all ingredient categories (### headers)
-            categories = re.findall(r"### (.+)\n(.*?)(?=\n###|\Z)", ingredients_section, re.DOTALL)
-            for category, items in categories:
-                ingredient_items = re.findall(r"- (.+)", items)
-                self.recipe_data["ingredients"][category.strip()] = [
-                    item.strip() for item in ingredient_items
-                ]
-
-    def _parse_instructions(self) -> None:
-        """Extract instructions section."""
-        instructions_section = self._extract_section(
-            r"## Instructions\n(.*?)(?:\n##|\Z)",
-            self.content,
-        )
-        if instructions_section:
-            # Find all instruction phases (### headers)
-            phases = re.findall(r"### (.+)\n(.*?)(?=\n###|\Z)", instructions_section, re.DOTALL)
-            for phase, items in phases:
-                step_items = re.findall(r"\d+\.\s+(.+)", items)
-                self.recipe_data["instructions"][phase.strip()] = [
-                    item.strip() for item in step_items
-                ]
-
-    def _parse_additional_sections(self) -> None:
-        """Extract storage tips, serving suggestions, and notes."""
-        # Extract storage tips
-        self._parse_list_section("storage_tips", "## Storage Tips")
-
-        # Extract serving suggestions
-        self._parse_list_section("serving_suggestions", "## Serving Suggestions")
-
-        # Extract recipe notes
-        self._parse_list_section("recipe_notes", "## Recipe Notes")
-
-    def _parse_list_section(self, section_name: str, section_header: str) -> None:
-        """Parse a section containing a list of items.
-
-        Args:
-            section_name: Name of the section in recipe_data
-            section_header: Markdown header for the section
-        """
-        pattern = f"{section_header}\\n(.*?)(?:\\n##|\\Z)"
-        section_content = self._extract_section(pattern, self.content)
-        if section_content:
-            self.recipe_data[section_name] = [
-                item.strip() for item in re.findall(r"- (.+)", section_content)
-            ]
-
-    def _extract_section(self, pattern: str, text: str) -> str | None:
-        """Extract a section of text using a regex pattern.
-
-        Parameters
-        ----------
-        pattern : str
-            Regular expression pattern to match
-        text : str
-            Text to search in
-
-        Returns
-        -------
-        str | None
-            The extracted section text or None if not found
-        """
-        match = re.search(pattern, text, re.DOTALL)
-        return match.group(1).strip() if match else None
-
-    def get_data(self) -> dict[str, Any]:
-        """Return the parsed recipe data.
-
-        Returns
-        -------
-        dict[str, Any]
-            Dictionary containing structured recipe data
-        """
-        return self.recipe_data
+RECIPES_DIR = Path("docs/recipes")
+DB_PATH = Path("docs/database/recipes.db")
+FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---\n(.*)$", re.DOTALL)
 
 
-class RecipeDatabase:
-    """Database handler for recipes.
+def parse_recipe(path: Path) -> dict[str, Any] | None:
+    """Split a recipe markdown file into frontmatter and section data."""
+    content = path.read_text(encoding="utf-8")
+    match = FRONTMATTER_RE.match(content)
+    if not match:
+        return None
+    meta = yaml.safe_load(match.group(1)) or {}
+    if not isinstance(meta, dict):
+        return None
+    body = match.group(2)
+    return {
+        "meta": meta,
+        "ingredients": _extract_ingredients(body),
+        "instructions": _extract_instructions(body),
+    }
 
-    Parameters
-    ----------
-    db_path : str
-        Path to the SQLite database file
-    """
 
-    def __init__(self, db_path: str) -> None:
-        self.db_path = db_path
-        self.conn = sqlite3.connect(db_path)
-        self.cursor = self.conn.cursor()
-        self._create_tables()
+def _extract_section(body: str, heading: str) -> str:
+    match = re.search(rf"## {heading}\b\s*(.*?)(?=\n## |\Z)", body, re.DOTALL)
+    return match.group(1).strip() if match else ""
 
-    def _create_tables(self) -> None:
-        """Create the necessary database tables if they don't exist."""
-        # Create main recipe table
-        self._create_recipe_table()
 
-        # Create ingredient table
-        self._create_ingredient_table()
+def _extract_ingredients(body: str) -> list[tuple[str, str]]:
+    section = _extract_section(body, "Ingredients")
+    if not section:
+        return []
+    items: list[tuple[str, str]] = []
+    current = ""
+    for line in section.splitlines():
+        if line.startswith("### "):
+            current = line.removeprefix("### ").strip()
+            continue
+        match = re.match(r"-\s*(?:\[\s*\]\s*)?(.+)", line)
+        if match:
+            items.append((current, match.group(1).strip()))
+    return items
 
-        # Create instruction table
-        self._create_instruction_table()
 
-        # Create additional tables
-        self._create_additional_tables()
+def _extract_instructions(body: str) -> list[tuple[str, int, str]]:
+    section = _extract_section(body, "Instructions")
+    if not section:
+        return []
+    steps: list[tuple[str, int, str]] = []
+    current = ""
+    step_num = 0
+    for line in section.splitlines():
+        if line.startswith("### "):
+            current = line.removeprefix("### ").strip()
+            step_num = 0
+            continue
+        match = re.match(r"(?:\d+\.|-)\s+(.+)", line)
+        if match:
+            step_num += 1
+            steps.append((current, step_num, match.group(1).strip()))
+    return steps
 
-        self.conn.commit()
 
-    def _create_recipe_table(self) -> None:
-        """Create the main recipe table."""
-        self.cursor.execute("""
+def create_schema(conn: sqlite3.Connection) -> None:
+    """Create tables (idempotent)."""
+    conn.executescript("""
         CREATE TABLE IF NOT EXISTS recipes (
             id INTEGER PRIMARY KEY,
+            file_path TEXT NOT NULL UNIQUE,
             title TEXT NOT NULL,
             description TEXT,
-            file_path TEXT NOT NULL,
-            language TEXT,
-            category TEXT,
+            image TEXT,
+            course TEXT,
+            cuisine TEXT,
             difficulty TEXT,
-            prep_time TEXT,
-            cook_time TEXT,
-            total_time TEXT,
+            prep_minutes INTEGER,
+            cook_minutes INTEGER,
             servings TEXT,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-        """)
-
-    def _create_ingredient_table(self) -> None:
-        """Create the ingredients table."""
-        self.cursor.execute("""
+            language TEXT
+        );
         CREATE TABLE IF NOT EXISTS ingredients (
             id INTEGER PRIMARY KEY,
-            recipe_id INTEGER,
+            recipe_id INTEGER NOT NULL REFERENCES recipes(id) ON DELETE CASCADE,
             category TEXT,
-            ingredient TEXT NOT NULL,
-            FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON DELETE CASCADE
-        )
-        """)
-
-    def _create_instruction_table(self) -> None:
-        """Create the instructions table."""
-        self.cursor.execute("""
+            ingredient TEXT NOT NULL
+        );
         CREATE TABLE IF NOT EXISTS instructions (
             id INTEGER PRIMARY KEY,
-            recipe_id INTEGER,
+            recipe_id INTEGER NOT NULL REFERENCES recipes(id) ON DELETE CASCADE,
             phase TEXT,
-            step_number INTEGER,
-            instruction TEXT NOT NULL,
-            FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON DELETE CASCADE
-        )
-        """)
+            step_number INTEGER NOT NULL,
+            instruction TEXT NOT NULL
+        );
+        CREATE TABLE IF NOT EXISTS tags (
+            recipe_id INTEGER NOT NULL REFERENCES recipes(id) ON DELETE CASCADE,
+            tag TEXT NOT NULL,
+            PRIMARY KEY (recipe_id, tag)
+        );
+    """)
 
-    def _create_additional_tables(self) -> None:
-        """Create tips and notes tables."""
-        for table in ["storage_tips", "serving_suggestions", "recipe_notes"]:
-            self.cursor.execute(f"""
-            CREATE TABLE IF NOT EXISTS {table} (
-                id INTEGER PRIMARY KEY,
-                recipe_id INTEGER,
-                text TEXT NOT NULL,
-                FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON DELETE CASCADE
-            )
-            """)
 
-    def clear_all_data(self) -> None:
-        """Clear all data from all tables."""
-        tables = [
-            "recipe_notes",
-            "serving_suggestions",
-            "storage_tips",
-            "instructions",
-            "ingredients",
-            "recipes",
-        ]
-        for table in tables:
-            self.cursor.execute(f"DELETE FROM {table}")
-        self.conn.commit()
-
-    def add_recipe(self, recipe_data: dict[str, Any], file_path: str) -> int:
-        """Add a recipe to the database and return its ID.
-
-        Parameters
-        ----------
-        recipe_data : dict[str, Any]
-            Structured recipe data
-        file_path : str
-            Path to the source markdown file
-
-        Returns
-        -------
-        int
-            The ID of the inserted recipe
+def insert_recipe(conn: sqlite3.Connection, path: Path, parsed: dict[str, Any]) -> int:
+    """Insert a parsed recipe and its ingredients/instructions/tags."""
+    meta = parsed["meta"]
+    cursor = conn.execute(
         """
-        # Insert main recipe data
-        recipe_id = self._insert_recipe_main_data(recipe_data, file_path)
-
-        # Insert related data
-        self._insert_recipe_ingredients(recipe_id, recipe_data)
-        self._insert_recipe_instructions(recipe_id, recipe_data)
-        self._insert_recipe_additional_data(recipe_id, recipe_data)
-
-        self.conn.commit()
-        return recipe_id
-
-    def _insert_recipe_main_data(self, recipe_data: dict[str, Any], file_path: str) -> int:
-        """Insert main recipe data and return the recipe ID.
-
-        Parameters
-        ----------
-        recipe_data : dict[str, Any]
-            Structured recipe data
-        file_path : str
-            Path to the source markdown file
-
-        Returns
-        -------
-        int
-            The ID of the inserted recipe
-
-        Raises
-        ------
-        ValueError
-            If unable to get recipe ID after insertion
-        """
-        # Determine language by checking for Dutch keywords in the title
-        language = self._determine_language(recipe_data["title"])
-
-        # Extract category and difficulty if present
-        category = recipe_data["info"].get("course", "")
-        difficulty = recipe_data["info"].get("difficulty", "")
-
-        # Insert main recipe info
-        self.cursor.execute(
-            """
         INSERT INTO recipes (
-            title, description, file_path, language,
-            category, difficulty, prep_time, cook_time,
-            total_time, servings
-        )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            file_path, title, description, image, course, cuisine,
+            difficulty, prep_minutes, cook_minutes, servings, language
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
-            (
-                recipe_data["title"],
-                recipe_data["description"],
-                file_path,
-                language,
-                category,
-                difficulty,
-                recipe_data["info"].get("prep_time", ""),
-                recipe_data["info"].get("cook_time", ""),
-                recipe_data["info"].get("total_time", ""),
-                recipe_data["info"].get("servings", ""),
-            ),
-        )
+        (
+            str(path),
+            meta.get("title", path.stem),
+            meta.get("description"),
+            meta.get("image"),
+            meta.get("course"),
+            meta.get("cuisine"),
+            meta.get("difficulty"),
+            meta.get("prep_minutes"),
+            meta.get("cook_minutes"),
+            meta.get("servings"),
+            meta.get("language"),
+        ),
+    )
+    recipe_id = cursor.lastrowid
+    if recipe_id is None:
+        msg = f"Failed to insert recipe: {path}"
+        raise RuntimeError(msg)
 
-        recipe_id = self.cursor.lastrowid
-        if recipe_id is None:
-            msg = "Failed to get recipe ID after insertion"
-            raise ValueError(msg)
-
-        return recipe_id
-
-    def _determine_language(self, title: str) -> str:
-        """Determine the language of a recipe based on its title.
-
-        Parameters
-        ----------
-        title : str
-            Recipe title
-
-        Returns
-        -------
-        str
-            Language code ('nl' for Dutch, 'en' for English)
-        """
-        # Dutch keywords often found in recipe titles
-        dutch_keywords = [
-            "boterkoek",
-            "appeltaart",
-            "stroopwafel",
-            "poffertjes",
-            "speculaas",
-            "stamppot",
-            "hutspot",
-            "erwtensoep",
-            "bitterballen",
-            "oliebollen",
-            "zoete",
-            "koek",
-            "taart",
-            "saus",
-            "soep",
-            "gebak",
-        ]
-
-        # Check if any Dutch keywords are in the title
-        title_lower = title.lower()
-        for keyword in dutch_keywords:
-            if keyword in title_lower:
-                return "nl"
-
-        # Default to English
-        return "en"
-
-    def _insert_recipe_ingredients(self, recipe_id: int, recipe_data: dict[str, Any]) -> None:
-        """Insert recipe ingredients.
-
-        Args:
-            recipe_id: ID of the recipe
-            recipe_data: Structured recipe data
-        """
-        for category, ingredients in recipe_data["ingredients"].items():
-            for ingredient in ingredients:
-                self.cursor.execute(
-                    """
-                INSERT INTO ingredients (recipe_id, category, ingredient)
-                VALUES (?, ?, ?)
-                """,
-                    (recipe_id, category, ingredient),
-                )
-
-    def _insert_recipe_instructions(self, recipe_id: int, recipe_data: dict[str, Any]) -> None:
-        """Insert recipe instructions.
-
-        Args:
-            recipe_id: ID of the recipe
-            recipe_data: Structured recipe data
-        """
-        for phase, steps in recipe_data["instructions"].items():
-            for step_num, instruction in enumerate(steps, 1):
-                self.cursor.execute(
-                    """
-                INSERT INTO instructions (recipe_id, phase, step_number, instruction)
-                VALUES (?, ?, ?, ?)
-                """,
-                    (recipe_id, phase, step_num, instruction),
-                )
-
-    def _insert_recipe_additional_data(self, recipe_id: int, recipe_data: dict[str, Any]) -> None:
-        """Insert tips, suggestions, and notes.
-
-        Args:
-            recipe_id: ID of the recipe
-            recipe_data: Structured recipe data
-        """
-        for field in ["storage_tips", "serving_suggestions", "recipe_notes"]:
-            for item in recipe_data.get(field, []):
-                self.cursor.execute(
-                    f"""
-                INSERT INTO {field} (recipe_id, text)
-                VALUES (?, ?)
-                """,
-                    (recipe_id, item),
-                )
-
-    def close(self) -> None:
-        """Close the database connection."""
-        self.conn.close()
+    conn.executemany(
+        "INSERT INTO ingredients (recipe_id, category, ingredient) VALUES (?, ?, ?)",
+        [(recipe_id, cat, ing) for cat, ing in parsed["ingredients"]],
+    )
+    conn.executemany(
+        "INSERT INTO instructions (recipe_id, phase, step_number, instruction) VALUES (?, ?, ?, ?)",
+        [(recipe_id, phase, n, text) for phase, n, text in parsed["instructions"]],
+    )
+    conn.executemany(
+        "INSERT INTO tags (recipe_id, tag) VALUES (?, ?)",
+        [(recipe_id, tag) for tag in meta.get("tags") or []],
+    )
+    return recipe_id
 
 
 def populate_database() -> None:
-    """Populate the recipe database from markdown files."""
-    print("Starting recipe parser...")
-
-    # Setup paths
-    recipes_dir = Path("docs/recipes")
-    db_path = Path("docs/database/recipes.db")
-    db_path.parent.mkdir(exist_ok=True, parents=True)
-
-    # Initialize database
-    db = RecipeDatabase(str(db_path))
-
-    # Clear existing data
-    db.clear_all_data()
-
-    # Process recipe files
-    process_recipe_files(recipes_dir, db)
-
-    db.close()
-    print("Recipe database generation complete!")
-
-
-def process_recipe_files(recipes_dir: Path, db: RecipeDatabase) -> None:
-    """Process all recipe files in the directory.
-
-    Args:
-        recipes_dir: Directory containing recipe markdown files
-        db: Database instance for storing recipe data
-    """
-    # Skip index files like main.md, breakfast.md, side.md, etc.
-    index_files = ["main.md", "breakfast.md", "side.md", "dessert.md", "sides.md", "starter.md"]
-
-    recipe_files = [
-        file for file in list(recipes_dir.glob("**/*.md")) if file.name not in index_files
-    ]
-    print(f"Found {len(recipe_files)} recipe files")
-
-    for file_path in recipe_files:
-        print(f"Processing {file_path}...")
-        try:
-            parser = RecipeParser(str(file_path))
-            recipe_data = parser.get_data()
-            recipe_id = db.add_recipe(recipe_data, str(file_path))
-            print(f"Added recipe ID {recipe_id}: {recipe_data['title']}")
-        except Exception as e:  # noqa: BLE001
-            print(f"Error processing {file_path}: {e}")
+    """Entry point: build `docs/database/recipes.db` from recipe frontmatter."""
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        create_schema(conn)
+        for table in ("tags", "instructions", "ingredients", "recipes"):
+            conn.execute(f"DELETE FROM {table}")
+        count = 0
+        for path in sorted(RECIPES_DIR.rglob("*.md")):
+            parsed = parse_recipe(path)
+            if parsed is None or not parsed["meta"].get("course"):
+                continue
+            insert_recipe(conn, path, parsed)
+            count += 1
+        conn.commit()
+        print(f"Built {DB_PATH} with {count} recipes.")
+    finally:
+        conn.close()
 
 
 if __name__ == "__main__":
