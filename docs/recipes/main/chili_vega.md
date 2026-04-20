@@ -1,30 +1,33 @@
+---
+title: Vega Chili
+description: "Bennita's classic"
+course: main
+cook_minutes: 30
+servings: 4 personen
+difficulty: easy
+language: en
+---
+
 # Vega Chili
 
 > *Bennita's classic*
 
-## Recipe Information
-
-- **Cook Time:** 30 minutes
-- **Servings:** 4 personen
-- **Course:** Main
-- **Difficulty:** Easy
-
 ## Ingredients
 
-- 1 of 2 ui, gesnipperd
-- 2 teentjes knoflook, fijngehakt
-- Grote pot Kapucijners (Hak is echt de lekkerste)
-- Klein blikje kidneybonen
-- 1 blikje (150 gr) mais, uitgelekt
-- 500 ml gezeefde tomaten/passata
-- 1 rode paprika
-- 1 klein blikje tomatenpuree
-- Soms extra tomatensap uit een fles voor spaghettipaste
-- 1 theelepel komijn/kaneel (als je dat lekker vindt)
-- 1 theelepel gerookt paprikapoeder
-- ¼ theelepel chilipoeder en/of vlokken
-- Vega gehakt 3 ons
-- Zout en peper
+- [ ] 1 of 2 ui, gesnipperd
+- [ ] 2 teentjes knoflook, fijngehakt
+- [ ] Grote pot Kapucijners (Hak is echt de lekkerste)
+- [ ] Klein blikje kidneybonen
+- [ ] 1 blikje (150 gr) mais, uitgelekt
+- [ ] 500 ml gezeefde tomaten/passata
+- [ ] 1 rode paprika
+- [ ] 1 klein blikje tomatenpuree
+- [ ] Soms extra tomatensap uit een fles voor spaghettipaste
+- [ ] 1 theelepel komijn/kaneel (als je dat lekker vindt)
+- [ ] 1 theelepel gerookt paprikapoeder
+- [ ] ¼ theelepel chilipoeder en/of vlokken
+- [ ] Vega gehakt 3 ons
+- [ ] Zout en peper
 
 ## Instructions
 

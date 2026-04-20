@@ -1,25 +1,28 @@
+---
+title: Zesty Sumac Vinaigrette
+description: "A bright, tangy dressing featuring the unique lemony flavor of sumac that adds beautiful color and zest to various dishes."
+image: sumac.jpeg
+course: side
+prep_minutes: 5
+difficulty: easy
+language: en
+---
+
 # Zesty Sumac Vinaigrette
 
 > *A bright, tangy dressing featuring the unique lemony flavor of sumac that adds beautiful color and zest to various dishes.*
 
-## Recipe Information
-
-- **Prep Time:** 5 minutes
-- **Rest Time:** 15 minutes
-- **Course:** Side
-- **Difficulty:** Easy
-
 ## Ingredients
 
-- 1/3 cup extra virgin olive oil
-- 2 tablespoons red wine vinegar
-- 1 tablespoon fresh lemon juice
-- 2 teaspoons ground sumac
-- 1 small garlic clove, minced
-- 1 teaspoon honey
-- 1/2 teaspoon Dijon mustard
-- 1/4 teaspoon salt
-- Freshly ground black pepper to taste
+- [ ] 1/3 cup extra virgin olive oil
+- [ ] 2 tablespoons red wine vinegar
+- [ ] 1 tablespoon fresh lemon juice
+- [ ] 2 teaspoons ground sumac
+- [ ] 1 small garlic clove, minced
+- [ ] 1 teaspoon honey
+- [ ] 1/2 teaspoon Dijon mustard
+- [ ] 1/4 teaspoon salt
+- [ ] Freshly ground black pepper to taste
 
 ## Instructions
 

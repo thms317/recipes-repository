@@ -1,34 +1,36 @@
+---
+title: Miso Peanut Ramen Bowls
+description: "A sweet and creamy savory broth ladled into bowls with noodles, crispy crumbled tofu, and fresh veg! These ramen bowls are SO GOOD"
+image: miso_peanut_ramen_bowls.jpg
+course: dinner
+prep_minutes: 5
+cook_minutes: 30
+servings: "2-4 servings"
+difficulty: medium
+language: en
+---
+
 # Miso Peanut Ramen Bowls
 
 > *A sweet and creamy savory broth ladled into bowls with noodles, crispy crumbled tofu, and fresh veg! These ramen bowls are SO GOOD*
 
-## Recipe Information
-
-- **Prep Time:** 5 minutes
-- **Cook Time:** 30 minutes
-- **Total Time:** 35 minutes
-- **Servings:** 2-4 servings
-- **Course:** Dinner
-- **Difficulty:** medium
-- **Language:** EN
-
 ## Ingredients
 
-- 1 block (350-400g) extra firm tofu
-- 1 tbsp olive oil
-- 60ml teriyaki sauce (Bachan's Japanese BBQ sauce recommended)
-- 1 clove garlic, grated
-- 1 tbsp red curry paste or roasted red chili paste
-- 1 tbsp white miso
-- 1-2 tbsp peanut butter
-- 2 tbsp reduced sodium soy sauce
-- 1 tbsp brown sugar
-- 355ml water + 1 1/2 tsp Better Than Bouillon roasted chicken or vegetable base (or substitute 355ml chicken or vegetable broth)
-- 400ml can full fat coconut milk
-- 170g uncooked ramen noodles
-- Finely sliced cucumbers
-- Cilantro and/or green onion
-- Chili crisp
+- [ ] 1 block (350-400g) extra firm tofu
+- [ ] 1 tbsp olive oil
+- [ ] 60ml teriyaki sauce (Bachan's Japanese BBQ sauce recommended)
+- [ ] 1 clove garlic, grated
+- [ ] 1 tbsp red curry paste or roasted red chili paste
+- [ ] 1 tbsp white miso
+- [ ] 1-2 tbsp peanut butter
+- [ ] 2 tbsp reduced sodium soy sauce
+- [ ] 1 tbsp brown sugar
+- [ ] 355ml water + 1 1/2 tsp Better Than Bouillon roasted chicken or vegetable base (or substitute 355ml chicken or vegetable broth)
+- [ ] 400ml can full fat coconut milk
+- [ ] 170g uncooked ramen noodles
+- [ ] Finely sliced cucumbers
+- [ ] Cilantro and/or green onion
+- [ ] Chili crisp
 
 ## Instructions
 

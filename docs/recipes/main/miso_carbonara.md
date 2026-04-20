@@ -1,31 +1,34 @@
+---
+title: Miso carbonara met knapperige broodkruim
+description: "Vegetarische carbonara met doperwten, harissa en miso"
+image: miso_carbonara.png
+course: main
+servings: "2-3 servings"
+difficulty: medium
+language: nl
+---
+
 # Miso carbonara met knapperige broodkruim
 
 > *Vegetarische carbonara met doperwten, harissa en miso*
-
-## Recipe Information
-
-- **Servings:** 2-3 servings
-- **Course:** main
-- **Difficulty:** medium
-- **Language:** NL
 
 ## Ingredients
 
 ### Carbonara
 
-- 250 g pasta naar keuze
-- 300 g diepvries doperwten (ontdooid)
-- 3 eieren
-- 200 g fijn geraspte Parmigiano Reggiano
-- 1 tbsp witte misopasta
-- 2 tbsp harissa
-- 2 tbsp olijfolie
+- [ ] 250 g pasta naar keuze
+- [ ] 300 g diepvries doperwten (ontdooid)
+- [ ] 3 eieren
+- [ ] 200 g fijn geraspte Parmigiano Reggiano
+- [ ] 1 tbsp witte misopasta
+- [ ] 2 tbsp harissa
+- [ ] 2 tbsp olijfolie
 
 ### Knapperig broodkruim
 
-- 50 g panko
-- 2 tbsp olijfolie
-- 2 tbsp fijngehakte peterselie
+- [ ] 50 g panko
+- [ ] 2 tbsp olijfolie
+- [ ] 2 tbsp fijngehakte peterselie
 
 ## Instructions
 

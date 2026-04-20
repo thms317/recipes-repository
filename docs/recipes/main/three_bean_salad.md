@@ -1,28 +1,30 @@
+---
+title: Three Bean Salad
+description: "This easy and colorful three-bean salad is perfect for summer picnics"
+image: three_bean_salad.jpg
+course: side
+servings: 5 servings
+difficulty: easy
+language: en
+---
+
 # Three Bean Salad
 
 > *This easy and colorful three-bean salad is perfect for summer picnics*
 
-## Recipe Information
-
-- **Total Time:** 15 minutes
-- **Servings:** 5 servings
-- **Course:** side
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 425 g chickpeas, 1 can, drained and rinsed
-- 425 g kidney beans, 1 can, drained and rinsed
-- 425 g cannellini beans, 1 can, drained and rinsed
-- ½ large English cucumber
-- ½ red onion
-- ½ cup fresh parsley
-- 60 ml olive oil
-- 60 ml red wine vinegar
-- ½ tsp dried oregano
-- ½ tsp salt
-- ¼ tsp pepper
+- [ ] 425 g chickpeas, 1 can, drained and rinsed
+- [ ] 425 g kidney beans, 1 can, drained and rinsed
+- [ ] 425 g cannellini beans, 1 can, drained and rinsed
+- [ ] ½ large English cucumber
+- [ ] ½ red onion
+- [ ] ½ cup fresh parsley
+- [ ] 60 ml olive oil
+- [ ] 60 ml red wine vinegar
+- [ ] ½ tsp dried oregano
+- [ ] ½ tsp salt
+- [ ] ¼ tsp pepper
 
 ## Instructions
 

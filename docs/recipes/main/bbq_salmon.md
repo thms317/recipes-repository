@@ -1,42 +1,44 @@
+---
+title: BBQ Salmon Bowls with Mango Avocado Salsa
+description: An easy and impressive dinner
+image: bbq_salmon.png
+course: main
+servings: "2-4 (depends on how much salmon you use)"
+difficulty: medium
+language: en
+---
+
 # BBQ Salmon Bowls with Mango Avocado Salsa
 
 > *An easy and impressive dinner*
-
-## Recipe Information
-
-- **Total Time:** 25 minutes
-- **Servings:** 2-4 (depends on how much salmon you use)
-- **Course:** main
-- **Difficulty:** medium
-- **Language:** EN
 
 ## Ingredients
 
 ### Salmon
 
-- 400-900g fresh salmon
-- 2 tablespoon brown sugar
-- 2 teaspoon smoked paprika
-- 2 teaspoon onion powder
-- 1 teaspoon garlic powder
-- 1/2 teaspoon chili powder
-- 1/2 teaspoon kosher salt (more for a larger filet)
-- 2 tablespoon olive oil
+- [ ] 400-900g fresh salmon
+- [ ] 2 tablespoon brown sugar
+- [ ] 2 teaspoon smoked paprika
+- [ ] 2 teaspoon onion powder
+- [ ] 1 teaspoon garlic powder
+- [ ] 1/2 teaspoon chili powder
+- [ ] 1/2 teaspoon kosher salt (more for a larger filet)
+- [ ] 2 tablespoon olive oil
 
 ### Mango Avocado Salsa
 
-- 2 mangoes, diced (about 300 grams frozen)
-- 1 avocado, diced (about 200 grams frozen)
-- 4 grams minced cilantro
-- 40 grams minced red onion
-- 1/2 jalapeño, minced (optional, to taste)
-- 1 teaspoon honey
-- 2 tablespoon lime juice + 1 teaspoon lime zest
-- salt to taste
+- [ ] 2 mangoes, diced (about 300 grams frozen)
+- [ ] 1 avocado, diced (about 200 grams frozen)
+- [ ] 4 grams minced cilantro
+- [ ] 40 grams minced red onion
+- [ ] 1/2 jalapeño, minced (optional, to taste)
+- [ ] 1 teaspoon honey
+- [ ] 2 tablespoon lime juice + 1 teaspoon lime zest
+- [ ] salt to taste
 
 ### For serving
 
-- 300 grams of rice
+- [ ] 300 grams of rice
 
 ## Instructions
 

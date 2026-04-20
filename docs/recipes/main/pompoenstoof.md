@@ -1,34 +1,36 @@
+---
+title: Pompoenstoof met Eieren
+description: "Hartige Noord-Afrikaans geïnspireerde stoofschotel met geroosterde pompoen, kikkererwten en gepocheerde eieren"
+course: main
+prep_minutes: 20
+cook_minutes: 45
+servings: 6 porties
+difficulty: medium
+language: nl
+---
+
 # Pompoenstoof met Eieren
 > *Hartige Noord-Afrikaans geïnspireerde stoofschotel met geroosterde pompoen, kikkererwten en gepocheerde eieren*
 
-## Recipe Information
-- **Prep Time:** 20 minuten
-- **Cook Time:** 45 minuten
-- **Total Time:** 65 minuten
-- **Servings:** 6 porties
-- **Course:** main
-- **Difficulty:** medium
-- **Language:** NL
-
 ## Ingredients
-- 1 grote flespompoen
-- 1 blik (400 g) kikkererwten, uitgelekt
-- 2 blikken (800 g) gepelde tomaten
-- 1 grote ui, gesnipperd
-- 5 tenen knoflook, fijngehakt
-- 10 cm verse gember, geraspt
-- 1 rode chili, fijngesneden
-- 2 tl geroosterd paprikapoeder
-- 1 tl komijnpoeder
-- 1 el korianderzaad
-- 1 kaneelstok
-- 4 verse laurierbladeren
-- 1 el groentebouillonpoeder (of 1 blokje)
-- Zeezout naar smaak
-- Zwarte peper naar smaak
-- 6 eieren
-- Olijfolie
-- Water
+- [ ] 1 grote flespompoen
+- [ ] 1 blik (400 g) kikkererwten, uitgelekt
+- [ ] 2 blikken (800 g) gepelde tomaten
+- [ ] 1 grote ui, gesnipperd
+- [ ] 5 tenen knoflook, fijngehakt
+- [ ] 10 cm verse gember, geraspt
+- [ ] 1 rode chili, fijngesneden
+- [ ] 2 tl geroosterd paprikapoeder
+- [ ] 1 tl komijnpoeder
+- [ ] 1 el korianderzaad
+- [ ] 1 kaneelstok
+- [ ] 4 verse laurierbladeren
+- [ ] 1 el groentebouillonpoeder (of 1 blokje)
+- [ ] Zeezout naar smaak
+- [ ] Zwarte peper naar smaak
+- [ ] 6 eieren
+- [ ] Olijfolie
+- [ ] Water
 
 ## Instructions
 1. Verwarm de oven voor op 200°C. Snijd de pompoen in grove stukken (schillen indien de schil dik is), meng met olijfolie, zout en paprikapoeder in een ovenschaal. Rooster 25-30 minuten tot zacht

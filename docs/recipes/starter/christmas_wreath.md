@@ -1,25 +1,26 @@
+---
+title: Cranberry Brie Puff Pastry Wreath
+description: "A festive Christmas appetizer with creamy brie, tangy cranberry sauce, and fresh basil wrapped in golden puff pastry"
+image: christmas_wreath.png
+course: starter
+prep_minutes: 15
+cook_minutes: 25
+servings: "[please specify]"
+difficulty: medium
+language: en
+---
+
 # Cranberry Brie Puff Pastry Wreath
 
 > *A festive Christmas appetizer with creamy brie, tangy cranberry sauce, and fresh basil wrapped in golden puff pastry*
 
-## Recipe Information
-
-- **Prep Time:** 15 minutes
-- **Cook Time:** 25 minutes
-- **Rest Time:** 5 minutes
-- **Total Time:** 45 minutes
-- **Servings:** [please specify]
-- **Course:** starter
-- **Difficulty:** medium
-- **Language:** EN
-
 ## Ingredients
 
-- 1 sheet puff pastry, thawed
-- 125g brie, sliced
-- 100g cranberry sauce
-- Handful of fresh basil
-- 1 egg, whisked
+- [ ] 1 sheet puff pastry, thawed
+- [ ] 125g brie, sliced
+- [ ] 100g cranberry sauce
+- [ ] Handful of fresh basil
+- [ ] 1 egg, whisked
 
 ## Instructions
 

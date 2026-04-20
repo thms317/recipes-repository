@@ -1,34 +1,37 @@
+---
+title: The best spaghetti bolognese recipe
+description: "Our best ever spaghetti bolognese is super easy and a true Italian classic with a meaty, chilli sauce"
+image: bolognese.png
+course: main
+cook_minutes: 75
+difficulty: easy
+language: en
+---
+
 # The best spaghetti bolognese recipe
 
 > *Our best ever spaghetti bolognese is super easy and a true Italian classic with a meaty, chilli sauce*
 
-## Recipe Information
-
-- **Cook Time:** 1 hour 15 minutes (plus pasta cooking time)
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 150g smoked streaky bacon, finely chopped
-- 500g beef mince
-- 2 medium onions, finely chopped
-- 2 carrots, finely chopped
-- 2 celery sticks, finely chopped
-- 2 garlic cloves, finely chopped
-- 1 red chilli, deseeded and finely chopped (optional)
-- 2 x 400g tins plum tomatoes
-- 30g tomato purée
-- 6 cherry tomatoes, halved
-- 10g fresh rosemary leaves, finely chopped
-- 25g fresh basil leaves (¾ finely chopped, rest for garnish)
-- 1 tsp dried oregano
-- 2 fresh bay leaves
-- 125g red wine
-- 1 beef stock cube
-- 75g parmesan, grated
-- 400g spaghetti
+- [ ] 150g smoked streaky bacon, finely chopped
+- [ ] 500g beef mince
+- [ ] 2 medium onions, finely chopped
+- [ ] 2 carrots, finely chopped
+- [ ] 2 celery sticks, finely chopped
+- [ ] 2 garlic cloves, finely chopped
+- [ ] 1 red chilli, deseeded and finely chopped (optional)
+- [ ] 2 x 400g tins plum tomatoes
+- [ ] 30g tomato purée
+- [ ] 6 cherry tomatoes, halved
+- [ ] 10g fresh rosemary leaves, finely chopped
+- [ ] 25g fresh basil leaves (¾ finely chopped, rest for garnish)
+- [ ] 1 tsp dried oregano
+- [ ] 2 fresh bay leaves
+- [ ] 125g red wine
+- [ ] 1 beef stock cube
+- [ ] 75g parmesan, grated
+- [ ] 400g spaghetti
 
 ## Instructions
 

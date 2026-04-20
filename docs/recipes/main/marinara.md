@@ -1,31 +1,32 @@
+---
+title: Best Marinara Sauce Yet
+description: "This homemade marinara sauce recipe is very easy to make and the only red sauce my 5-year-old daughter will eat! Serve with your favorite type of pasta"
+image: marinara.jpg
+course: side
+prep_minutes: 15
+cook_minutes: 30
+servings: 8 servings
+difficulty: easy
+language: en
+---
+
 # Best Marinara Sauce Yet
 
 > *This homemade marinara sauce recipe is very easy to make and the only red sauce my 5-year-old daughter will eat! Serve with your favorite type of pasta*
 
-## Recipe Information
-
-- **Prep Time:** 15 minutes
-- **Cook Time:** 30 minutes
-- **Total Time:** 45 minutes
-- **Servings:** 8 servings
-- **Yield:** 4 cups
-- **Course:** side
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 2 (410g) cans stewed tomatoes
-- 1 (170g) can tomato paste
-- 80g finely diced onion
-- 1 clove garlic, minced
-- 4 tbsp chopped fresh parsley
-- 1 tsp dried oregano
-- 1 tsp salt or to taste
-- ¼ tsp ground black pepper
-- 6 tbsp olive oil
-- 120ml white wine
-- 200g sausages (optional, for meatballs)
+- [ ] 2 (410g) cans stewed tomatoes
+- [ ] 1 (170g) can tomato paste
+- [ ] 80g finely diced onion
+- [ ] 1 clove garlic, minced
+- [ ] 4 tbsp chopped fresh parsley
+- [ ] 1 tsp dried oregano
+- [ ] 1 tsp salt or to taste
+- [ ] ¼ tsp ground black pepper
+- [ ] 6 tbsp olive oil
+- [ ] 120ml white wine
+- [ ] 200g sausages (optional, for meatballs)
 
 ## Instructions
 

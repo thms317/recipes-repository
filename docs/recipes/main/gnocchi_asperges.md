@@ -1,26 +1,29 @@
+---
+title: "Gnocchi met ricotta, kastanjechampignons en groene asperges"
+description: Gnocchi + groene asperges = top
+image: gnocchi_asperges.jpeg
+course: main
+prep_minutes: 15
+servings: 4 servings
+difficulty: easy
+language: nl
+---
+
 # Gnocchi met ricotta, kastanjechampignons en groene asperges
 
 > *Gnocchi + groene asperges = top*
 
-## Recipe Information
-
-- **Prep Time:** 15 minutes
-- **Servings:** 4 servings
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** NL
-
 ## Ingredients
 
-- 1 rode ui
-- 1 teen knoflook
-- 350 g groene asperges
-- 200 g diepvries tuinerwten
-- 200 g kastanjechampignons
-- 800 g gnocchi
-- 1 tbsp milde olijfolie
-- 100 g ricotta
-- 90 g Parmigiano Reggiano-flakes
+- [ ] 1 rode ui
+- [ ] 1 teen knoflook
+- [ ] 350 g groene asperges
+- [ ] 200 g diepvries tuinerwten
+- [ ] 200 g kastanjechampignons
+- [ ] 800 g gnocchi
+- [ ] 1 tbsp milde olijfolie
+- [ ] 100 g ricotta
+- [ ] 90 g Parmigiano Reggiano-flakes
 
 ## Instructions
 

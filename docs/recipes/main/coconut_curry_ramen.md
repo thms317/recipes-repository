@@ -1,37 +1,39 @@
+---
+title: Spicy Coconut Curry Ramen
+description: "Ultra creamy, slightly spicy broth simmered with quick-cooking ramen noodles plus all the ingredients you love in Thai food for a huge flavor punch"
+image: coconut_curry_ramen.jpg
+course: main
+prep_minutes: 10
+cook_minutes: 10
+servings: 4 servings
+difficulty: easy
+language: en
+---
+
 # Spicy Coconut Curry Ramen
 
 > *Ultra creamy, slightly spicy broth simmered with quick-cooking ramen noodles plus all the ingredients you love in Thai food for a huge flavor punch*
 
-## Recipe Information
-
-- **Prep Time:** 10 minutes
-- **Cook Time:** 10 minutes
-- **Total Time:** 20 minutes
-- **Servings:** 4 servings
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 3 tbsp toasted sesame oil
-- 100g shiitakes, torn
-- 4 garlic cloves, grated
-- 1 tbsp freshly grated ginger
-- 950ml chicken broth or vegetable broth
-- ½ tsp ground turmeric
-- ½ tsp brown sugar
-- 2 tbsp low sodium soy sauce
-- 1 tbsp fish sauce
-- 1 tbsp sambal oelek or other chili paste (optional)
-- 2 tbsp Thai red curry paste
-- 1 can (400ml) unsweetened coconut milk, full fat
-- 1 tbsp lime juice
-- 255g instant ramen noodles
-- chili oil
-- sesame seeds
-- chopped chives
-- 4 boiled eggs
+- [ ] 3 tbsp toasted sesame oil
+- [ ] 100g shiitakes, torn
+- [ ] 4 garlic cloves, grated
+- [ ] 1 tbsp freshly grated ginger
+- [ ] 950ml chicken broth or vegetable broth
+- [ ] ½ tsp ground turmeric
+- [ ] ½ tsp brown sugar
+- [ ] 2 tbsp low sodium soy sauce
+- [ ] 1 tbsp fish sauce
+- [ ] 1 tbsp sambal oelek or other chili paste (optional)
+- [ ] 2 tbsp Thai red curry paste
+- [ ] 1 can (400ml) unsweetened coconut milk, full fat
+- [ ] 1 tbsp lime juice
+- [ ] 255g instant ramen noodles
+- [ ] chili oil
+- [ ] sesame seeds
+- [ ] chopped chives
+- [ ] 4 boiled eggs
 
 ## Instructions
 

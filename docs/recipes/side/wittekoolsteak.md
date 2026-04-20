@@ -1,28 +1,30 @@
+---
+title: "Wittekoolsteak met Miso-Pindasaus"
+description: "Een lekkere steak... van witte kool! Maar de pittige miso-pindasaus is de echte ster van dit BBQ gerecht"
+image: wittekoolsteak.png
+course: side
+prep_minutes: 30
+cook_minutes: 25
+servings: 4 servings
+difficulty: easy
+language: nl
+---
+
 # Wittekoolsteak met Miso-Pindasaus
 
 > *Een lekkere steak... van witte kool! Maar de pittige miso-pindasaus is de echte ster van dit BBQ gerecht*
 
-## Recipe Information
-
-- **Prep Time:** 30 minutes
-- **Cook Time:** 25 minutes
-- **Total Time:** 55 minutes
-- **Servings:** 4 servings
-- **Course:** side
-- **Difficulty:** simple
-- **Language:** NL
-
 ## Ingredients
 
-- 2 witte kolen
-- 4 el milde olijfolie
-- 8 el water
-- 1 limoen
-- 3 el misopasta
-- 2 el rijstazijn
-- 2 tl sriracha
-- 2 el pindakaas
-- 15g verse platte peterselie
+- [ ] 2 witte kolen
+- [ ] 4 el milde olijfolie
+- [ ] 8 el water
+- [ ] 1 limoen
+- [ ] 3 el misopasta
+- [ ] 2 el rijstazijn
+- [ ] 2 tl sriracha
+- [ ] 2 el pindakaas
+- [ ] 15g verse platte peterselie
 
 ## Instructions
 

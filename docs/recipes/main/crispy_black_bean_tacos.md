@@ -1,33 +1,35 @@
+---
+title: Crispy Black Bean Tacos
+description: "Baked black bean tacos filled with sneaky vegetables, cozy spices, and a layer of melty cheese – the perfect vegetarian dinner that even kiddos will love"
+image: crispy_black_bean_tacos.webp
+course: main
+prep_minutes: 10
+cook_minutes: 20
+servings: 4 servings (2 tacos each)
+difficulty: easy
+language: en
+---
+
 # Crispy Black Bean Tacos
 
 > _Baked black bean tacos filled with sneaky vegetables, cozy spices, and a layer of melty cheese – the perfect vegetarian dinner that even kiddos will love_
 
-## Recipe Information
-
-- **Prep Time:** 10 minutes
-- **Cook Time:** 20 minutes
-- **Total Time:** 30 minutes
-- **Servings:** 4 servings (2 tacos each)
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 2 cans (425g each) black beans, drained and rinsed
-- 1 tbsp olive oil, plus more for brushing tortillas
-- 1 small yellow onion, diced
-- 1 orange bell pepper, diced
-- 3 cloves garlic, minced
-- 1 tsp chili powder
-- 1 tsp cumin
-- ½ tsp dried oregano
-- ½ tsp paprika
-- ½ tsp salt
-- 60g fresh cilantro, chopped
-- 120ml salsa (medium or mild)
-- 8 flour tortillas (or corn for gluten-free)
-- 180g shredded cheddar or pepper jack cheese
+- [ ] 2 cans (425g each) black beans, drained and rinsed
+- [ ] 1 tbsp olive oil, plus more for brushing tortillas
+- [ ] 1 small yellow onion, diced
+- [ ] 1 orange bell pepper, diced
+- [ ] 3 cloves garlic, minced
+- [ ] 1 tsp chili powder
+- [ ] 1 tsp cumin
+- [ ] ½ tsp dried oregano
+- [ ] ½ tsp paprika
+- [ ] ½ tsp salt
+- [ ] 60g fresh cilantro, chopped
+- [ ] 120ml salsa (medium or mild)
+- [ ] 8 flour tortillas (or corn for gluten-free)
+- [ ] 180g shredded cheddar or pepper jack cheese
 
 ## Instructions
 

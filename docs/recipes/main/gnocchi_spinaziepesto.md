@@ -1,42 +1,44 @@
+---
+title: "Gnocchi met Spinaziepesto & Gekarameliseerde Artisjok"
+description: Een heerlijke combinatie van gnocchi met zelfgemaakte spinaziepesto en gekarameliseerde artisjokharten
+image: gnocchi_spinaziepesto.png
+course: hoofdgerecht
+prep_minutes: 15
+cook_minutes: 20
+servings: 2 porties
+difficulty: medium
+language: nl
+---
+
 # Gnocchi met Spinaziepesto & Gekarameliseerde Artisjok
 
 > *Een heerlijke combinatie van gnocchi met zelfgemaakte spinaziepesto en gekarameliseerde artisjokharten*
-
-## Recipe Information
-
-- **Prep Time:** 15 minuten
-- **Cook Time:** 20 minuten
-- **Total Time:** 35 minuten
-- **Servings:** 2 porties
-- **Course:** hoofdgerecht
-- **Difficulty:** medium
-- **Language:** NL
 
 ## Ingredients
 
 ### Spinaziepesto
 
-- 10 grote blaadjes salie
-- 50 ml extra virgine olijfolie
-- 50 g parmezaan
-- 2 teentjes knoflook
-- 1/2 courgette
-- 2 handjes spinazie
-- 1 el citroensap
-- 40 g walnoten
+- [ ] 10 grote blaadjes salie
+- [ ] 50 ml extra virgine olijfolie
+- [ ] 50 g parmezaan
+- [ ] 2 teentjes knoflook
+- [ ] 1/2 courgette
+- [ ] 2 handjes spinazie
+- [ ] 1 el citroensap
+- [ ] 40 g walnoten
 
 ### Gnocchi
 
-- 1 pak gnocchi
-- 2 el boter
+- [ ] 1 pak gnocchi
+- [ ] 2 el boter
 
 ### Topping
 
-- 1 el boter
-- 3-4 artisjokharten uit blik
-- 10 blaadjes salie
-- handje walnoten
-- extra parmezaan
+- [ ] 1 el boter
+- [ ] 3-4 artisjokharten uit blik
+- [ ] 10 blaadjes salie
+- [ ] handje walnoten
+- [ ] extra parmezaan
 
 ## Instructions
 

@@ -1,29 +1,31 @@
+---
+title: "Pasta met Paddenstoelen, Salie en Ei"
+description: "Heerlijke pasta met verse paddenstoelen, knapperige salie en een romig ei-mengsel"
+image: salie_pasta.gif
+course: main
+cook_minutes: 15
+servings: 4 servings
+difficulty: easy
+language: nl
+---
+
 # Pasta met Paddenstoelen, Salie en Ei
 
 > *Heerlijke pasta met verse paddenstoelen, knapperige salie en een romig ei-mengsel*
 
-## Recipe Information
-
-- **Cook Time:** 15 minutes
-- **Total Time:** 15 minutes
-- **Servings:** 4 servings
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** NL
-
 ## Ingredients
 
-- 90 g gedroogd eekhoornjesbrood
-- 300 g gemengde verse paddenstoelen
-- 1/2 ui
-- 2 tenen knoflook
-- 10 blaadjes salie
-- Rasp en sap van 1/2 citroen
-- 1 gedroogd pepertje
-- 400 g penne
-- 2 eidooiers
-- 100 g geraspte parmezaan
-- Olijfolie
+- [ ] 90 g gedroogd eekhoornjesbrood
+- [ ] 300 g gemengde verse paddenstoelen
+- [ ] 1/2 ui
+- [ ] 2 tenen knoflook
+- [ ] 10 blaadjes salie
+- [ ] Rasp en sap van 1/2 citroen
+- [ ] 1 gedroogd pepertje
+- [ ] 400 g penne
+- [ ] 2 eidooiers
+- [ ] 100 g geraspte parmezaan
+- [ ] Olijfolie
 
 ## Instructions
 

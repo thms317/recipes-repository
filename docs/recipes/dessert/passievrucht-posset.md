@@ -1,25 +1,26 @@
+---
+title: "Passievrucht-Posset"
+description: Perfecttttttt voor kerst
+image: passievrucht-posset.png
+course: dessert
+prep_minutes: 15
+cook_minutes: 10
+servings: 4 porties
+difficulty: easy
+language: nl
+---
+
 # Passievrucht-Posset
 
 > *Perfecttttttt voor kerst*
 
-## Recipe Information
-
-- **Prep Time:** 15 minutes
-- **Cook Time:** 10 minutes
-- **Rest Time:** 240 minutes
-- **Total Time:** 265 minutes
-- **Servings:** 4 porties
-- **Course:** dessert
-- **Difficulty:** simple
-- **Language:** NL
-
 ## Ingredients
 
-- 250 ml slagroom
-- 70 g kristalsuiker
-- 40 ml passievruchtensap (ongeveer 4 passievruchten)
-- 20 ml limoensap (ongeveer ½ limoen)
-- 1 tl vanille (optioneel)
+- [ ] 250 ml slagroom
+- [ ] 70 g kristalsuiker
+- [ ] 40 ml passievruchtensap (ongeveer 4 passievruchten)
+- [ ] 20 ml limoensap (ongeveer ½ limoen)
+- [ ] 1 tl vanille (optioneel)
 
 ## Instructions
 

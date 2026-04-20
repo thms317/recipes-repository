@@ -1,25 +1,27 @@
+---
+title: "Aardappelsoep van zoete aardappelen, kokos en limoen"
+description: Vegetarisch voorgerecht
+image: zoete_aardappelsoep.jpeg
+course: starter
+servings: 4 personen
+difficulty: easy
+language: nl
+---
+
 # Aardappelsoep van zoete aardappelen, kokos en limoen
 
 > *Vegetarisch voorgerecht*
 
-## Recipe Information
-
-- **Total Time:** 35 min
-- **Servings:** 4 personen
-- **Rating:** waardering 7,8
-- **Difficulty:** Easy
-- **Category:** Starter
-
 ## Ingredients
 
-- Olijfolie
-- 1 ui, fijngehakt
-- 3 teentjes knoflook, fijngehakt
-- 2 theelepels geraspte verse gember
-- 500 g zoete aardappelen, in stukken
-- 1 liter bouillon
-- 200 ml kokosmelk (blik)
-- Sap van 2 limoenen
+- [ ] Olijfolie
+- [ ] 1 ui, fijngehakt
+- [ ] 3 teentjes knoflook, fijngehakt
+- [ ] 2 theelepels geraspte verse gember
+- [ ] 500 g zoete aardappelen, in stukken
+- [ ] 1 liter bouillon
+- [ ] 200 ml kokosmelk (blik)
+- [ ] Sap van 2 limoenen
 
 ## Instructions
 

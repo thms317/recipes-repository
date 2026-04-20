@@ -1,33 +1,34 @@
+---
+title: Caponata
+description: "A fantastic aubergine stew from southern Italy with delicious capers, olives and tomatoes - eaten as a warm vegetable side dish or cold antipasto"
+image: caponata.webp
+course: main
+prep_minutes: 30
+cook_minutes: 30
+servings: "4-8 servings"
+difficulty: easy
+language: en
+---
 
 # Caponata
 
 > *A fantastic aubergine stew from southern Italy with delicious capers, olives and tomatoes - eaten as a warm vegetable side dish or cold antipasto*
 
-## Recipe Information
-
-- **Prep Time:** 30 minutes
-- **Cook Time:** 30 minutes
-- **Total Time:** 60 minutes
-- **Servings:** 4-8 servings
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 2 large eggplants, cut into large chunks
-- 500 gram ripe tomatoes (preferably Romas) roughly chopped
-- 2 stalks celery from the inner, tender stalks (the heart), diced
-- 1 medium onion, peeled and finely chopped
-- 2-3 large garlic cloves, minced or finely sliced
-- 2 red bell peppers, diced
-- 1 heaped teaspoon dried oregano
-- 3 heaped tablespoons salted capers
-- 1 handful green olives, chopped
-- 3 tablespoons red or white wine vinegar
-- 1 small bunch fresh flat-leaf parsley, leaves picked and stalks finely chopped
-- 2-3 tablespoons olive oil, plus extra for drizzling
-- 2 tablespoons toasted pine nuts (optional)
+- [ ] 2 large eggplants, cut into large chunks
+- [ ] 500 gram ripe tomatoes (preferably Romas) roughly chopped
+- [ ] 2 stalks celery from the inner, tender stalks (the heart), diced
+- [ ] 1 medium onion, peeled and finely chopped
+- [ ] 2-3 large garlic cloves, minced or finely sliced
+- [ ] 2 red bell peppers, diced
+- [ ] 1 heaped teaspoon dried oregano
+- [ ] 3 heaped tablespoons salted capers
+- [ ] 1 handful green olives, chopped
+- [ ] 3 tablespoons red or white wine vinegar
+- [ ] 1 small bunch fresh flat-leaf parsley, leaves picked and stalks finely chopped
+- [ ] 2-3 tablespoons olive oil, plus extra for drizzling
+- [ ] 2 tablespoons toasted pine nuts (optional)
 
 ## Instructions
 

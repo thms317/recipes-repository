@@ -1,21 +1,25 @@
+---
+title: Ruby Hearts
+description: "A beer cocktail that's actually nice"
+image: ruby_hearts.webp
+course: cocktail
+servings: 1 cocktail
+difficulty: easy
+language: en
+---
+
 # Ruby Hearts
 
 > *A beer cocktail that's actually nice*
 
-## Recipe Information
-
-- **Servings:** 1 cocktail
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 45ml Union mezcal
-- 15ml Campari
-- 22ml lime juice, freshly squeezed
-- 22ml cinnamon-demerara syrup
-- 120ml Bell's Two Hearted Ale
-- Cinnamon stick for garnish
+- [ ] 45ml Union mezcal
+- [ ] 15ml Campari
+- [ ] 22ml lime juice, freshly squeezed
+- [ ] 22ml cinnamon-demerara syrup
+- [ ] 120ml Bell's Two Hearted Ale
+- [ ] Cinnamon stick for garnish
 
 ## Instructions
 

@@ -1,36 +1,38 @@
+---
+title: Korean Style Spicy Tofu
+description: "Crispy pan-fried tofu in a sweet and spicy gochujang sauce, garnished with sesame seeds and chives"
+image: spicy_korean_tofu.jpg
+course: main
+prep_minutes: 5
+cook_minutes: 45
+servings: 4 servings
+difficulty: easy
+language: en
+---
+
 # Korean Style Spicy Tofu
 
 > *Crispy pan-fried tofu in a sweet and spicy gochujang sauce, garnished with sesame seeds and chives*
 
-## Recipe Information
-
-- **Prep Time:** 5 minutes
-- **Cook Time:** 45 minutes
-- **Total Time:** 50 minutes
-- **Servings:** 4 servings
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 500 g firm tofu
-- 2 cloves garlic, minced
-- ½ onion, finely chopped
-- 2 cm fresh ginger, grated
+- [ ] 500 g firm tofu
+- [ ] 2 cloves garlic, minced
+- [ ] ½ onion, finely chopped
+- [ ] 2 cm fresh ginger, grated
 
 ### Sauce
 
-- 3 tbsp gochujang
-- 2 tbsp soy sauce or tamari
-- 2 tbsp mirin
-- 2 tsp brown sugar
-- 225 ml water
+- [ ] 3 tbsp gochujang
+- [ ] 2 tbsp soy sauce or tamari
+- [ ] 2 tbsp mirin
+- [ ] 2 tsp brown sugar
+- [ ] 225 ml water
 
 ### Garnish
 
-- Sesame seeds
-- Fresh chives, chopped
+- [ ] Sesame seeds
+- [ ] Fresh chives, chopped
 
 ## Instructions
 

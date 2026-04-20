@@ -1,34 +1,37 @@
+---
+title: Portobellosteaks met puree van limabonen
+description: Uit Flavour van Yotam Ottolenghi
+image: portobello_steaks.webp
+course: hoofdgerecht
+cook_minutes: 80
+servings: 4 personen
+language: nl
+---
+
 # Portobellosteaks met puree van limabonen
 
 > _Uit Flavour van Yotam Ottolenghi_
-
-## Recipe Information
-
-- **Cook Time:** 80 minutes
-- **Servings:** 4 personen
-- **Course:** hoofdgerecht
-- **Language:** NL
 
 ## Ingredients
 
 ### Voor de portobellosteaks
 
-- 8 (middel)grote portobello's, stelen verwijderd
-- 10 tenen knoflook, gepeld
-- 1 ui, gepeld en in 6 parten
-- 1½ el chipotle-chilivlokken (of: ½ tl chilivlokken + ½ tl gerookte paprikapoeder)
-- 1 rode chilipeper
-- 4 tl komijnzaad, grof gekneusd
-- 1 el korianderzaad, grof gekneusd
-- 2 el tomatenpuree
-- 400 ml olijfolie
+- [ ] 8 (middel)grote portobello's, stelen verwijderd
+- [ ] 10 tenen knoflook, gepeld
+- [ ] 1 ui, gepeld en in 6 parten
+- [ ] 1½ el chipotle-chilivlokken (of: ½ tl chilivlokken + ½ tl gerookte paprikapoeder)
+- [ ] 1 rode chilipeper
+- [ ] 4 tl komijnzaad, grof gekneusd
+- [ ] 1 el korianderzaad, grof gekneusd
+- [ ] 2 el tomatenpuree
+- [ ] 400 ml olijfolie
 
 ### Voor de puree van limabonen
 
-- 1 pot van 700 g limabonen, uitgelekt
-- 1½ el citroensap
-- 1 el olijfolie
-- Zeezoutvlokken
+- [ ] 1 pot van 700 g limabonen, uitgelekt
+- [ ] 1½ el citroensap
+- [ ] 1 el olijfolie
+- [ ] Zeezoutvlokken
 
 ## Instructions
 

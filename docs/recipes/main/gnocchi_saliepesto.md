@@ -1,33 +1,37 @@
+---
+title: Gnocchi met Saliepesto en Artisjokharten
+description: "Een heerlijk vegetarisch gerecht met zelfgemaakte saliepesto, gnocchi en artisjokarten."
+image: gnocchi_saliepesto.png
+course: main
+servings: 2 personen
+difficulty: easy
+language: nl
+---
+
 # Gnocchi met Saliepesto en Artisjokharten
 
 > *Een heerlijk vegetarisch gerecht met zelfgemaakte saliepesto, gnocchi en artisjokarten.*
-
-## Recipe Information
-
-- **Servings:** 2 personen
-- **Course:** Main
-- **Difficulty:** Easy
 
 ## Ingredients
 
 ### Saliepesto
 
-- 15-20 blaadjes salie
-- 2 teentjes knoflook
-- 50 ml extra vierge olijfolie
-- 70 g ontdooide tuinerwten (diepvries)
-- 40 g geroosterde walnoten
-- 30 g geraspte Parmigiano Reggiano
-- 1 el citroensap
-- peper & zout
+- [ ] 15-20 blaadjes salie
+- [ ] 2 teentjes knoflook
+- [ ] 50 ml extra vierge olijfolie
+- [ ] 70 g ontdooide tuinerwten (diepvries)
+- [ ] 40 g geroosterde walnoten
+- [ ] 30 g geraspte Parmigiano Reggiano
+- [ ] 1 el citroensap
+- [ ] peper & zout
 
 ### Veder
 
-- 500 g (mini) gnocchi
-- 1 blik artisjokarten
-- 4 el gezouten roomboter
-- verse citroen
-- extra salie & walnoten
+- [ ] 500 g (mini) gnocchi
+- [ ] 1 blik artisjokarten
+- [ ] 4 el gezouten roomboter
+- [ ] verse citroen
+- [ ] extra salie & walnoten
 
 ## Instructions
 

@@ -1,38 +1,39 @@
+---
+title: Espresso Martini Brownies
+description: "Rijke chocolade brownies met een romige espresso-likeurtoping"
+image: espresso_martini_brownies.png
+course: dessert
+prep_minutes: 25
+cook_minutes: 20
+servings: "4-6 servings"
+difficulty: medium
+language: nl
+---
+
 # Espresso Martini Brownies
 
 > *Rijke chocolade brownies met een romige espresso-likeurtoping*
-
-## Recipe Information
-
-- **Prep Time:** 25 minutes
-- **Cook Time:** 20 minutes
-- **Rest Time:** 240 minutes
-- **Total Time:** 285 minutes
-- **Servings:** 4-6 servings
-- **Course:** dessert
-- **Difficulty:** medium
-- **Language:** NL
 
 ## Ingredients
 
 ### Brownies
 
-- 100 g pure chocolade
-- 100 g boter
-- 100 g kristalsuiker
-- 100 g donkere basterdsuiker
-- 2 eieren
-- 1 tl vanille aroma of extract
-- 70 g bloem
-- 35 g cacaopoeder (ongezoet)
-- snuf zout (¼ tl)
+- [ ] 100 g pure chocolade
+- [ ] 100 g boter
+- [ ] 100 g kristalsuiker
+- [ ] 100 g donkere basterdsuiker
+- [ ] 2 eieren
+- [ ] 1 tl vanille aroma of extract
+- [ ] 70 g bloem
+- [ ] 35 g cacaopoeder (ongezoet)
+- [ ] snuf zout (¼ tl)
 
 ### Topping
 
-- 150 ml espresso + likeur (eigen invulling hoe sterk je hem wil)
-- 2 el poedersuiker (of meer, naar smaak)
-- 250 g mascarpone
-- 100 ml slagroom
+- [ ] 150 ml espresso + likeur (eigen invulling hoe sterk je hem wil)
+- [ ] 2 el poedersuiker (of meer, naar smaak)
+- [ ] 250 g mascarpone
+- [ ] 100 ml slagroom
 
 ## Instructions
 

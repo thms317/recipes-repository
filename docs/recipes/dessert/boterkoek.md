@@ -1,18 +1,20 @@
+---
+title: Boterkoek
+course: dessert
+cook_minutes: 25
+difficulty: easy
+language: nl
+---
+
 # Boterkoek
-
-## Recipe Information
-
-- **Cook Time:** 25 min
-- **Course:** Dessert
-- **Difficulty:** Easy
 
 ## Ingredients
 
-- 350 gram bloem
-- 3 ons boter
-- 2 ons suiker
-- snufje zout
-- geraspte citroenschil
+- [ ] 350 gram bloem
+- [ ] 3 ons boter
+- [ ] 2 ons suiker
+- [ ] snufje zout
+- [ ] geraspte citroenschil
 
 ## Instructions
 

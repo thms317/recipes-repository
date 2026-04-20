@@ -1,19 +1,21 @@
+---
+title: Appeltaart
+course: dessert
+cook_minutes: 50
+difficulty: medium
+language: nl
+---
+
 # Appeltaart
-
-## Recipe Information
-
-- **Cook Time:** 50 minuten
-- **Course:** Dessert
-- **Difficulty:** Medium
 
 ## Ingredients
 
-- 5 appels
-- ½ zakje rozijnen
-- 4,5 ons bloem
-- 2 ons suiker
-- pakje roomboter
-- snufje zout
+- [ ] 5 appels
+- [ ] ½ zakje rozijnen
+- [ ] 4,5 ons bloem
+- [ ] 2 ons suiker
+- [ ] pakje roomboter
+- [ ] snufje zout
 
 ## Instructions
 

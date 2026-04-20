@@ -1,23 +1,25 @@
+---
+title: Spaghetti Bami met Ketjap Tempeh
+image: spaghetti_bami.png
+course: main
+difficulty: medium
+language: nl
+---
+
 # Spaghetti Bami met Ketjap Tempeh
-
-## Recipe Information
-
-- **Course:** main
-- **Difficulty:** medium
-- **Language:** NL
 
 ## Ingredients
 
-- 400 g spaghetti
-- 2 middelgrote uien
-- 1 prei
-- 400 g verse tempeh
-- 400 g sperziebonen (diepvries)
-- 4 el bami specerijenpasta
-- 4 el ketjap manis
-- 1.5 el japanse sojasaus
-- 1 el tomatenpuree
-- 7 el zonnebloemolie
+- [ ] 400 g spaghetti
+- [ ] 2 middelgrote uien
+- [ ] 1 prei
+- [ ] 400 g verse tempeh
+- [ ] 400 g sperziebonen (diepvries)
+- [ ] 4 el bami specerijenpasta
+- [ ] 4 el ketjap manis
+- [ ] 1.5 el japanse sojasaus
+- [ ] 1 el tomatenpuree
+- [ ] 7 el zonnebloemolie
 
 ## Instructions
 

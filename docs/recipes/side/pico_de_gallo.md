@@ -1,27 +1,28 @@
+---
+title: Pico de gallo
+description: "Pico de gallo als topping op guacamole, nachos, bij quesadilla's, taco's, burrito's of tortillachips"
+image: pico_de_gallo.png
+course: side
+prep_minutes: 10
+servings: 8 personen
+difficulty: easy
+language: nl
+---
+
 # Pico de gallo
 
 > *Pico de gallo als topping op guacamole, nachos, bij quesadilla's, taco's, burrito's of tortillachips*
-
-## Recipe Information
-
-- **Prep Time:** 10 minutes
-- **Rest Time:** 45 minutes
-- **Total Time:** 55 minutes
-- **Servings:** 8 personen
-- **Course:** side
-- **Difficulty:** simple
-- **Language:** NL
 
 ## Ingredients
 
 ### Main Ingredients
 
-- 1 middelgrote ui
-- 750 g romatomaten
-- 2 jalapeñopepers
-- 10 g verse koriander
-- 1 limoen
-- ½ tl zeezout
+- [ ] 1 middelgrote ui
+- [ ] 750 g romatomaten
+- [ ] 2 jalapeñopepers
+- [ ] 10 g verse koriander
+- [ ] 1 limoen
+- [ ] ½ tl zeezout
 
 ## Instructions
 

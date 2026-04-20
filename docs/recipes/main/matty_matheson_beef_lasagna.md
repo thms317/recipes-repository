@@ -1,34 +1,36 @@
+---
+title: "Matty Matheson's Beef Lasagna"
+description: "If you don't like lasagna, you're probably an idiot"
+image: matty_matheson_beef_lasagna.jpg
+course: main
+prep_minutes: 60
+cook_minutes: 45
+servings: "8-10 servings"
+difficulty: medium
+language: en
+---
+
 # Matty Matheson's Beef Lasagna
 
 > *If you don't like lasagna, you're probably an idiot*
 
-## Recipe Information
-
-- **Prep Time:** 60 minutes
-- **Cook Time:** 45 minutes
-- **Total Time:** 1 hour 45 minutes
-- **Servings:** 8-10 servings
-- **Course:** main
-- **Difficulty:** medium
-- **Language:** EN
-
 ## Ingredients
 
-- 125ml canola oil
-- 1.8kg ground beef
-- 237ml good olive oil
-- 6 cloves garlic
-- 1 carrot
-- 1 large onion
-- 60ml tomato paste
-- 1 tbsp dried red chilies
-- 1 liter beef stock
-- 473ml whole milk
-- 3 large egg yolks
-- 1 bunch flat-leaf parsley
-- 1 box oven ready lasagna noodles
-- 1.4kg shredded mozzarella (reserve some for topping)
-- 250g Parmesan cheese, grated
+- [ ] 125ml canola oil
+- [ ] 1.8kg ground beef
+- [ ] 237ml good olive oil
+- [ ] 6 cloves garlic
+- [ ] 1 carrot
+- [ ] 1 large onion
+- [ ] 60ml tomato paste
+- [ ] 1 tbsp dried red chilies
+- [ ] 1 liter beef stock
+- [ ] 473ml whole milk
+- [ ] 3 large egg yolks
+- [ ] 1 bunch flat-leaf parsley
+- [ ] 1 box oven ready lasagna noodles
+- [ ] 1.4kg shredded mozzarella (reserve some for topping)
+- [ ] 250g Parmesan cheese, grated
 
 ## Instructions
 

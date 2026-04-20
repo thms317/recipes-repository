@@ -1,29 +1,30 @@
+---
+title: "Golden One Pan Turmeric Cauliflower, Lentils & Coconut"
+description: "Cauliflower supplies glucosinolates that support detoxification pathways and cellular protection. Red lentils add plant protein and soluble fibre to stabilise blood glucose and promote SCFA production in the gut. Turmeric and ginger contribute curcuminoids and gingerols that downregulate inflammatory mediators such as NF-κB, while coconut milk provides medium-chain fatty acids that are readily metabolised for energy"
+image: turmeric_cauliflower.png
+course: main
+prep_minutes: 10
+cook_minutes: 25
+servings: 2–3 servings
+difficulty: easy
+language: en
+---
 
 # Golden One Pan Turmeric Cauliflower, Lentils & Coconut
 
 > *Cauliflower supplies glucosinolates that support detoxification pathways and cellular protection. Red lentils add plant protein and soluble fibre to stabilise blood glucose and promote SCFA production in the gut. Turmeric and ginger contribute curcuminoids and gingerols that downregulate inflammatory mediators such as NF-κB, while coconut milk provides medium-chain fatty acids that are readily metabolised for energy*
 
-## Recipe Information
-
-- **Prep Time:** 10 minutes
-- **Cook Time:** 25 minutes
-- **Total Time:** 35 minutes
-- **Servings:** 2–3 servings
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 1 small cauliflower, cut into small florets
-- 150 g red lentils, rinsed
-- 400 ml full-fat coconut milk
-- 300 ml water or vegetable stock
-- 1 tsp ground turmeric
-- 1 tsp ground cumin
-- 1 tsp ground ginger
-- Fresh coriander, to serve
-- Chilli oil or lime wedges, to serve
+- [ ] 1 small cauliflower, cut into small florets
+- [ ] 150 g red lentils, rinsed
+- [ ] 400 ml full-fat coconut milk
+- [ ] 300 ml water or vegetable stock
+- [ ] 1 tsp ground turmeric
+- [ ] 1 tsp ground cumin
+- [ ] 1 tsp ground ginger
+- [ ] Fresh coriander, to serve
+- [ ] Chilli oil or lime wedges, to serve
 
 ## Instructions
 

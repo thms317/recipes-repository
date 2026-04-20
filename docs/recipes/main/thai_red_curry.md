@@ -1,41 +1,42 @@
+---
+title: Thai Red Curry (Gaeng Ped)
+description: "Rich, creamy, and full of bold flavor — an authentic Thai red curry with shrimp that comes together in one pot in less than 30 minutes"
+course: main
+prep_minutes: 15
+cook_minutes: 10
+servings: 4 servings
+difficulty: easy
+language: en
+---
+
 # Thai Red Curry (Gaeng Ped)
 
 > *Rich, creamy, and full of bold flavor — an authentic Thai red curry with shrimp that comes together in one pot in less than 30 minutes*
 
-## Recipe Information
-
-- **Prep Time:** 15 minutes
-- **Cook Time:** 10 minutes
-- **Total Time:** 25 minutes
-- **Servings:** 4 servings
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** EN
-
 ## Ingredients
 
-- 20 large shrimp, deveined
-- 4 tbsp red curry paste
-- 960 ml coconut milk, full fat
-- 2 tbsp fish sauce
-- 3 tbsp palm sugar
-- 4 cups Thai eggplants, halved or quartered
-- 8 yardlong beans, cut into 2.5 cm pieces
-- 4 kaffir lime leaves, finely shredded
-- 4 fresh red chilies, diagonally sliced
+- [ ] 20 large shrimp, deveined
+- [ ] 4 tbsp red curry paste
+- [ ] 960 ml coconut milk, full fat
+- [ ] 2 tbsp fish sauce
+- [ ] 3 tbsp palm sugar
+- [ ] 4 cups Thai eggplants, halved or quartered
+- [ ] 8 yardlong beans, cut into 2.5 cm pieces
+- [ ] 4 kaffir lime leaves, finely shredded
+- [ ] 4 fresh red chilies, diagonally sliced
 
 ### Curry Paste (optional)
 
-- 16 g dry red spur chilies, chopped
-- 6 g dry chilies, chopped
-- 28 g galangal, chopped
-- 56 g garlic, chopped
-- 56 g shallots, chopped
-- 6 g kaffir lime skin, chopped
-- 6 g turmeric, chopped
-- 56 g lemongrass, chopped
-- 16 g shrimp paste
-- 6 g salt
+- [ ] 16 g dry red spur chilies, chopped
+- [ ] 6 g dry chilies, chopped
+- [ ] 28 g galangal, chopped
+- [ ] 56 g garlic, chopped
+- [ ] 56 g shallots, chopped
+- [ ] 6 g kaffir lime skin, chopped
+- [ ] 6 g turmeric, chopped
+- [ ] 56 g lemongrass, chopped
+- [ ] 16 g shrimp paste
+- [ ] 6 g salt
 
 ## Instructions
 

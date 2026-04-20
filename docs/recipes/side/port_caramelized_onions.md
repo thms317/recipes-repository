@@ -1,24 +1,28 @@
+---
+title: "Port-Caramelized Onions"
+description: "These luxurious caramelized onions are cooked low and slow, then finished with aged port wine for a deep, complex flavor. Perfect for topping burgers, steaks, crostini, or stirring into pasta."
+image: port_caramelized_onions.webp
+course: side
+cook_minutes: 55
+difficulty: medium
+language: en
+---
+
 # Port-Caramelized Onions
 
 > *These luxurious caramelized onions are cooked low and slow, then finished with aged port wine for a deep, complex flavor. Perfect for topping burgers, steaks, crostini, or stirring into pasta.*
 
-## Recipe Information
-
-- **Cook Time:** 45-55 minutes
-- **Course:** Side
-- **Difficulty:** Medium
-
 ## Ingredients
 
-- 900g (2 lbs, about 4 large) yellow or sweet onions
-- 3 tablespoons unsalted butter
-- 1 tablespoon olive oil
-- 1/2 teaspoon kosher salt
-- 1/4 teaspoon freshly ground black pepper
-- 1 teaspoon fresh thyme leaves (optional)
-- 1/4 cup (60ml) aged port wine (using your 300ml bottle)
-- 1 teaspoon brown sugar (optional, if your port isn't very sweet)
-- 1 teaspoon balsamic vinegar (optional, for added depth)
+- [ ] 900g (2 lbs, about 4 large) yellow or sweet onions
+- [ ] 3 tablespoons unsalted butter
+- [ ] 1 tablespoon olive oil
+- [ ] 1/2 teaspoon kosher salt
+- [ ] 1/4 teaspoon freshly ground black pepper
+- [ ] 1 teaspoon fresh thyme leaves (optional)
+- [ ] 1/4 cup (60ml) aged port wine (using your 300ml bottle)
+- [ ] 1 teaspoon brown sugar (optional, if your port isn't very sweet)
+- [ ] 1 teaspoon balsamic vinegar (optional, for added depth)
 
 ## Instructions
 

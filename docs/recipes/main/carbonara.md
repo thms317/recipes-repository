@@ -1,28 +1,31 @@
+---
+title: Spaghetti Carbonara
+description: "A classic Italian pasta dish with crispy pancetta, eggs, and cheese."
+image: carbonara.png
+course: main
+prep_minutes: 20
+cook_minutes: 15
+servings: 4 servings
+difficulty: easy
+language: en
+---
+
 # Spaghetti Carbonara
 
 > *A classic Italian pasta dish with crispy pancetta, eggs, and cheese.*
-
-## Recipe Information
-
-- **Prep Time:** 15-20 minutes
-- **Cook Time:** 15 minutes
-- **Total Time:** 30-35 minutes
-- **Servings:** 4 servings
-- **Course:** Main
-- **Difficulty:** Easy
 
 ## Ingredients
 
 ### Main Ingredients
 
-- 100g pancetta
-- 50g pecorino cheese
-- 50g parmesan
-- 3 large eggs
-- 350g spaghetti
-- 2 plump garlic cloves, peeled and left whole
-- 50g unsalted butter
-- sea salt and freshly ground black pepper
+- [ ] 100g pancetta
+- [ ] 50g pecorino cheese
+- [ ] 50g parmesan
+- [ ] 3 large eggs
+- [ ] 350g spaghetti
+- [ ] 2 plump garlic cloves, peeled and left whole
+- [ ] 50g unsalted butter
+- [ ] sea salt and freshly ground black pepper
 
 ## Instructions
 

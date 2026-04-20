@@ -1,35 +1,36 @@
+---
+title: "Banana-Peanut Butter Granola with Whole Nuts"
+description: "Crunchy, protein-rich homemade granola featuring the perfect combination of bananas, peanut butter, and toasted nuts"
+image: granola.jpg
+course: breakfast
+prep_minutes: 15
+cook_minutes: 30
+servings: big jar
+difficulty: easy
+language: en
+---
+
 # Banana-Peanut Butter Granola with Whole Nuts
 
 > _Crunchy, protein-rich homemade granola featuring the perfect combination of bananas, peanut butter, and toasted nuts_
-
-## Recipe Information
-
-- **Prep Time:** 15 minutes
-- **Cook Time:** 30 minutes
-- **Cooling Time:** 60 minutes
-- **Total Time:** 1 hour 45 minutes
-- **Servings:** big jar
-- **Category:** breakfast
-- **Difficulty:** easy
-- **Language:** EN
 
 ## Ingredients
 
 ### Dry Ingredients
 
-- 500g rolled oats
-- 300g mixed whole nuts (sunflower seeds, cashews, pecans, almonds, peanuts, pumpkin seeds)
-- 15g chia seeds
-- 1.5 teaspoon ground cinnamon
-- 1 teaspoon fine table salt
+- [ ] 500g rolled oats
+- [ ] 300g mixed whole nuts (sunflower seeds, cashews, pecans, almonds, peanuts, pumpkin seeds)
+- [ ] 15g chia seeds
+- [ ] 1.5 teaspoon ground cinnamon
+- [ ] 1 teaspoon fine table salt
 
 ### Wet Ingredients
 
-- 3 bananas (mashed)
-- 75g olive oil
-- 100g crunchy peanut butter
-- 125g honey (or more)
-- 1 teaspoon vanilla extract
+- [ ] 3 bananas (mashed)
+- [ ] 75g olive oil
+- [ ] 100g crunchy peanut butter
+- [ ] 125g honey (or more)
+- [ ] 1 teaspoon vanilla extract
 
 ## Instructions
 

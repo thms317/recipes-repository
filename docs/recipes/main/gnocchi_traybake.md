@@ -1,29 +1,31 @@
+---
+title: Gnocchi traybake
+description: Superlekkere gnocchi traybake met aubergine en tomaatjes
+image: gnocchi_traybake.webp
+course: main
+servings: 2 servings
+difficulty: easy
+language: nl
+---
+
 # Gnocchi traybake
 
 > *Superlekkere gnocchi traybake met aubergine en tomaatjes*
 
-## Recipe Information
-
-- **Total Time:** 30 minutes
-- **Servings:** 2 servings
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** NL
-
 ## Ingredients
 
-- 1 rode ui
-- 250 g cherrytomaten
-- 1/2 aubergine
-- 300 g verse gnocchi
-- 80 g crème fraîche
-- 40 g geraspte kaas
-- 70 g Parmezaanse kaas
-- 20 g passata
-- 15 g verse basilicum
-- 1 knoflookteentje
-- 40 g pistachenoten
-- 1 citroen
+- [ ] 1 rode ui
+- [ ] 250 g cherrytomaten
+- [ ] 1/2 aubergine
+- [ ] 300 g verse gnocchi
+- [ ] 80 g crème fraîche
+- [ ] 40 g geraspte kaas
+- [ ] 70 g Parmezaanse kaas
+- [ ] 20 g passata
+- [ ] 15 g verse basilicum
+- [ ] 1 knoflookteentje
+- [ ] 40 g pistachenoten
+- [ ] 1 citroen
 
 ## Instructions
 

@@ -1,29 +1,30 @@
+---
+title: Asparagus Linguine with Lemon and Mint
+description: "Truly is a great 15 minutes meal - you have to give it a try!"
+image: asparagus_linguine.png
+course: main
+cook_minutes: 15
+servings: 4 servings
+difficulty: easy
+language: en
+---
+
 # Asparagus Linguine with Lemon and Mint
 
 > *Truly is a great 15 minutes meal - you have to give it a try!*
-
-## Recipe Information
-
-- **Cook Time:** 15 minutes
-- **Total Time:** 15 minutes
-- **Servings:** 4 servings
-- **Course:** Main
-- **Difficulty:** Simple
-- **Language:** EN
-- **Date:** 24/4/2025
 
 ## Ingredients
 
 ### Main Ingredients
 
-- 400g linguine
-- 400g asparagus
-- 1 lemon
-- 60g butter
-- 6 sprigs of mint
-- Extra virgin olive oil
-- Freshly ground black pepper
-- Grana Padano cheese, plus extra for serving
+- [ ] 400g linguine
+- [ ] 400g asparagus
+- [ ] 1 lemon
+- [ ] 60g butter
+- [ ] 6 sprigs of mint
+- [ ] Extra virgin olive oil
+- [ ] Freshly ground black pepper
+- [ ] Grana Padano cheese, plus extra for serving
 
 ## Instructions
 

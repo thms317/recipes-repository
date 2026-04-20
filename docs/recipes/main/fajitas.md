@@ -1,43 +1,45 @@
+---
+title: Fajitas
+description: Easy chicken fajitas with vibrant veggies
+image: fajitas.jpeg
+course: main
+prep_minutes: 10
+cook_minutes: 15
+servings: 6 servings
+difficulty: easy
+language: en
+---
+
 # Fajitas
 
 > *Easy chicken fajitas with vibrant veggies*
-
-## Recipe Information
-
-- **Prep Time:** 10 minutes
-- **Cook Time:** 15 minutes
-- **Total Time:** 25 minutes
-- **Servings:** 6 servings
-- **Course:** main
-- **Difficulty:** simple
-- **Language:** EN
 
 ## Ingredients
 
 ### Chicken Fajitas
 
-- 1 onion, thinly sliced
-- 500 grams (vegetarian) chicken breasts
-- 3 bell peppers, thinly sliced
-- ½ lime
-- 2 tablespoons olive oil
+- [ ] 1 onion, thinly sliced
+- [ ] 500 grams (vegetarian) chicken breasts
+- [ ] 3 bell peppers, thinly sliced
+- [ ] ½ lime
+- [ ] 2 tablespoons olive oil
 
 ### Fajita Seasoning
 
-- 0.5 tablespoon ground cumin
-- 0.5 tablespoon chili powder
-- 1 teaspoon garlic powder
-- 0.5 teaspoon oregano
-- 0.5 teaspoon paprika
-- 0.5 teaspoon kosher salt
-- 0.25 teaspoon ground black pepper
+- [ ] 0.5 tablespoon ground cumin
+- [ ] 0.5 tablespoon chili powder
+- [ ] 1 teaspoon garlic powder
+- [ ] 0.5 teaspoon oregano
+- [ ] 0.5 teaspoon paprika
+- [ ] 0.5 teaspoon kosher salt
+- [ ] 0.25 teaspoon ground black pepper
 
 ### For Serving
 
-- sour cream
-- tortillas
+- [ ] sour cream
+- [ ] tortillas
 - [pico de gallo](https://thms317.github.io/recipes/recipes/side/pico_de_gallo/)
-- avocado
+- [ ] avocado
 
 ## Instructions
 

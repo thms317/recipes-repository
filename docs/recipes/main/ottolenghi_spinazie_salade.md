@@ -1,17 +1,17 @@
+---
+title: Salade van Jonge Spinazie met Dadels en Amandelen
+description: "Een frisse salade uit het boek Jeruzalem van Yotam Ottolenghi en Sami Tamimi, met knapperige pitacroutons en zoete medjool dadels"
+image: ottolenghi_spinazie_salade.webp
+course: bijgerecht
+prep_minutes: 10
+cook_minutes: 6
+servings: 4 personen
+language: nl
+---
+
 # Salade van Jonge Spinazie met Dadels en Amandelen
 
 > *Een frisse salade uit het boek Jeruzalem van Yotam Ottolenghi en Sami Tamimi, met knapperige pitacroutons en zoete medjool dadels*
-
-## Recipe Information
-
-- **Prep Time:** 10 minuten
-- **Cook Time:** 6 minuten
-- **Rest Time:** 20 minuten
-- **Total Time:** 36 minuten
-- **Servings:** 4 personen
-- **Course:** bijgerecht
-- **Difficulty:** simpel
-- **Language:** NL
 
 ## Ingrediënten
 

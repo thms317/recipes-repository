@@ -1,24 +1,27 @@
+---
+title: "Verse Loempia's met Shiitake en Rode Kool"
+description: Vietnamese vegarolletjes met een Hollandse draai
+image: loempias.png
+course: starter
+prep_minutes: 20
+difficulty: medium
+language: nl
+---
+
 # Verse Loempia's met Shiitake en Rode Kool
 
 > *Vietnamese vegarolletjes met een Hollandse draai*
 
-## Recipe Information
-
-- **Prep Time:** 20 minutes
-- **Course:** starter
-- **Difficulty:** medium
-- **Language:** NL
-
 ## Ingredients
 
-- 8 stuks rijstvellen
-- 100 g rijstvermicelli
-- 200 g shiitake
-- 2 teentjes knoflook
-- 200 g gesneden rode kool
-- 150 g wortel julienne
-- 1 el zwart sesamzaad
-- 2 el olie
+- [ ] 8 stuks rijstvellen
+- [ ] 100 g rijstvermicelli
+- [ ] 200 g shiitake
+- [ ] 2 teentjes knoflook
+- [ ] 200 g gesneden rode kool
+- [ ] 150 g wortel julienne
+- [ ] 1 el zwart sesamzaad
+- [ ] 2 el olie
 
 ## Instructions
 

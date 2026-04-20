@@ -1,41 +1,44 @@
+---
+title: Classic Caesar Salad
+description: "A great Caesar salad gets its swagger from a great dressing. Squeamish about raw egg yolks and anchovies? Sorry. Yolks are what give richness to the emulsion, while anchovies provide a briny blast (and that whole umami thing). This is part of BA's Best, a collection of our essential recipes."
+image: caesar.webp
+course: starter
+servings: 6
+difficulty: medium
+language: en
+---
+
 # Classic Caesar Salad
 
 > *A great Caesar salad gets its swagger from a great dressing. Squeamish about raw egg yolks and anchovies? Sorry. Yolks are what give richness to the emulsion, while anchovies provide a briny blast (and that whole umami thing). This is part of BA's Best, a collection of our essential recipes.*
-
-## Recipe Information
-
-- **Servings:** 6
-- **Course:** starter
-- **Difficulty:** medium
-- **Language:** EN
 
 ## Ingredients
 
 ### The Dressing
 
-- 6 anchovy fillets packed in oil, drained
-- 1 small garlic clove
-- Kosher salt
-- 2 large egg yolks
-- 2 tablespoons fresh lemon juice, plus more
-- ¾ teaspoon Dijon mustard
-- 2 tablespoons olive oil
-- ½ cup vegetable oil
-- 3 tablespoons finely grated Parmesan
-- Freshly ground black pepper
+- [ ] 6 anchovy fillets packed in oil, drained
+- [ ] 1 small garlic clove
+- [ ] Kosher salt
+- [ ] 2 large egg yolks
+- [ ] 2 tablespoons fresh lemon juice, plus more
+- [ ] ¾ teaspoon Dijon mustard
+- [ ] 2 tablespoons olive oil
+- [ ] ½ cup vegetable oil
+- [ ] 3 tablespoons finely grated Parmesan
+- [ ] Freshly ground black pepper
 
 ### The Croutons
 
-- 3 cups torn 1" pieces country bread, with crusts
-- 3 tablespoons olive oil
+- [ ] 3 cups torn 1" pieces country bread, with crusts
+- [ ] 3 tablespoons olive oil
 
 ### The Lettuce
 
-- 3 romaine hearts, leaves separated
+- [ ] 3 romaine hearts, leaves separated
 
 ### The Cheese
 
-- Parmesan, for serving
+- [ ] Parmesan, for serving
 
 ## Instructions
 

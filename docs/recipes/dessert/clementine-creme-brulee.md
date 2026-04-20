@@ -1,28 +1,29 @@
+---
+title: Clementine Crème Brûlée
+description: Een ultra simpel en echt heerlijk dessert voor kerst
+image: clementine-creme-brulee.png
+course: dessert
+prep_minutes: 20
+cook_minutes: 60
+servings: 10 clementines
+difficulty: medium
+language: nl
+---
+
 # Clementine Crème Brûlée
 
 > *Een ultra simpel en echt heerlijk dessert voor kerst*
 
-## Recipe Information
-
-- **Prep Time:** 20 minutes
-- **Cook Time:** 60 minutes
-- **Rest Time:** 240 minutes
-- **Total Time:** 320 minutes
-- **Servings:** 10 clementines
-- **Course:** dessert
-- **Difficulty:** medium
-- **Language:** NL
-
 ## Ingredients
 
-- 4 eidooiers
-- 60 g suiker
-- Rasp van één biologische clementine (optioneel)
-- Sap van 2-3 clementines
-- 200 g slagroom
-- 150 ml melk
-- 25 g suiker voor het carameliseren
-- 10 clementines (om in te serveren)
+- [ ] 4 eidooiers
+- [ ] 60 g suiker
+- [ ] Rasp van één biologische clementine (optioneel)
+- [ ] Sap van 2-3 clementines
+- [ ] 200 g slagroom
+- [ ] 150 ml melk
+- [ ] 25 g suiker voor het carameliseren
+- [ ] 10 clementines (om in te serveren)
 
 ## Instructions
 

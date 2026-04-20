@@ -1,30 +1,32 @@
+---
+title: Baba Ganoush
+description: "Authentic Baba Ganoush recipe made with smoky eggplant, tahini, garlic and lemon"
+image: baba_ganoush.jpg
+course: appetizer
+cook_minutes: 30
+servings: 8 servings
+difficulty: medium
+language: en
+---
+
 # Baba Ganoush
 
 > *Authentic Baba Ganoush recipe made with smoky eggplant, tahini, garlic and lemon*
 
-## Recipe Information
-
-- **Cook Time:** 30 minutes
-- **Total Time:** 1 hour
-- **Servings:** 8 servings
-- **Course:** Appetizer
-- **Difficulty:** Medium
-- **Language:** EN
-
 ## Ingredients
 
-- 2 extra-large eggplants
-- 2 garlic cloves, finely minced
-- 4 tbsp tahini paste (60g)
-- 1 tbsp lemon juice
-- 1 tsp salt
+- [ ] 2 extra-large eggplants
+- [ ] 2 garlic cloves, finely minced
+- [ ] 4 tbsp tahini paste (60g)
+- [ ] 1 tbsp lemon juice
+- [ ] 1 tsp salt
 
 ### For Garnish
 
-- Olive oil
-- Za'atar spice
-- Fresh herbs like parsley
-- Toasted pita bread
+- [ ] Olive oil
+- [ ] Za'atar spice
+- [ ] Fresh herbs like parsley
+- [ ] Toasted pita bread
 
 ## Instructions
 
