@@ -1,0 +1,5 @@
+nav:
+  - Introduction: index.md
+  - Recipes: recipes
+  - recipe_database.md
+  - llm_instructions.md

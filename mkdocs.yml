@@ -1,17 +1,6 @@
 site_name: Recipes Repository
 site_url: https://thms317.github.io/recipes-repository/
 
-nav:
-  - Introduction: index.md
-  - Recipes:
-    - Breakfast: recipes/breakfast.md
-    - Starter: recipes/starter.md
-    - Main: recipes/main.md
-    - Side: recipes/side.md
-    - Dessert: recipes/dessert.md
-  - Recipe Database: recipe_database.md
-  - LLM Instructions: llm_instructions.md
-
 theme:
   name: material
   features:
@@ -21,13 +10,16 @@ theme:
 
 plugins:
   - search
-  - recipes:
-      recipes_dir: recipes
-      images_dir: images
+  - awesome-pages
+  - recipes
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - pymdownx.highlight
   - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra_css:
   - css/custom.css
