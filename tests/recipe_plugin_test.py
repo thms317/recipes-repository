@@ -5,11 +5,21 @@ from __future__ import annotations
 import json
 import re
 from dataclasses import dataclass, field
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from mkdocs.config import load_config
 
 from recipes_repository.mkdocs_recipe_plugin import RecipePlugin
+
+if TYPE_CHECKING:
+    import pytest
+
+
+@dataclass
+class FakeFile:
+    """Minimal File stub — the plugin only reads ``src_path`` for logging."""
+
+    src_path: str = "recipes/test.md"
 
 
 @dataclass
@@ -18,12 +28,13 @@ class FakePage:
 
     title: str = "Test Recipe"
     meta: dict[str, Any] = field(default_factory=dict)
+    file: FakeFile = field(default_factory=FakeFile)
 
 
 def _render(meta: dict[str, Any], markdown: str = "# Body\n") -> str:
     plugin = RecipePlugin()
     page = FakePage(title="Test Recipe", meta=meta)
-    return plugin.on_page_markdown(markdown, page)  # type: ignore[arg-type]
+    return plugin.on_page_markdown(markdown, page)  # ty: ignore[invalid-argument-type]
 
 
 def test_skips_page_without_course() -> None:
@@ -66,11 +77,18 @@ def test_injects_grid_card_and_jsonld() -> None:
 
 def test_missing_timings_render_as_dash() -> None:
     """Absent minute values render as em-dashes in the info card."""
-    meta = {"course": "dessert", "difficulty": "medium"}
+    meta = {"course": "dessert", "difficulty": "medium", "image": "x.png"}
     result = _render(meta)
     assert "| Prep | — |" in result
     assert "| Cook | — |" in result
     assert "| Servings | — |" in result
+
+
+def test_warns_when_image_missing(caplog: pytest.LogCaptureFixture) -> None:
+    """Recipes without an image field emit a plugin warning."""
+    with caplog.at_level("WARNING"):
+        _render({"course": "main"})
+    assert any("missing an image" in r.message for r in caplog.records)
 
 
 def test_mkdocs_config_registers_plugin() -> None:
