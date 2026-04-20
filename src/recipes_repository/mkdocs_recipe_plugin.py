@@ -1,8 +1,6 @@
 """MkDocs plugin for recipes_repository."""
 
-import json
 import re
-import sqlite3
 from pathlib import Path
 from typing import Any
 
@@ -14,7 +12,6 @@ from mkdocs.structure.files import Files
 from mkdocs.structure.pages import Page
 
 from recipes_repository.auto_index import on_startup
-from recipes_repository.parse_recipes import populate_database
 
 
 class RecipePluginConfig(Config):
@@ -60,111 +57,11 @@ class RecipePlugin(BasePlugin[RecipePluginConfig]):
             The modified configuration
         """
         try:
-            # Generate index files for recipes
             on_startup()
         except ImportError as e:
             print(f"Error generating recipe index files: {e}")
 
-        # Ensure the database exists
-        db_path = Path("docs/database/recipes.db")
-        if not db_path.exists():
-            # Create an empty database file
-            db_path.parent.mkdir(exist_ok=True, parents=True)
-
-            try:
-                # Try to populate the database with recipe data
-                populate_database()
-            except ImportError as e:
-                print(f"Error populating recipe database: {e}")
-                # Create an empty file if we can't import the database
-                db_path.touch()
-
-        # Generate the recipes JSON file directly in the docs directory
-        # This ensures it will be copied to the site directory during build
-        json_dir = Path("docs/recipes/api")
-        json_dir.mkdir(exist_ok=True, parents=True)
-        self._generate_recipe_json(db_path, json_dir / "recipes.json")
-
         return config
-
-    def on_serve(self, server: Any, config: MkDocsConfig, builder: Any) -> Any:  # noqa: ARG002
-        """Add recipe API endpoint to the development server.
-
-        Parameters
-        ----------
-        server : Any
-            The WSGI server instance
-        config : MkDocsConfig
-            The MkDocs configuration dictionary
-        builder : Any
-            The MkDocs builder
-
-        Returns
-        -------
-        Any
-            The server instance, potentially modified
-        """
-        return server
-
-    def on_post_build(self, config: MkDocsConfig) -> None:
-        """Run operations after the build is complete.
-
-        Args:
-            config: MkDocs configuration dictionary
-        """
-        # No need to regenerate the JSON file here since we're doing it in on_config
-        # and the file will be copied from docs to site directory during the build
-
-    def _generate_recipe_json(self, db_path: Path, output_path: Path) -> None:
-        """Generate a JSON file with recipe data.
-
-        Args:
-            db_path: Path to the database file
-            output_path: Path where the JSON file should be saved
-        """
-        recipes = []
-
-        if db_path.exists():
-            try:
-                conn = sqlite3.connect(str(db_path))
-                conn.row_factory = sqlite3.Row
-                cursor = conn.cursor()
-
-                # Get table info to check for column existence
-                cursor.execute("PRAGMA table_info(recipes)")
-                columns = [column_info[1] for column_info in cursor.fetchall()]
-
-                # Build query based on available columns
-                select_fields = ["id", "title", "description", "file_path", "language"]
-                if "category" in columns:
-                    select_fields.append("category")
-                if "difficulty" in columns:
-                    select_fields.append("difficulty")
-                if "prep_time" in columns:
-                    select_fields.append("prep_time")
-                if "cook_time" in columns:
-                    select_fields.append("cook_time")
-                if "total_time" in columns:
-                    select_fields.append("total_time")
-                if "servings" in columns:
-                    select_fields.append("servings")
-
-                query = f"SELECT {', '.join(select_fields)} FROM recipes"
-                cursor.execute(query)
-
-                recipes = [dict(row) for row in cursor.fetchall()]
-                conn.close()
-            except sqlite3.Error as e:
-                print(f"Error generating recipe JSON: {e}")
-
-        # Ensure directory exists
-        output_path.parent.mkdir(exist_ok=True, parents=True)
-
-        # Write JSON to file
-        with output_path.open("w", encoding="utf-8") as f:
-            json.dump(recipes, f, ensure_ascii=False, indent=2)
-
-        print(f"Generated recipe API file at {output_path} with {len(recipes)} recipes")
 
     def on_page_markdown(
         self,
