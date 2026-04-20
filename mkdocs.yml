@@ -5,12 +5,35 @@ theme:
   name: material
   features:
     - navigation.tracking
-    - navigation.expand
     - navigation.top
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
 plugins:
   - search
   - awesome-pages
+  - glightbox
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
   - recipes
 
 markdown_extensions:
